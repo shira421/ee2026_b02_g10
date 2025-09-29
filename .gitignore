@@ -1,37 +1,65 @@
-# Vivado project file (machine-specific)
-*.xpr
-*.xpr.lock
+# Vivado generated directories and files
+.cache/
+.hw/
+.runs/
+.sim/
+.Xil/
+.ip_user_files/
+.sdk/
 
-# Vivado auto-generated folders
-*.srcs/
-*.runs/
-*.sim/
-*.cache/
-*.hw/
-*.sdk/
-*.ip_user_files/
-
-# Logs and temporary files
-*.jou
+# Log files and reports
 *.log
-*.str
-*.pb
-*.xml
-*.html
-*.dmp
-*.tmp
-*.backup
+*.jou
+*.rpt
+webtalk/*
 
-# Generated outputs (don’t track build products)
+# IP related files (unless you are versioning specific IP changes)
+ip/
+bd/
+*.dcp
 *.bit
 *.bin
+*.elf
+*.mcs
+*.mem
 *.mmi
+*.bmm
 *.ltx
-*.rpt
-*.cfg
-*.xsa
-
-# Simulation waveforms
+*.vlt
+*.wcfg
 *.wdb
-*.vcd
-*.fst
+
+# Vivado project files that are regenerated
+*.str
+*.bif
+*.cdc
+*.xml
+*.xdc.bak
+*.txt
+*.html
+*.pdf
+*.csv
+
+# Operating system and editor specific files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+# Eclipse/Vitis specific files (if applicable)
+.settings/
+.project
+.cproject
+
+# Exclude everything by default and then whitelist
+*
+!*.v
+!*.sv
+!*.vh
+!*.svh
+!*.xdc
+!*.tcl
+!*.xpr
+!*.bd # If you have Block Designs you want to track
+!*.xci # If you have custom IP Cores you want to track
+!srcs/
+!srcs/**
