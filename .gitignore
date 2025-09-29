@@ -1,1 +1,37 @@
-ee2026_b02_g10.srcs/
+# Vivado project file (machine-specific)
+*.xpr
+*.xpr.lock
+
+# Vivado auto-generated folders
+*.srcs/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.sdk/
+*.ip_user_files/
+
+# Logs and temporary files
+*.jou
+*.log
+*.str
+*.pb
+*.xml
+*.html
+*.dmp
+*.tmp
+*.backup
+
+# Generated outputs (don’t track build products)
+*.bit
+*.bin
+*.mmi
+*.ltx
+*.rpt
+*.cfg
+*.xsa
+
+# Simulation waveforms
+*.wdb
+*.vcd
+*.fst
