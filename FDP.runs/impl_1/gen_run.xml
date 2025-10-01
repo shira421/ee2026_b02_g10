@@ -1,168 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1759236775">
-  <File Type="BITSTR-BMM" Name="top_module_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="top_module_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="top_module_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="top_module_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="top_module.tcl"/>
-  <File Type="OPT-TIMING" Name="top_module_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="top_module_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="top_module_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="top_module_reports.tcl"/>
-  <File Type="OPT-DRC" Name="top_module_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="top_module.hwdef"/>
-  <File Type="PWROPT-DCP" Name="top_module_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="top_module_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="top_module_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="top_module_placed.dcp"/>
-  <File Type="PLACE-IO" Name="top_module_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="top_module_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="top_module_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="top_module_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="top_module_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="top_module_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="top_module_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="top_module.bgn"/>
-  <File Type="PLACE-TIMING" Name="top_module_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="top_module_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="top_module.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="top_module_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="top_module_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="top_module_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="top_module.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="top_module_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="top_module_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="top_module_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="top_module_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="top_module_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="top_module_drc_routed.pb"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1759323915">
+  <File Type="BITSTR-BMM" Name="Top_Student_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Top_Student_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="Top_Student_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="Top_Student_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="Top_Student.tcl"/>
+  <File Type="OPT-TIMING" Name="Top_Student_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="Top_Student_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="Top_Student_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Top_Student_reports.tcl"/>
+  <File Type="OPT-DRC" Name="Top_Student_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Top_Student.hwdef"/>
+  <File Type="PWROPT-DCP" Name="Top_Student_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="Top_Student_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="Top_Student_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="Top_Student_placed.dcp"/>
+  <File Type="PLACE-IO" Name="Top_Student_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Top_Student_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Top_Student_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Top_Student_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Top_Student_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Top_Student_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Top_Student_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="Top_Student.bgn"/>
+  <File Type="PLACE-TIMING" Name="Top_Student_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Top_Student_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="Top_Student.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Top_Student_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Top_Student_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Top_Student_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="Top_Student.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="Top_Student_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Top_Student_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="Top_Student_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Top_Student_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="Top_Student_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Top_Student_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="top_module.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="top_module_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="top_module.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="top_module_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="top_module_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="top_module.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="top_module_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="top_module_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="top_module_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="top_module_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="top_module_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="top_module_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="top_module_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="top_module_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="top_module_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="top_module_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="top_module_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="top_module_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="top_module_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="top_module_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="top_module_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="top_module_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="top_module_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="top_module_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="top_module_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="top_module.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="top_module_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="top_module.rbt"/>
-  <File Type="BITSTR-NKY" Name="top_module.nky"/>
-  <File Type="BG-DRC" Name="top_module.drc"/>
-  <File Type="RDI-RDI" Name="top_module.vdi"/>
+  <File Type="BITSTR-LTX" Name="Top_Student.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="Top_Student_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="Top_Student.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Top_Student_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Top_Student_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="Top_Student.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Top_Student_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="Top_Student_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="Top_Student_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Top_Student_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Top_Student_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Top_Student_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Top_Student_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Top_Student_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="Top_Student_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="Top_Student_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="Top_Student_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="Top_Student_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Top_Student_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Top_Student_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Top_Student_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Top_Student_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Top_Student_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Top_Student_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Top_Student_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="Top_Student.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Top_Student_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="Top_Student.rbt"/>
+  <File Type="BITSTR-NKY" Name="Top_Student.nky"/>
+  <File Type="BG-DRC" Name="Top_Student.drc"/>
+  <File Type="RDI-RDI" Name="Top_Student.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v">
+    <File Path="$PSRCDIR/sources_1/imports/Desktop/Oled_Display.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v"/>
-        <Attr Name="ImportTime" Val="1759220921"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/imports/Desktop/Oled_Display.v"/>
+        <Attr Name="ImportTime" Val="1677398246"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v"/>
-        <Attr Name="ImportTime" Val="1759157812"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/freq_200.v">
+    <File Path="$PSRCDIR/sources_1/new/digit1.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v"/>
-        <Attr Name="ImportTime" Val="1759156713"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v"/>
-        <Attr Name="ImportTime" Val="1759148545"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v"/>
-        <Attr Name="ImportTime" Val="1759228781"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/seven_segment_display.v">
+    <File Path="$PSRCDIR/sources_1/new/digit9.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v">
+    <File Path="$PSRCDIR/sources_1/new/Top_Student.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v"/>
-        <Attr Name="ImportTime" Val="1759228051"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../SoundDisplay.srcs/sources_1/new/Top_Student.v"/>
+        <Attr Name="ImportTime" Val="1570395690"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/top_module.v">
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/ip/blk_mem_gen_inter/blk_mem_gen_inter.xci"/>
+        <Attr Name="ImportTime" Val="1673495803"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/samue/Documents/vivado/ee2026_b02_g10/archive_project_summary.txt">
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/archive_project_summary.txt"/>
-        <Attr Name="ImportTime" Val="1759229045"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.xci"/>
+        <Attr Name="ImportTime" Val="1686296404"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.xci"/>
+        <Attr Name="ImportTime" Val="1686296427"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci"/>
+        <Attr Name="ImportTime" Val="1673495799"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MouseAudioDisplay/archive_project_summary.txt">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../MouseAudioDisplay/archive_project_summary.txt"/>
+        <Attr Name="ImportTime" Val="1677398648"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/res/weights.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../res/weights.coe"/>
+        <Attr Name="ImportTime" Val="1677159677"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/res/00.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../res/00.coe"/>
+        <Attr Name="ImportTime" Val="1677159677"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Desktop/Ps2Interface.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/imports/Desktop/Ps2Interface.vhd"/>
+        <Attr Name="ImportTime" Val="1677398072"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Desktop/Mouse_Control.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/imports/Desktop/Mouse_Control.vhd"/>
+        <Attr Name="ImportTime" Val="1677398056"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/neural_net.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/new/neural_net.v"/>
+        <Attr Name="ImportTime" Val="1677159677"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/paint.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/new/paint.v"/>
+        <Attr Name="ImportTime" Val="1709183192"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/CanvasTransfer.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/new/CanvasTransfer.v"/>
+        <Attr Name="ImportTime" Val="1680151347"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/module_pack.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/new/module_pack.v"/>
+        <Attr Name="ImportTime" Val="1686554360"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ss_display.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../MODS.srcs/sources_1/new/ss_display.v"/>
+        <Attr Name="ImportTime" Val="1696226948"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/MODS/archive_project_summary.txt">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../archive_project_summary.txt"/>
+        <Attr Name="ImportTime" Val="1709183388"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/archive_project_summary.txt"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_module"/>
+      <Option Name="TopModule" Val="Top_Student"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/imports/new/my_basys3_constraints.xdc">
+    <File Path="$PSRCDIR/constrs_1/new/Basys3_Master.xdc">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/constrs_1/new/my_basys3_constraints.xdc"/>
-        <Attr Name="ImportTime" Val="1759219105"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -172,9 +258,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
