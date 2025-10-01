@@ -1,0 +1,91 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Oct  1 20:02:03 2025
+| Host         : Akshay running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
+| Design       : Top_Student
+| Device       : xc7a35t
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    24 |
+| Unused register locations in slices containing registers |    42 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      4 |            1 |
+|     12 |            1 |
+|     14 |            1 |
+|    16+ |           21 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             162 |           33 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             450 |           66 |
+| Yes          | No                    | No                     |             130 |           20 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             128 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+------------------------------------+---------------------------------+------------------+----------------+
+|    Clock Signal   |            Enable Signal           |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++-------------------+------------------------------------+---------------------------------+------------------+----------------+
+| ~clk_25mhz_BUFG   |                                    |                                 |                2 |              4 |
+|  clk_6_25mhz_BUFG | clock_move/E[0]                    |                                 |                2 |             12 |
+|  clk_6_25mhz_BUFG | move/circle_x[6]_i_1_n_0           |                                 |                3 |             14 |
+|  clk_IBUF_BUFG    | dbD/debounce_counter[7]_i_2__0_n_0 | dbD/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbD/pulse_counter                  | dbD/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG    | dbL/debounce_counter[7]_i_2__1_n_0 | dbL/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbL/pulse_counter                  | dbL/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbR/pulse_counter                  | dbR/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbR/debounce_counter[7]_i_2__2_n_0 | dbR/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbU/debounce_counter[7]_i_2_n_0    | dbU/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG    | dbU/pulse_counter                  | dbU/debounce_counter            |                2 |             16 |
+| ~clk_25mhz_BUFG   |                                    | test1/frame_counter[16]_i_1_n_0 |                4 |             32 |
+|  clk_IBUF_BUFG    |                                    | dbD/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG    |                                    | dbL/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG    |                                    | dbR/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG    |                                    | dbU/clear                       |                5 |             34 |
+| ~clk_25mhz_BUFG   | test1/delay[0]_i_1_n_0             |                                 |                5 |             40 |
+|  clk_IBUF_BUFG    |                                    |                                 |               12 |             46 |
+|  clk_IBUF_BUFG    |                                    | clock_25mhz/COUNT[0]_i_1__0_n_0 |                8 |             64 |
+|  clk_IBUF_BUFG    |                                    | clock_6_25_mhz/clear            |                8 |             64 |
+|  clk_IBUF_BUFG    |                                    | clock_move/COUNT[0]_i_1__1_n_0  |                8 |             64 |
+| ~clk_25mhz_BUFG   | test1/FSM_onehot_state[31]_i_1_n_0 |                                 |               10 |             64 |
+| ~clk_25mhz_BUFG   |                                    | test1/spi_word[39]_i_1_n_0      |               18 |             90 |
+|  clk_6_25mhz_BUFG |                                    |                                 |               19 |            112 |
++-------------------+------------------------------------+---------------------------------+------------------+----------------+
+
+

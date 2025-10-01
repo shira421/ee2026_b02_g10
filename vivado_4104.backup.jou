@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Oct  1 19:25:46 2025
+# Process ID: 4104
+# Current directory: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28712 C:\Users\sarav\EE2026_lab\week7\pls_work_pls.xpr\FDP\FDP.xpr
+# Log file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/vivado.log
+# Journal file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.xpr
+open_hw
+update_compile_order -fileset sources_1
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+wait_on_run impl_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_design
+archive_project C:/Users/sarav/EE2026_lab/Akshay_part_s.xpr.zip -temp_dir C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay -force -include_local_ip_cache
+close_project
+open_project C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+wait_on_run impl_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_design
+close [ open C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_2ff.v w ]
+add_files C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_2ff.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_off.v w ]
+add_files C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_off.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+wait_on_run impl_1
+open_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw
+close_project

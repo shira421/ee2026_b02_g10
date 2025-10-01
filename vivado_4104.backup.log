@@ -1,0 +1,366 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Oct  1 19:25:46 2025
+# Process ID: 4104
+# Current directory: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent28712 C:\Users\sarav\EE2026_lab\week7\pls_work_pls.xpr\FDP\FDP.xpr
+# Log file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/vivado.log
+# Journal file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/sarav/EE2026_LABS/TASK_S_WEEK7.xpr/FDP/.Xil/Vivado-14224-Akshay/PrjAr/_X_' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.vhdl'. Please regenerate to continue.
+open_hw
+update_compile_order -fileset sources_1
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3EA9A
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Wed Oct  1 19:28:00 2025] Launched synth_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/runme.log
+[Wed Oct  1 19:28:00 2025] Launched impl_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 95 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 2470.664 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 2470.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2595.660 ; gain = 936.492
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3EA9A
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+close_design
+archive_project C:/Users/sarav/EE2026_lab/Akshay_part_s.xpr.zip -temp_dir C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.vhdl'. Please regenerate to continue.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [ProjectBase 1-495] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience any problem with archiving the project, please consider setting environment variable $TEMP to a shorter path.
+Current project path is 'C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_'.
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.dcp' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.dcp'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.v' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.v'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.vhdl' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.vhdl'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.v' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.v'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.vhdl' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.vhdl'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.dcp' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.dcp'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.v' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.v'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.vhdl' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.vhdl'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.v' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.v'
+CRITICAL WARNING: [IP_Flow 19-4299] Failed to copy 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.vhdl' to 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/.Xil/Vivado-4104-Akshay/PrjAr/_X_/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.vhdl'
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'blk_mem_gen_const_synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'blk_mem_gen_img_synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-133] re-setting run 'blk_mem_gen_const_impl_1'...
+INFO: [Coretcl 2-133] re-setting run 'blk_mem_gen_img_impl_1'...
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'blk_mem_gen_const'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'blk_mem_gen_const'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'blk_mem_gen_img'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'blk_mem_gen_img'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (C:/Users/sarav/EE2026_lab/Akshay_part_s.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+archive_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2606.637 ; gain = 0.000
+close_project
+open_project C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_const' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_const/blk_mem_gen_const_sim_netlist.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'blk_mem_gen_img' generated file not found 'c:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/ip/blk_mem_gen_img/blk_mem_gen_img_sim_netlist.vhdl'. Please regenerate to continue.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Wed Oct  1 19:44:10 2025] Launched synth_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/runme.log
+[Wed Oct  1 19:44:10 2025] Launched impl_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2606.637 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2606.637 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3EA9A
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+close_design
+close [ open C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_2ff.v w ]
+add_files C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_2ff.v
+update_compile_order -fileset sources_1
+close [ open C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_off.v w ]
+add_files C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.srcs/sources_1/new/sync_off.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Wed Oct  1 19:54:52 2025] Launched synth_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/runme.log
+[Wed Oct  1 19:54:52 2025] Launched impl_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2647.590 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2647.590 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3EA9A
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 14
+[Wed Oct  1 20:01:17 2025] Launched synth_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/runme.log
+[Wed Oct  1 20:01:17 2025] Launched impl_1...
+Run output will be captured here: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.2
+  **** Build date : Jun 14 2018-20:42:52
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3EA9A
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/impl_1/Top_Student.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+close_hw
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  1 20:05:23 2025...
