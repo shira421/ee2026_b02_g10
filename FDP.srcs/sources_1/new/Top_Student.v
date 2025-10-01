@@ -13,8 +13,9 @@
 module Top_Student(
     input clk,              
     input btnC,            
-    input btnL, btnR,       
-    output [7:0] JB 
+    input btnL, btnR, 
+    input [12:0] pixel_index,
+    output reg [15:0] pixel_data
 );
 
     // Clock divider: 100 MHz -> 6.25 MHz (existing)
@@ -26,26 +27,24 @@ module Top_Student(
     );
 
     // OLED wiring
-    wire oled_clk, oled_mosi, oled_dc, oled_res, oled_cs;
-    assign JB[0] = oled_cs; assign JB[1] = oled_mosi; assign JB[2] = 1'b0;
-    assign JB[3] = oled_clk; assign JB[4] = oled_dc; assign JB[5] = oled_res;
-    assign JB[6] = 1'b1; assign JB[7] = 1'b1;
+//    wire oled_clk, oled_mosi, oled_dc, oled_res, oled_cs;
+//    assign JB[0] = oled_cs; assign JB[1] = oled_mosi; assign JB[2] = 1'b0;
+//    assign JB[3] = oled_clk; assign JB[4] = oled_dc; assign JB[5] = oled_res;
+//    assign JB[6] = 1'b1; assign JB[7] = 1'b1;
 
-    // OLED driver
-    wire [12:0] pixel_index;
-    reg  [15:0] pixel_data;
-    Oled_Display oled(
-        .clk(clk6p25),
-        .reset(btnC),
-        .frame_begin(),
-        .sending_pixels(),
-        .sample_pixel(),
-        .pixel_index(pixel_index),
-        .pixel_data(pixel_data),
-        .cs(oled_cs), .sdin(oled_mosi), .sclk(oled_clk),
-        .d_cn(oled_dc), .resn(oled_res),
-        .vccen(), .pmoden()
-    );
+//    // OLED driver
+//    Oled_Display oled(
+//        .clk(clk6p25),
+//        .reset(btnC),
+//        .frame_begin(),
+//        .sending_pixels(),
+//        .sample_pixel(),
+//        .pixel_index(pixel_index),
+//        .pixel_data(pixel_data),
+//        .cs(oled_cs), .sdin(oled_mosi), .sclk(oled_clk),
+//        .d_cn(oled_dc), .resn(oled_res),
+//        .vccen(), .pmoden()
+//    );
 
     // Pixel coordinates
     wire [6:0] row = pixel_index / 96;

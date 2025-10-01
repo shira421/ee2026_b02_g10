@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,7 +32,6 @@ add_files C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/
 add_files C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/imports/res/00.coe
 read_verilog -library xil_defaultlib {
   C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/new/DigitRenderer.v
-  C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v
   C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/new/clk_div_625kHz.v
   C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/new/debounce.v
   C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.srcs/sources_1/new/Top_Student.v
