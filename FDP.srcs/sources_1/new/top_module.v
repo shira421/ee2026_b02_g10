@@ -31,7 +31,7 @@ module top_module(
     //connections for frequency clock
     wire freq625m;
     //connectiojns for the task_q
-    wire [15:0] pixel_data_q;
+    wire [15:0] pixel_data_p,pixel_data_q;
     //connections for the multiplexer, i am just gonna place the multiplexer in the top
     wire [15:0] pixel_data_multiplexed;
     //connections for the oled_display
@@ -45,7 +45,8 @@ module top_module(
     seven_segment_display f1(clk, an, seg); //clk is the native clokc input
     
     //initiate the separate task here
-    task_q t0(clk, btnL, btnC, btnR, pixel_index, pixel_data_q);
+    task_p t0(clk, btnC, btnL, btnR, pixel_index, pixel_data_p);
+    task_q t1(clk, btnL, btnC, btnR, pixel_index, pixel_data_q);
     //clk is the native clock, btn are direct, pixel_index is the output of the display
     //pixel_data_q is the output of this module fed back to the oled_display function later
     
