@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date                      : Tue Sep 30 20:53:41 2025
-| Host                      : dorn_pc running 64-bit major release  (build 9200)
+| Date                      : Wed Oct  1 15:42:33 2025
+| Host                      : dorn_laptop running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_module_io_placed.rpt
 | Design                    : top_module
 | Device                    : xc7a35t
@@ -68,7 +68,7 @@ Table of Contents
 | B12        |             | Dedicated  | VREFP_0                      | XADC          |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B13        |             | Dedicated  | VN_0                         | XADC          |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B14        |             |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| B15        | JB[2]       | High Range | IO_L11N_T1_SRCC_16           | OUTPUT        | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| B15        | JB[2]       | High Range | IO_L11N_T1_SRCC_16           | TRISTATE      | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | B16        | JB[3]       | High Range | IO_L13N_T2_MRCC_16           | OUTPUT        | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | B17        |             | High Range | IO_L14N_T2_SRCC_16           | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | B18        |             | High Range | IO_L19P_T3_16                | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

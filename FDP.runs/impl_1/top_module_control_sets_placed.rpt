@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Sep 30 20:53:41 2025
-| Host         : dorn_pc running 64-bit major release  (build 9200)
+| Date         : Wed Oct  1 15:42:33 2025
+| Host         : dorn_laptop running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_module_control_sets_placed.rpt
 | Design       : top_module
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    22 |
-| Unused register locations in slices containing registers |    72 |
+| Number of unique control sets                            |    23 |
+| Unused register locations in slices containing registers |    76 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,7 +36,7 @@ Table of Contents
 +--------+--------------+
 |      2 |            1 |
 |      4 |            1 |
-|     10 |            4 |
+|     10 |            5 |
 |     12 |            1 |
 |    16+ |           15 |
 +--------+--------------+
@@ -48,43 +48,44 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             102 |           21 |
+| No           | No                    | No                     |             104 |           29 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             266 |           42 |
-| Yes          | No                    | No                     |             104 |           13 |
+| No           | Yes                   | No                     |             276 |           38 |
+| Yes          | No                    | No                     |             104 |           14 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              96 |           15 |
+| Yes          | Yes                   | No                     |              96 |           16 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-------------------------------------+-------------------------------------+------------------+----------------+
-|  Clock Signal  |            Enable Signal            |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
-+----------------+-------------------------------------+-------------------------------------+------------------+----------------+
-| ~freq625m      |                                     |                                     |                1 |              2 |
-|  f0/f0/CLK     |                                     |                                     |                1 |              4 |
-|  clk_IBUF_BUFG |                                     | Q/f0/ctr[4]_i_1__0_n_0              |                1 |             10 |
-|  Q/d0/CLK      |                                     |                                     |                3 |             10 |
-|  Q/d1/CLK      |                                     |                                     |                1 |             10 |
-|  Q/d2/CLK      |                                     |                                     |                2 |             10 |
-|  freq625m      |                                     |                                     |                3 |             12 |
-|  clk_IBUF_BUFG | Q/d0/debounce_counter[7]_i_2_n_0    | Q/d0/debounce_counter               |                2 |             16 |
-|  clk_IBUF_BUFG | Q/d0/pulse_counter                  | Q/d0/debounce_counter               |                3 |             16 |
-|  clk_IBUF_BUFG | Q/d1/debounce_counter[7]_i_2__0_n_0 | Q/d1/debounce_counter               |                3 |             16 |
-|  clk_IBUF_BUFG | Q/d1/pulse_counter                  | Q/d1/debounce_counter               |                3 |             16 |
-|  clk_IBUF_BUFG | Q/d2/pulse_counter                  | Q/d2/debounce_counter               |                2 |             16 |
-|  clk_IBUF_BUFG | Q/d2/debounce_counter[7]_i_2__1_n_0 | Q/d2/debounce_counter               |                2 |             16 |
-|  freq625m      |                                     | Q/f1/FSM_onehot_b0_state[4]_i_1_n_0 |                7 |             30 |
-| ~freq625m      |                                     | Q/f3/frame_counter[16]_i_1_n_0      |                4 |             34 |
-|  clk_IBUF_BUFG |                                     | Q/d0/clear                          |                5 |             34 |
-|  clk_IBUF_BUFG |                                     | Q/d1/tick_1ms_i_1__0_n_0            |                5 |             34 |
-|  clk_IBUF_BUFG |                                     | Q/d2/tick_1ms_i_1__1_n_0            |                5 |             34 |
-| ~freq625m      | Q/f3/delay[0]_i_1_n_0               |                                     |                5 |             40 |
-|  clk_IBUF_BUFG |                                     |                                     |               10 |             54 |
-| ~freq625m      | Q/f3/FSM_onehot_state[31]_i_1_n_0   |                                     |                8 |             64 |
-| ~freq625m      |                                     | Q/f3/spi_word[39]_i_1_n_0           |               15 |             90 |
-+----------------+-------------------------------------+-------------------------------------+------------------+----------------+
++-----------------+--------------------------------------+--------------------------------------+------------------+----------------+
+|   Clock Signal  |             Enable Signal            |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
++-----------------+--------------------------------------+--------------------------------------+------------------+----------------+
+| ~freq625m_BUFG  |                                      |                                      |                1 |              2 |
+|  f1/f0/CLK      |                                      |                                      |                1 |              4 |
+|  clk_IBUF_BUFG  |                                      | f0/ctr[4]_i_1__0_n_0                 |                1 |             10 |
+|  clk_IBUF_BUFG  |                                      | t0/f0/ctr[4]_i_1__1_n_0              |                1 |             10 |
+|  t0/d0/CLK      |                                      |                                      |                1 |             10 |
+|  t0/d1/CLK      |                                      |                                      |                1 |             10 |
+|  t0/d2/CLK      |                                      |                                      |                2 |             10 |
+|  t0/f0/freq625m |                                      |                                      |                3 |             12 |
+|  clk_IBUF_BUFG  | t0/d0/pulse_counter                  | t0/d0/debounce_counter               |                3 |             16 |
+|  clk_IBUF_BUFG  | t0/d0/debounce_counter[7]_i_2_n_0    | t0/d0/debounce_counter               |                3 |             16 |
+|  clk_IBUF_BUFG  | t0/d1/pulse_counter                  | t0/d1/debounce_counter               |                3 |             16 |
+|  clk_IBUF_BUFG  | t0/d1/debounce_counter[7]_i_2__0_n_0 | t0/d1/debounce_counter               |                2 |             16 |
+|  clk_IBUF_BUFG  | t0/d2/pulse_counter                  | t0/d2/debounce_counter               |                2 |             16 |
+|  clk_IBUF_BUFG  | t0/d2/debounce_counter[7]_i_2__1_n_0 | t0/d2/debounce_counter               |                3 |             16 |
+|  t0/f0/freq625m |                                      | t0/f1/FSM_onehot_b0_state[4]_i_1_n_0 |                4 |             30 |
+| ~freq625m_BUFG  |                                      | f2/frame_counter[16]_i_1_n_0         |                5 |             34 |
+|  clk_IBUF_BUFG  |                                      | t0/d0/clear                          |                5 |             34 |
+|  clk_IBUF_BUFG  |                                      | t0/d1/tick_1ms_i_1__0_n_0            |                5 |             34 |
+|  clk_IBUF_BUFG  |                                      | t0/d2/tick_1ms_i_1__1_n_0            |                5 |             34 |
+| ~freq625m_BUFG  | f2/delay[0]_i_1_n_0                  |                                      |                5 |             40 |
+|  clk_IBUF_BUFG  |                                      |                                      |               20 |             56 |
+| ~freq625m_BUFG  | f2/FSM_onehot_state[31]_i_1_n_0      |                                      |                9 |             64 |
+| ~freq625m_BUFG  |                                      | f2/spi_word[39]_i_1_n_0              |               12 |             90 |
++-----------------+--------------------------------------+--------------------------------------+------------------+----------------+
 
 

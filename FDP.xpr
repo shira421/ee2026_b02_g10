@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr">
+<Project Version="7" Minor="38" Path="C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="24e5d7a1779144f797f24297896a26e0"/>
@@ -59,8 +59,53 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v"/>
+          <Attr Name="ImportTime" Val="1759220921"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v"/>
+          <Attr Name="ImportTime" Val="1759157812"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/freq_200.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v"/>
+          <Attr Name="ImportTime" Val="1759156713"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v"/>
+          <Attr Name="ImportTime" Val="1759148545"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v"/>
+          <Attr Name="ImportTime" Val="1759228781"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -73,68 +118,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/top_module.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v"/>
-          <Attr Name="ImportTime" Val="1759220921"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v"/>
-          <Attr Name="ImportTime" Val="1759157812"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v"/>
-          <Attr Name="ImportTime" Val="1759156713"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v"/>
-          <Attr Name="ImportTime" Val="1759148545"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v"/>
-          <Attr Name="ImportTime" Val="1759228781"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v"/>
           <Attr Name="ImportTime" Val="1759228051"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/top_module.v">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -199,9 +193,7 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -210,9 +202,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
