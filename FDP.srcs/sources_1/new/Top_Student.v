@@ -38,7 +38,7 @@ module task_s(
     sync_2ff syncL (.clk(clk_6_25mhz), .async_in(btnL_clean), .sync_out(btnL_sync));
     sync_2ff syncR (.clk(clk_6_25mhz), .async_in(btnR_clean), .sync_out(btnR_sync));
     
-    // REMOVE THIS LINE - don't create your own clock
+    // REMOVE THIS
     // flexible_clock clock_6_25_mhz(.clk(clk), .m(m_6_25mhz), .slow_clock(clk_6_25mhz));
     
     flexible_clock clock_move (.clk(clk), .m(32'd1249999), .slow_clock(clk_move));
