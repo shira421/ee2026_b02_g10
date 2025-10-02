@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Oct  1 20:01:18 2025
-# Process ID: 28712
+# Start of session at: Thu Oct  2 07:53:22 2025
+# Process ID: 31660
 # Current directory: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1
-# Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
-# Log file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/Top_Student.vds
+# Command line: vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+# Log file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1/top_module.vds
 # Journal file: C:/Users/sarav/EE2026_lab/week7/pls_work_pls.xpr/FDP/FDP.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source Top_Student.tcl -notrace
+source top_module.tcl -notrace

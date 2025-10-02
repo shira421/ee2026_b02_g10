@@ -1,3 +1,21 @@
-FDP.ip_user_files/
+# Vivado auto-generated junk
+.Xil/
+*.jou
+*.log
+*.str
+
+# Build & cache folders
+*.cache/
+*.runs/
+*.hw/
+*.ip_user_files/
+
+# Simulation outputs
 FDP.sim/
-FDP.cache/
+
+# OS/editor junk
+*.swp
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
