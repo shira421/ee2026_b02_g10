@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Oct  1 15:41:23 2025
-# Process ID: 12544
-# Current directory: C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.runs/synth_1
+# Start of session at: Thu Oct  2 21:38:13 2025
+# Process ID: 32180
+# Current directory: C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1
 # Command line: vivado.exe -log top_module.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
-# Log file: C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.runs/synth_1/top_module.vds
-# Journal file: C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.runs/synth_1\vivado.jou
+# Log file: C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1/top_module.vds
+# Journal file: C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top_module.tcl -notrace

@@ -17,28 +17,38 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.cache/wt [current_project]
-set_property parent.project_path C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.cache/wt [current_project]
+set_property parent.project_path C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.cache/ip [current_project]
+set_property ip_output_repo c:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_200.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/new/seven_segment_display.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v
-  C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/sources_1/new/top_module.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/CircleMover.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/DigitRenderer.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/clk_div_625kHz.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/colour_identifier.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/digit1.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/digit9.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/draw_shapes.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/flexible_clock.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_200.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/freq_clock_gen.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/pixel_output_generator.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/seven_segment_display.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/sync_2ff.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/task_p.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/task_q.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/task_r.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/task_s.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/top_module.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,8 +58,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/dorn/Documents/xilinx/ee_2026_project/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+read_xdc C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]

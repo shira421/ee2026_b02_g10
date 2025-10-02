@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Wed Oct  1 15:42:48 2025
-| Host             : dorn_laptop running 64-bit major release  (build 9200)
+| Date             : Thu Oct  2 21:39:19 2025
+| Host             : dorn_pc running 64-bit major release  (build 9200)
 | Command          : report_power -file top_module_power_routed.rpt -pb top_module_power_summary_routed.pb -rpx top_module_power_routed.rpx
 | Design           : top_module
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.143        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.045        |
+| Dynamic (W)              | 0.071        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 84.3         |
+| Junction Temperature (C) | 25.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      828 |       --- |             --- |
-|   LUT as Logic |     0.002 |      370 |     20800 |            1.78 |
-|   CARRY4       |    <0.001 |       40 |      8150 |            0.49 |
-|   Register     |    <0.001 |      290 |     41600 |            0.70 |
-|   F7/F8 Muxes  |    <0.001 |        2 |     32600 |           <0.01 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     0.002 |      589 |       --- |             --- |
-| I/O            |     0.039 |       25 |       106 |           23.58 |
+| Clocks         |     0.004 |        3 |       --- |             --- |
+| Slice Logic    |     0.012 |     2878 |       --- |             --- |
+|   LUT as Logic |     0.011 |     1540 |     20800 |            7.40 |
+|   CARRY4       |    <0.001 |      280 |      8150 |            3.44 |
+|   Register     |    <0.001 |      699 |     41600 |            1.68 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |       63 |       --- |             --- |
+| Signals        |     0.010 |     2056 |       --- |             --- |
+| DSPs           |     0.005 |        6 |        90 |            6.67 |
+| I/O            |     0.039 |       32 |       106 |           30.19 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.116 |          |           |                 |
+| Total          |     0.143 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.006 |      0.010 |
+| Vccint    |       1.000 |     0.042 |       0.032 |      0.010 |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |
 | Vcco33    |       3.300 |     0.012 |       0.011 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -139,22 +139,42 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------+-----------+
-| Name       | Power (W) |
-+------------+-----------+
-| top_module |     0.045 |
-|   f0       |    <0.001 |
-|   f1       |    <0.001 |
-|     f0     |    <0.001 |
-|     f1     |    <0.001 |
-|   f2       |     0.001 |
-|   t0       |     0.003 |
-|     d0     |    <0.001 |
-|     d1     |    <0.001 |
-|     d2     |    <0.001 |
-|     f0     |    <0.001 |
-|     f1     |    <0.001 |
-|     f2     |    <0.001 |
-+------------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| top_module      |     0.071 |
+|   f0            |    <0.001 |
+|   f1            |    <0.001 |
+|     f0          |    <0.001 |
+|     f1          |    <0.001 |
+|   f2            |     0.011 |
+|   t0            |     0.008 |
+|     dbL         |    <0.001 |
+|     dbR         |    <0.001 |
+|     dr4         |    <0.001 |
+|     dr6         |    <0.001 |
+|   t1            |     0.002 |
+|     d0          |    <0.001 |
+|     d1          |    <0.001 |
+|     d2          |    <0.001 |
+|     f0          |    <0.001 |
+|     f1          |    <0.001 |
+|     f2          |    <0.001 |
+|   t2            |     0.002 |
+|     digit1_inst |    <0.001 |
+|     digit9_inst |    <0.001 |
+|   t3            |     0.007 |
+|     clock_move  |    <0.001 |
+|     dbD         |    <0.001 |
+|     dbL         |    <0.001 |
+|     dbR         |    <0.001 |
+|     dbU         |    <0.001 |
+|     draw        |     0.004 |
+|     move        |    <0.001 |
+|     syncD       |    <0.001 |
+|     syncL       |    <0.001 |
+|     syncR       |    <0.001 |
+|     syncU       |    <0.001 |
++-----------------+-----------+
 
 
