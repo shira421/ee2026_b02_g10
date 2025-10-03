@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Oct  2 01:01:44 2025
+# Process ID: 25592
+# Current directory: C:/Users/samue/Documents/vivado/ee2026_b02_g10
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29156 C:\Users\samue\Documents\vivado\ee2026_b02_g10\FDP.xpr
+# Log file: C:/Users/samue/Documents/vivado/ee2026_b02_g10/vivado.log
+# Journal file: C:/Users/samue/Documents/vivado/ee2026_b02_g10\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  2 01:02:05 2025...
