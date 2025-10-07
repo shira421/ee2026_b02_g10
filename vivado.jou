@@ -2,13 +2,20 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Oct  6 13:52:08 2025
-# Process ID: 17920
+# Start of session at: Tue Oct  7 16:11:04 2025
+# Process ID: 6540
 # Current directory: C:/Users/samue/Documents/vivado/ee2026_b02_g10
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21580 C:\Users\samue\Documents\vivado\ee2026_b02_g10\FDP.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22112 C:\Users\samue\Documents\vivado\ee2026_b02_g10\FDP.xpr
 # Log file: C:/Users/samue/Documents/vivado/ee2026_b02_g10/vivado.log
 # Journal file: C:/Users/samue/Documents/vivado/ee2026_b02_g10\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/entering_numbers.v C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/mode_of_operation.v C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/calculator_display.v}
+import_files -norecurse {C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/entering_numbers.v C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/mode_of_operation.v C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/calculator_display.v}
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/add_function.v
+import_files -norecurse C:/Users/samue/Desktop/Week_7_S5_10_Group.xpr/FDP/FDP.srcs/sources_1/new/add_function.v
 update_compile_order -fileset sources_1
