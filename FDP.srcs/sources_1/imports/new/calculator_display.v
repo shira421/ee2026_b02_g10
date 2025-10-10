@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// Company:
+// Engineer:
+//
 // Create Date: 10/06/2025 02:26:48 PM
-// Design Name: 
+// Design Name:
 // Module Name: calculator_display
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 module calculator_display(
     input  wire [12:0] pixel_index,  // current pixel index (0-6143)
@@ -56,10 +56,10 @@ module calculator_display(
     localparam DIGIT_W = 12;
     localparam CHAR_H  = 12;
 
-    localparam TOP_Y    = 4;
-    localparam MID_Y    = 28;
-    localparam BOT_Y    = 50;
-    localparam X_RIGHT  = WIDTH - 2;
+    localparam TOP_Y   = 4;
+    localparam MID_Y   = 28;
+    localparam BOT_Y   = 50;
+    localparam X_RIGHT = WIDTH - 2;
 
     // === Box border ===
     function in_box_border;
@@ -81,35 +81,35 @@ module calculator_display(
         begin
             case(digit)
                 4'd0: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;
-                                  3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd1: case(row) 0: font_row=8'b00001000;1: font_row=8'b00011000;2: font_row=8'b00001000;
-                                  3: font_row=8'b00001000;4: font_row=8'b00001000;5: font_row=8'b00001000;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00001000;4: font_row=8'b00001000;5: font_row=8'b00001000;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd2: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b00000010;
-                                  3: font_row=8'b00000100;4: font_row=8'b00001000;5: font_row=8'b00100000;
-                                  6: font_row=8'b01111110; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00000100;4: font_row=8'b00001000;5: font_row=8'b00100000;
+                                 6: font_row=8'b01111110; default: font_row=8'b00000000; endcase
                 4'd3: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b00000010;
-                                  3: font_row=8'b00011100;4: font_row=8'b00000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00011100;4: font_row=8'b00000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd4: case(row) 0: font_row=8'b00000100;1: font_row=8'b00001100;2: font_row=8'b00010100;
-                                  3: font_row=8'b00100100;4: font_row=8'b01111110;5: font_row=8'b00000100;
-                                  6: font_row=8'b00000100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00100100;4: font_row=8'b01111110;5: font_row=8'b00000100;
+                                 6: font_row=8'b00000100; default: font_row=8'b00000000; endcase
                 4'd5: case(row) 0: font_row=8'b01111110;1: font_row=8'b01000000;2: font_row=8'b01111100;
-                                  3: font_row=8'b00000010;4: font_row=8'b00000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00000010;4: font_row=8'b00000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd6: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000000;2: font_row=8'b01111100;
-                                  3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd7: case(row) 0: font_row=8'b01111110;1: font_row=8'b00000010;2: font_row=8'b00000100;
-                                  3: font_row=8'b00001000;4: font_row=8'b00010000;5: font_row=8'b00100000;
-                                  6: font_row=8'b01000000; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00001000;4: font_row=8'b00010000;5: font_row=8'b00100000;
+                                 6: font_row=8'b01000000; default: font_row=8'b00000000; endcase
                 4'd8: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;
-                                  3: font_row=8'b00111100;4: font_row=8'b01000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00111100;4: font_row=8'b01000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 4'd9: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;
-                                  3: font_row=8'b00111110;4: font_row=8'b00000010;5: font_row=8'b01000010;
-                                  6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+                                 3: font_row=8'b00111110;4: font_row=8'b00000010;5: font_row=8'b01000010;
+                                 6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
                 default: font_row = 8'b00000000;
             endcase
         end
@@ -129,8 +129,8 @@ module calculator_display(
         m2 = (num_mid/100)%10; m3 = (num_mid/1000)%10;
         m4 = (num_mid/10000)%10;
 
-        b0 = num_bot % 10;     b1 = (num_bot/10)%10;
-        b2 = (num_bot/100)%10; b3 = (num_bot/1000)%10;
+        b0 = num_bot % 10;      b1 = (num_bot/10)%10;
+        b2 = (num_bot/100)%10;  b3 = (num_bot/1000)%10;
         b4 = (num_bot/10000)%10; b5 = (num_bot/100000)%10;
     end
 
@@ -186,7 +186,7 @@ module calculator_display(
                     cx = BOX_X_START + BOX_WIDTH/2;
                     cy = BOX_Y_START + BOX_HEIGHT/2;
                     dy = py - cy;
-                
+
                     // Division sign (÷)
                     draw_operator =
                         // Horizontal division bar (thickness 2 pixels)
@@ -205,7 +205,7 @@ module calculator_display(
                     cy = BOX_Y_START + BOX_HEIGHT/2;
                     dx = px - cx;
                     dy = py - cy;
-                
+
                     // limit drawing to within 9 pixels in any direction (since 18x18 box)
                     if ((px >= BOX_X_START + 3 && px < BOX_X_START + BOX_WIDTH - 3) &&
                         (py >= BOX_Y_START + 3 && py < BOX_Y_START + BOX_HEIGHT - 3)) begin
