@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1'
+HD_PWD='C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log dual_oled_calculator_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dual_oled_calculator_top.tcl
+EAStep vivado -log Top_Student.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl

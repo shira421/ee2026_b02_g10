@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/My-Work/NUS/Y2S1/EE2026/Project/Basic-Tasks/FDP/FDP.runs/blk_mem_gen_img_synth_1'
+HD_PWD='C:/Users/sarav/EE2026_lab/Final_project/image_drawing/FDP/FDP.runs/blk_mem_gen_img_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
