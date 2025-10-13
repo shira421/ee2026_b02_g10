@@ -69,12 +69,12 @@ set rc [catch {
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.cache/wt [current_project]
-  set_property parent.project_path C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.xpr [current_project]
-  set_property ip_output_repo C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.cache/ip [current_project]
+  set_property webtalk.parent_dir {C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.cache/wt} [current_project]
+  set_property parent.project_path {C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.xpr} [current_project]
+  set_property ip_output_repo {{C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.runs/synth_1/Top_Student.dcp
-  read_xdc C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/constrs_1/new/my_basys3.xdc
+  add_files -quiet {{C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.runs/synth_1/Top_Student.dcp}}
+  read_xdc {{C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/constrs_1/new/my_basys3.xdc}}
   link_design -top Top_Student -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
