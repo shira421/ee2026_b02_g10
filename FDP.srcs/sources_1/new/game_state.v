@@ -126,6 +126,9 @@ module game_state(
                 GAME_OVER: begin
                     if (btn_start_edge) begin
                         state <= HOME;
+                        score <= 0;
+                        mistakes <= 0;
+                        question_num <= 0;
                     end
                 end
             endcase

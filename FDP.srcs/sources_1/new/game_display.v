@@ -1,7 +1,9 @@
+
+//endmodule
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module: game_display
-// Description: Renders math game on 96x64 OLED display
+// Description: Renders math game on 96x64 OLED display with improved UI
 //////////////////////////////////////////////////////////////////////////////////
 
 module game_display(
@@ -32,21 +34,64 @@ module game_display(
     localparam GAME_OVER = 2'b10;
     
     // Colors (RGB565)
-    localparam COLOR_BG = 16'h2945;        // Teal
-    localparam COLOR_TEXT = 16'hFFFF;      // White
-    localparam COLOR_BTN_GREEN = 16'h07E0; // Green
-    localparam COLOR_BTN_RED = 16'hF800;   // Red
-    localparam COLOR_PROGRESS = 16'hFFE0;  // Yellow
+    localparam COLOR_HEADER = 16'hFC60;    // Orange banner
+    localparam COLOR_BG = 16'h5D45;        // Green background for question area
+    localparam COLOR_BOTTOM = 16'hFFFF;    // White background for button area
+    localparam COLOR_TEXT = 16'hFFFF;      // White text
+    localparam COLOR_TEXT_DARK = 16'h0000; // Black text for white background
+    localparam COLOR_BTN_GREEN = 16'h07E0; // Bright green for YES button
+    localparam COLOR_BTN_RED = 16'hF800;   // Bright red for NO button
+    localparam COLOR_PROGRESS_BG = 16'h8410; // Gray progress background
+    localparam COLOR_PROGRESS_FILL = 16'hFFE0; // Yellow progress fill
     
-    // Button regions (bottom of screen)
-    localparam BTN_Y = 50;
-    wire in_btn_left = (x_pos >= 8 && x_pos <= 38 && y_pos >= BTN_Y && y_pos <= 62);
-    wire in_btn_right = (x_pos >= 58 && x_pos <= 88 && y_pos >= BTN_Y && y_pos <= 62);
+    // Button regions - larger and centered
+    localparam BTN_CENTER_Y = 52;
+    localparam BTN_RADIUS = 8;
+    localparam BTN_LEFT_X = 32;
+    localparam BTN_RIGHT_X = 64;
+    
+    // Check if pixel is inside a circle
+    function in_circle;
+        input [6:0] px, py;
+        input [6:0] cx, cy;
+        input [6:0] radius;
+        reg signed [8:0] dx, dy;
+        reg [16:0] dist_sq;
+        begin
+            dx = px - cx;
+            dy = py - cy;
+            dist_sq = (dx * dx) + (dy * dy);
+            in_circle = (dist_sq <= (radius * radius));
+        end
+    endfunction
+    
+    wire in_btn_left = in_circle(x_pos, y_pos, BTN_LEFT_X, BTN_CENTER_Y, BTN_RADIUS);
+    wire in_btn_right = in_circle(x_pos, y_pos, BTN_RIGHT_X, BTN_CENTER_Y, BTN_RADIUS);
+    
+    // Checkmark and X rendering
+    wire in_checkmark = in_btn_left && (
+        // Checkmark left stroke
+        ((x_pos >= BTN_LEFT_X - 4 && x_pos <= BTN_LEFT_X - 2) && 
+         (y_pos >= BTN_CENTER_Y && y_pos <= BTN_CENTER_Y + 3)) ||
+        // Checkmark right stroke  
+        ((x_pos >= BTN_LEFT_X - 1 && x_pos <= BTN_LEFT_X + 3) && 
+         (y_pos >= BTN_CENTER_Y - 2 && y_pos <= BTN_CENTER_Y + 2) &&
+         ((BTN_CENTER_Y + 2 - y_pos) == (x_pos - (BTN_LEFT_X - 1))))
+    );
+    
+    wire in_x_mark = in_btn_right && (
+        // X mark diagonal 1
+        ((x_pos - (BTN_RIGHT_X - 4)) == (y_pos - (BTN_CENTER_Y - 4))) ||
+        ((x_pos - (BTN_RIGHT_X - 4)) == (y_pos - (BTN_CENTER_Y - 3))) ||
+        // X mark diagonal 2
+        ((x_pos - (BTN_RIGHT_X - 4)) == ((BTN_CENTER_Y + 4) - y_pos)) ||
+        ((x_pos - (BTN_RIGHT_X - 4)) == ((BTN_CENTER_Y + 3) - y_pos))
+    );
     
     // Progress bar
-    wire [6:0] progress_width = (question_num * 8);
-    wire in_progress = (y_pos >= 42 && y_pos <= 45 && x_pos >= 8 && x_pos <= 88);
-    wire in_progress_fill = in_progress && (x_pos < (8 + progress_width));
+    wire [6:0] progress_width = (question_num * 7);  // 70 pixels / 10 questions
+    wire in_progress = (y_pos >= 38 && y_pos <= 41 && x_pos >= 13 && x_pos <= 83);
+    wire in_progress_fill = in_progress && (x_pos < (13 + progress_width));
     
     // Character ROM function
     function [4:0] get_char;
@@ -65,19 +110,20 @@ module game_display(
                 "8": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b01110; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
                 "9": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b01111; 4:get_char=5'b00001; 5:get_char=5'b00001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
                 "S": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10000; 3:get_char=5'b01110; 4:get_char=5'b00001; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
+                "C": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10000; 3:get_char=5'b10000; 4:get_char=5'b10000; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
+                "O": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b10001; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
+                "R": case(row) 0:get_char=5'b11110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b11110; 4:get_char=5'b10100; 5:get_char=5'b10010; 6:get_char=5'b10001; default:get_char=5'b00000; endcase
+                "E": case(row) 0:get_char=5'b11111; 1:get_char=5'b10000; 2:get_char=5'b10000; 3:get_char=5'b11110; 4:get_char=5'b10000; 5:get_char=5'b10000; 6:get_char=5'b11111; default:get_char=5'b00000; endcase
+                ":": case(row) 0:get_char=5'b00000; 1:get_char=5'b01100; 2:get_char=5'b01100; 3:get_char=5'b00000; 4:get_char=5'b01100; 5:get_char=5'b01100; 6:get_char=5'b00000; default:get_char=5'b00000; endcase
                 "T": case(row) 0:get_char=5'b11111; 1:get_char=5'b00100; 2:get_char=5'b00100; 3:get_char=5'b00100; 4:get_char=5'b00100; 5:get_char=5'b00100; 6:get_char=5'b00100; default:get_char=5'b00000; endcase
                 "A": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b11111; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b10001; default:get_char=5'b00000; endcase
-                "R": case(row) 0:get_char=5'b11110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b11110; 4:get_char=5'b10100; 5:get_char=5'b10010; 6:get_char=5'b10001; default:get_char=5'b00000; endcase
                 "G": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10000; 3:get_char=5'b10011; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
                 "M": case(row) 0:get_char=5'b10001; 1:get_char=5'b11011; 2:get_char=5'b10101; 3:get_char=5'b10101; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b10001; default:get_char=5'b00000; endcase
-                "E": case(row) 0:get_char=5'b11111; 1:get_char=5'b10000; 2:get_char=5'b10000; 3:get_char=5'b11110; 4:get_char=5'b10000; 5:get_char=5'b10000; 6:get_char=5'b11111; default:get_char=5'b00000; endcase
-                "O": case(row) 0:get_char=5'b01110; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b10001; 4:get_char=5'b10001; 5:get_char=5'b10001; 6:get_char=5'b01110; default:get_char=5'b00000; endcase
                 "V": case(row) 0:get_char=5'b10001; 1:get_char=5'b10001; 2:get_char=5'b10001; 3:get_char=5'b10001; 4:get_char=5'b10001; 5:get_char=5'b01010; 6:get_char=5'b00100; default:get_char=5'b00000; endcase
                 "+": case(row) 0:get_char=5'b00000; 1:get_char=5'b00100; 2:get_char=5'b00100; 3:get_char=5'b11111; 4:get_char=5'b00100; 5:get_char=5'b00100; 6:get_char=5'b00000; default:get_char=5'b00000; endcase
                 "-": case(row) 0:get_char=5'b00000; 1:get_char=5'b00000; 2:get_char=5'b00000; 3:get_char=5'b11111; 4:get_char=5'b00000; 5:get_char=5'b00000; 6:get_char=5'b00000; default:get_char=5'b00000; endcase
                 "/": case(row) 0:get_char=5'b00001; 1:get_char=5'b00010; 2:get_char=5'b00010; 3:get_char=5'b00100; 4:get_char=5'b01000; 5:get_char=5'b01000; 6:get_char=5'b10000; default:get_char=5'b00000; endcase
                 "=": case(row) 0:get_char=5'b00000; 1:get_char=5'b00000; 2:get_char=5'b11111; 3:get_char=5'b00000; 4:get_char=5'b11111; 5:get_char=5'b00000; 6:get_char=5'b00000; default:get_char=5'b00000; endcase
-                ":": case(row) 0:get_char=5'b00000; 1:get_char=5'b01100; 2:get_char=5'b01100; 3:get_char=5'b00000; 4:get_char=5'b01100; 5:get_char=5'b01100; 6:get_char=5'b00000; default:get_char=5'b00000; endcase
                 default: get_char = 5'b00000;
             endcase
         end
@@ -114,34 +160,55 @@ module game_display(
                 end
             end
             
+
+                
+//                // Override text color - white on colored backgrounds, handled at end
+//            end
             PLAYING: begin
-                // Score display at top
+                // Orange header/banner area (top ~15% of screen)
+                if (y_pos < 10) begin
+                    pixel_data = COLOR_HEADER;
+                end
+                // Green question area (middle)
+                else if (y_pos >= 10 && y_pos < 43) begin
+                    pixel_data = COLOR_BG;
+                end
+                // White button area (bottom)
+                else begin
+                    pixel_data = COLOR_BOTTOM;
+                end
+
+                // Score display at top (white text on orange)
                 if (y_pos >= 2 && y_pos <= 8) begin
                     char_row = y_pos - 2;
-                    if (x_pos >= 4 && x_pos < 9) begin cur_char = "S"; char_col = x_pos - 4; end
-                    else if (x_pos >= 10 && x_pos < 15) begin cur_char = ":"; char_col = x_pos - 10; end
-                    else if (x_pos >= 18 && x_pos < 23) begin cur_char = "0" + score; char_col = x_pos - 18; end
-                    
+                    if (x_pos >= 30 && x_pos < 35) begin cur_char = "S"; char_col = x_pos - 30; end
+                    else if (x_pos >= 36 && x_pos < 41) begin cur_char = "C"; char_col = x_pos - 36; end
+                    else if (x_pos >= 42 && x_pos < 47) begin cur_char = "O"; char_col = x_pos - 42; end
+                    else if (x_pos >= 48 && x_pos < 53) begin cur_char = "R"; char_col = x_pos - 48; end
+                    else if (x_pos >= 54 && x_pos < 59) begin cur_char = "E"; char_col = x_pos - 54; end
+                    else if (x_pos >= 60 && x_pos < 65) begin cur_char = ":"; char_col = x_pos - 60; end
+                    else if (x_pos >= 68 && x_pos < 73) begin cur_char = "0" + score; char_col = x_pos - 68; end
+
                     char_data = get_char(cur_char, char_row);
-                    if (char_col < 5 && char_data[4-char_col])
+                    if (char_col < 5 && char_data[4 - char_col])
                         is_text = 1;
                 end
-                
-                // Question display: "14 / 7 = 2"
+
+                // Question and result display centered (single line)
                 if (y_pos >= 18 && y_pos <= 24) begin
                     char_row = y_pos - 18;
-                    
+
                     // Operand 1
                     if (operand1 >= 10) begin
-                        if (x_pos >= 15 && x_pos < 20) begin cur_char = "0" + (operand1/10); char_col = x_pos - 15; end
-                        else if (x_pos >= 20 && x_pos < 25) begin cur_char = "0" + (operand1%10); char_col = x_pos - 20; end
+                        if (x_pos >= 15 && x_pos < 20) begin cur_char = "0" + (operand1 / 10); char_col = x_pos - 15; end
+                        else if (x_pos >= 20 && x_pos < 25) begin cur_char = "0" + (operand1 % 10); char_col = x_pos - 20; end
                     end else begin
                         if (x_pos >= 20 && x_pos < 25) begin cur_char = "0" + operand1; char_col = x_pos - 20; end
                     end
-                    
-                    // Operation
-                    if (x_pos >= 28 && x_pos < 33) begin 
-                        case(operation)
+
+                    // Operation symbol
+                    if (x_pos >= 28 && x_pos < 33) begin
+                        case (operation)
                             2'b00: cur_char = "+";
                             2'b01: cur_char = "-";
                             2'b10: cur_char = "/";
@@ -149,41 +216,54 @@ module game_display(
                         endcase
                         char_col = x_pos - 28;
                     end
-                    
+
                     // Operand 2
                     if (operand2 >= 10) begin
-                        if (x_pos >= 36 && x_pos < 41) begin cur_char = "0" + (operand2/10); char_col = x_pos - 36; end
-                        else if (x_pos >= 41 && x_pos < 46) begin cur_char = "0" + (operand2%10); char_col = x_pos - 41; end
+                        if (x_pos >= 36 && x_pos < 41) begin cur_char = "0" + (operand2 / 10); char_col = x_pos - 36; end
+                        else if (x_pos >= 41 && x_pos < 46) begin cur_char = "0" + (operand2 % 10); char_col = x_pos - 41; end
                     end else begin
                         if (x_pos >= 41 && x_pos < 46) begin cur_char = "0" + operand2; char_col = x_pos - 41; end
                     end
-                    
-                    // Equals
+
+                    // Equals sign
                     if (x_pos >= 49 && x_pos < 54) begin cur_char = "="; char_col = x_pos - 49; end
-                    
+
                     // Result
                     if (result >= 10) begin
-                        if (x_pos >= 57 && x_pos < 62) begin cur_char = "0" + (result/10); char_col = x_pos - 57; end
-                        else if (x_pos >= 62 && x_pos < 67) begin cur_char = "0" + (result%10); char_col = x_pos - 62; end
+                        if (x_pos >= 57 && x_pos < 62) begin cur_char = "0" + (result / 10); char_col = x_pos - 57; end
+                        else if (x_pos >= 62 && x_pos < 67) begin cur_char = "0" + (result % 10); char_col = x_pos - 62; end
                     end else begin
                         if (x_pos >= 62 && x_pos < 67) begin cur_char = "0" + result; char_col = x_pos - 62; end
                     end
-                    
+
+                    // Render text pixels
                     char_data = get_char(cur_char, char_row);
-                    if (char_col < 5 && char_data[4-char_col])
+                    if (char_col < 5 && char_data[4 - char_col])
                         is_text = 1;
                 end
-                
-                // Progress bar
+
+                // Progress bar (on green background)
                 if (in_progress) begin
-                    pixel_data = in_progress_fill ? COLOR_PROGRESS : COLOR_TEXT;
+                    pixel_data = in_progress_fill ? COLOR_PROGRESS_FILL : COLOR_PROGRESS_BG;
                 end
-                
-                // Buttons
-                if (in_btn_left) pixel_data = COLOR_BTN_GREEN;
-                if (in_btn_right) pixel_data = COLOR_BTN_RED;
+
+                // Render buttons (on white background)
+                if (in_btn_left) begin
+                    if (in_checkmark)
+                        pixel_data = COLOR_TEXT;
+                    else
+                        pixel_data = COLOR_BTN_GREEN;
+                end
+
+                if (in_btn_right) begin
+                    if (in_x_mark)
+                        pixel_data = COLOR_TEXT;
+                    else
+                        pixel_data = COLOR_BTN_RED;
+                end
+
+                // Override text color - white on colored backgrounds, handled at end
             end
-            
             GAME_OVER: begin
                 // "GAME OVER" text
                 if (y_pos >= 18 && y_pos <= 24) begin
@@ -220,4 +300,3 @@ module game_display(
     end
 
 endmodule
-
