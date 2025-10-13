@@ -1,0 +1,101 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Mon Oct 13 17:20:14 2025
+| Host         : SWIFT-X-16 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
+| Design       : Top_Student
+| Device       : xc7a35t
+----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    33 |
+| Unused register locations in slices containing registers |    76 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            1 |
+|      6 |            1 |
+|      8 |            1 |
+|     14 |            1 |
+|    16+ |           29 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             104 |           32 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             372 |           63 |
+| Yes          | No                    | No                     |              20 |            6 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             404 |           68 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------+------------------------------------------------+--------------------------------+------------------+----------------+
+|   Clock Signal  |                  Enable Signal                 |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
++-----------------+------------------------------------------------+--------------------------------+------------------+----------------+
+| ~clk_6p25M_BUFG |                                                |                                |                1 |              2 |
+|  oled_inst/E[0] |                                                |                                |                2 |              6 |
+|  clk_6p25M_BUFG | linear_inst/active_item[3]_i_1_n_0             | deb_Reset/reset_p              |                2 |              8 |
+|  clk_6p25M_BUFG |                                                | deb_Reset/reset_p              |                6 |             14 |
+|  clk_IBUF_BUFG  | deb_Right/pulse_counter                        | deb_Right/debounce_counter     |                3 |             16 |
+|  clk_IBUF_BUFG  | deb_Up/debounce_counter[7]_i_2__0_n_0          | deb_Up/debounce_counter        |                3 |             16 |
+|  clk_IBUF_BUFG  | deb_Up/pulse_counter                           | deb_Up/debounce_counter        |                3 |             16 |
+|  clk_IBUF_BUFG  | deb_Down/debounce_counter[7]_i_2__1_n_0        | deb_Down/debounce_counter      |                2 |             16 |
+|  clk_IBUF_BUFG  | deb_Down/pulse_counter                         | deb_Down/debounce_counter      |                2 |             16 |
+|  clk_IBUF_BUFG  | deb_Left/debounce_counter[7]_i_2__2_n_0        | deb_Left/debounce_counter      |                2 |             16 |
+|  clk_IBUF_BUFG  | deb_Left/pulse_counter                         | deb_Left/debounce_counter      |                2 |             16 |
+|  clk_IBUF_BUFG  | deb_Reset/debounce_counter[7]_i_2_n_0          | deb_Reset/debounce_counter     |                3 |             16 |
+|  clk_IBUF_BUFG  | deb_Reset/pulse_counter                        | deb_Reset/debounce_counter     |                3 |             16 |
+|  clk_IBUF_BUFG  | deb_Right/debounce_counter[7]_i_2__3_n_0       | deb_Right/debounce_counter     |                3 |             16 |
+|  clk_6p25M_BUFG | linear_inst/temp_val                           |                                |                6 |             20 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/c1b2_reg_0[0]          | deb_Reset/reset_p              |                4 |             22 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/solution_type3_1[0]    | deb_Reset/reset_p              |                4 |             22 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/a1c2_reg_0[0]          | deb_Reset/reset_p              |                5 |             22 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/E[0]                   | deb_Reset/reset_p              |                4 |             22 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/solution_type3_0[0]    | deb_Reset/reset_p              |                4 |             22 |
+|  clk_6p25M_BUFG | linear_inst/solver_inst/solution_type3__0_0[0] | deb_Reset/reset_p              |                5 |             22 |
+| ~clk_6p25M_BUFG |                                                | deb_Reset/reset_p              |                5 |             34 |
+|  clk_IBUF_BUFG  |                                                | deb_Reset/clear                |                5 |             34 |
+|  clk_IBUF_BUFG  |                                                | deb_Right/clear                |                5 |             34 |
+|  clk_IBUF_BUFG  |                                                | deb_Up/clear                   |                5 |             34 |
+|  clk_IBUF_BUFG  |                                                | deb_Down/clear                 |                5 |             34 |
+|  clk_IBUF_BUFG  |                                                | deb_Left/clear                 |                5 |             34 |
+|  clk_6p25M_BUFG |                                                |                                |               10 |             38 |
+| ~clk_6p25M_BUFG | oled_inst/delay[0]_i_1_n_0                     | deb_Reset/reset_p              |                5 |             40 |
+|  clk_IBUF_BUFG  |                                                |                                |               19 |             58 |
+| ~clk_6p25M_BUFG | oled_inst/state                                | deb_Reset/reset_p              |                9 |             64 |
+|  clk_IBUF_BUFG  |                                                | clk_6p25M_gen/clear            |                8 |             64 |
+| ~clk_6p25M_BUFG |                                                | oled_inst/spi_word[39]_i_1_n_0 |               19 |             90 |
++-----------------+------------------------------------------------+--------------------------------+------------------+----------------+
+
+
