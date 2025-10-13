@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Mon Oct 13 19:50:39 2025
+| Date         : Mon Oct 13 23:38:09 2025
 | Host         : Akshay running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_Student_control_sets_placed.rpt
 | Design       : Top_Student
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    28 |
-| Unused register locations in slices containing registers |    52 |
+| Number of unique control sets                            |    33 |
+| Unused register locations in slices containing registers |    64 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,8 +35,10 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            1 |
+|      4 |            1 |
 |      8 |            5 |
-|    16+ |           22 |
+|     10 |            1 |
+|    16+ |           25 |
 +--------+--------------+
 
 
@@ -46,49 +48,54 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              46 |           16 |
+| No           | No                    | No                     |              52 |           15 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             340 |           57 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |             422 |           73 |
+| Yes          | No                    | No                     |               8 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             386 |           61 |
+| Yes          | Yes                   | No                     |             510 |           78 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------+------------------------------------------+----------------------------------+------------------+----------------+
-|   Clock Signal  |               Enable Signal              |         Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+-----------------+------------------------------------------+----------------------------------+------------------+----------------+
-| ~clk_6p25M_BUFG |                                          |                                  |                1 |              2 |
-|  clk_IBUF_BUFG  | game_logic/mistakes[3]_i_1_n_0           | deb_U/btn_up                     |                2 |              8 |
-|  clk_IBUF_BUFG  | game_logic/prev_question_reg[0]          | deb_U/btn_up                     |                1 |              8 |
-|  clk_IBUF_BUFG  | game_logic/score[3]_i_1_n_0              | deb_U/btn_up                     |                2 |              8 |
-|  clk_IBUF_BUFG  | game_logic/question_num[3]_i_1_n_0       | deb_U/btn_up                     |                2 |              8 |
-|  clk_IBUF_BUFG  | game_logic/E[0]                          | deb_U/btn_up                     |                1 |              8 |
-|  clk_IBUF_BUFG  |                                          | deb_U/btn_up                     |                4 |             16 |
-|  clk_IBUF_BUFG  | deb_C/pulse_counter                      | deb_C/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_C/debounce_counter[7]_i_2_n_0        | deb_C/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_L/pulse_counter                      | deb_L/debounce_counter           |                3 |             16 |
-|  clk_IBUF_BUFG  | deb_L/debounce_counter[7]_i_2__0_n_0     | deb_L/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_R/debounce_counter[7]_i_2__1_n_0     | deb_R/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_R/pulse_counter                      | deb_R/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_U/debounce_counter[7]_i_2__2_n_0     | deb_U/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | deb_U/pulse_counter                      | deb_U/debounce_counter           |                2 |             16 |
-|  clk_IBUF_BUFG  | game_logic/led_feedback_reg[0]           | deb_U/led_feedback_reg[0]        |                8 |             32 |
-|  clk_IBUF_BUFG  |                                          | deb_C/clear                      |                5 |             34 |
-|  clk_IBUF_BUFG  |                                          | deb_L/tick_1ms_i_1__0_n_0        |                5 |             34 |
-|  clk_IBUF_BUFG  |                                          | deb_R/tick_1ms_i_1__1_n_0        |                5 |             34 |
-|  clk_IBUF_BUFG  |                                          | deb_U/tick_1ms_i_1__2_n_0        |                5 |             34 |
-|  clk_IBUF_BUFG  | game_logic/operand1[5]_i_1_n_0           | deb_U/btn_up                     |                7 |             34 |
-| ~clk_6p25M_BUFG |                                          | deb_U/btn_up                     |                5 |             34 |
-| ~clk_6p25M_BUFG | oled_driver/delay[0]_i_1_n_0             | deb_U/btn_up                     |                5 |             40 |
-|  clk_IBUF_BUFG  |                                          |                                  |               15 |             44 |
-|  clk_IBUF_BUFG  | flash_active_reg_n_0                     | game_logic/flash_counter_reg[23] |                6 |             48 |
-|  clk_IBUF_BUFG  |                                          | clk_6p25M_gen/COUNT[0]_i_1_n_0   |                8 |             64 |
-| ~clk_6p25M_BUFG | oled_driver/FSM_onehot_state[31]_i_1_n_0 | deb_U/btn_up                     |               10 |             64 |
-| ~clk_6p25M_BUFG |                                          | oled_driver/spi_word[39]_i_1_n_0 |               20 |             90 |
-+-----------------+------------------------------------------+----------------------------------+------------------+----------------+
++-------------------------------------+------------------------------------------+-----------------------------------+------------------+----------------+
+|             Clock Signal            |               Enable Signal              |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-------------------------------------+------------------------------------------+-----------------------------------+------------------+----------------+
+| ~clk_6p25M_BUFG                     |                                          |                                   |                1 |              2 |
+|  clk_anode_gen/anode_counter_reg[0] |                                          |                                   |                1 |              4 |
+|  clk_6p25M_BUFG                     | game_logic/E[0]                          |                                   |                2 |              8 |
+|  clk_IBUF_BUFG                      | game_logic/prev_question_reg[0]          | deb_U/btn_up                      |                1 |              8 |
+|  clk_IBUF_BUFG                      | game_logic/question_num[3]_i_1_n_0       | deb_U/btn_up                      |                1 |              8 |
+|  clk_IBUF_BUFG                      | game_logic/prev_score_reg[0][0]          | deb_U/btn_up                      |                1 |              8 |
+|  clk_IBUF_BUFG                      | game_logic/score[3]_i_1_n_0              | deb_U/btn_up                      |                3 |              8 |
+|  clk_IBUF_BUFG                      | game_logic/timer_count[4]_i_1_n_0        | deb_U/btn_up                      |                4 |             10 |
+|  clk_IBUF_BUFG                      | deb_C/pulse_counter                      | deb_C/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | deb_L/pulse_counter                      | deb_L/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | deb_L/debounce_counter[7]_i_2__0_n_0     | deb_L/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | deb_R/debounce_counter[7]_i_2__1_n_0     | deb_R/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG                      | deb_R/pulse_counter                      | deb_R/debounce_counter            |                3 |             16 |
+|  clk_IBUF_BUFG                      | deb_U/pulse_counter                      | deb_U/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | deb_U/debounce_counter[7]_i_2__2_n_0     | deb_U/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | deb_C/debounce_counter[7]_i_2_n_0        | deb_C/debounce_counter            |                2 |             16 |
+|  clk_IBUF_BUFG                      | game_logic/led_feedback_reg[0]           | deb_U/led_feedback_reg[0]         |                9 |             32 |
+| ~clk_6p25M_BUFG                     |                                          | deb_U/btn_up                      |                5 |             34 |
+|  clk_IBUF_BUFG                      |                                          | deb_C/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG                      |                                          | deb_U/btn_up                      |               10 |             34 |
+|  clk_IBUF_BUFG                      |                                          | deb_U/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG                      |                                          | deb_R/clear                       |                5 |             34 |
+|  clk_IBUF_BUFG                      |                                          | deb_L/clear                       |                5 |             34 |
+| ~clk_6p25M_BUFG                     | oled_driver/delay[0]_i_1_n_0             | deb_U/btn_up                      |                5 |             40 |
+|  clk_IBUF_BUFG                      |                                          |                                   |               13 |             46 |
+|  clk_IBUF_BUFG                      | game_logic/button_cooldown[23]_i_1_n_0   | deb_U/btn_up                      |                6 |             48 |
+|  clk_IBUF_BUFG                      | flash_active_reg_n_0                     | game_logic/flash_counter_reg[23]  |                6 |             48 |
+|  clk_IBUF_BUFG                      | game_logic/clk_divider[26]_i_1_n_0       | deb_U/btn_up                      |                5 |             54 |
+|  clk_IBUF_BUFG                      | game_logic/pause_counter[26]_i_1_n_0     | deb_U/btn_up                      |               11 |             54 |
+| ~clk_6p25M_BUFG                     | oled_driver/FSM_onehot_state[31]_i_1_n_0 | deb_U/btn_up                      |                8 |             64 |
+|  clk_IBUF_BUFG                      |                                          | clk_anode_gen/clear               |                8 |             64 |
+|  clk_IBUF_BUFG                      |                                          | clk_6p25M_gen/COUNT[0]_i_1__0_n_0 |                8 |             64 |
+| ~clk_6p25M_BUFG                     |                                          | oled_driver/spi_word[39]_i_1_n_0  |               22 |             90 |
++-------------------------------------+------------------------------------------+-----------------------------------+------------------+----------------+
 
 

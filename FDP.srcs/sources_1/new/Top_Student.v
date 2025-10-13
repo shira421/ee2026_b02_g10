@@ -1,21 +1,21 @@
 //`timescale 1ns / 1ps
 ////////////////////////////////////////////////////////////////////////////////////
 //// Module: Top_Student
-//// Description: Top module for OLED math game
+//// Description: Top module for OLED math game with timer
 ////////////////////////////////////////////////////////////////////////////////////
 
 //module Top_Student (
 //    input clk, 
-//    input btnC_raw,    // Center - Start/Next
-//    input btnU_raw,    // Up (unused)
-//    input btnD_raw,    // Down (unused) 
-//    input btnL_raw,    // Left - Correct answer
-//    input btnR_raw,    // Right - Wrong answer
+//    input btnC_raw,
+//    input btnU_raw,
+//    input btnD_raw,
+//    input btnL_raw,
+//    input btnR_raw,
 //    input [15:0] sw,
 //    inout PS2Clk,
 //    inout PS2Data,
 //    output reg [6:0] seg, 
-//    output [3:0] an,  
+//    output reg [3:0] an,  
 //    output [15:0] led,
 //    output [7:0] JB 
 //);
@@ -24,11 +24,18 @@
 //    // Clock Generation
 //    //================================================================
 //    wire clk_6p25M;
+//    wire clk_anode_switch;
     
 //    flexible_clock clk_6p25M_gen (
 //        .clk(clk), 
 //        .m(32'd7),
 //        .slow_clock(clk_6p25M)
+//    );
+    
+//    flexible_clock clk_anode_gen (
+//        .clk(clk),
+//        .m(32'd100_000),
+//        .slow_clock(clk_anode_switch)
 //    );
     
 //    //================================================================
@@ -49,11 +56,12 @@
 //    wire [3:0] score, mistakes, question_num;
 //    wire [7:0] operand1, operand2, result;
 //    wire [1:0] operation;
+//    wire [4:0] timer_count;
     
-//game_state game_logic (
+//    game_state game_logic (
 //        .clk(clk),
-//        .reset(btn_up),          // ? CHANGED: Use UP button for reset
-//        .btn_start(btn_center),  // Center button starts/continues game
+//        .reset(btn_up),
+//        .btn_start(btn_center),
 //        .btn_correct(btn_left),
 //        .btn_wrong(btn_right),
 //        .state(game_state),
@@ -63,7 +71,8 @@
 //        .operand1(operand1),
 //        .operand2(operand2),
 //        .result(result),
-//        .operation(operation)
+//        .operation(operation),
+//        .timer_count(timer_count)
 //    );
 
 //    //================================================================
@@ -84,12 +93,13 @@
 //        .operand2(operand2),
 //        .result(result),
 //        .operation(operation),
+//        .timer_count(timer_count),
 //        .pixel_data(pixel_data)
 //    );
     
-//Oled_Display oled_driver (
+//    Oled_Display oled_driver (
 //        .clk(clk_6p25M),
-//        .reset(btn_up),          // ? CHANGED: Use UP button for reset
+//        .reset(btn_up),
 //        .pixel_index(oled_pixel_index),
 //        .pixel_data(pixel_data),
 //        .frame_begin(), 
@@ -117,53 +127,114 @@
 //    assign JB[7] = oled_pmoden;
     
 //    //================================================================
-//    // LED Feedback Logic (Responsive & Visible)
+//    // LED Feedback Logic
 //    //================================================================
 //    reg [15:0] led_feedback = 16'b0;
 //    reg [3:0] prev_score = 4'd0;
 //    reg [3:0] prev_question = 4'd0;
-//    reg [23:0] led_timer = 0;  // for short visible blink
-
+//    reg [1:0] prev_game_state = 2'b00;
+    
+//    reg [23:0] flash_counter = 24'd0;
+//    reg flash_active = 1'b0;
+//    localparam FLASH_DURATION = 24'd15_000_000;
+    
 //    always @(posedge clk) begin
 //        if (btn_up) begin
-//            // Reset everything
-//            led_feedback <= 16'b0;
-//            prev_score <= 4'd0;
-//            prev_question <= 4'd0;
-//            led_timer <= 0;
+//            led_feedback    <= 16'b0;
+//            prev_score      <= 4'd0;
+//            prev_question   <= 4'd0;
+//            prev_game_state <= 2'b00;
+//            flash_active    <= 1'b0;
+//            flash_counter   <= 24'd0;
 //        end else begin
-//            // Detect new question ? turn LEDs off
+//            if (game_state != prev_game_state) begin
+//                prev_game_state <= game_state;
+//                if (game_state == 2'b00) begin
+//                    prev_score    <= 4'd0;
+//                    led_feedback  <= 16'b0;
+//                    flash_active  <= 1'b0;
+//                    flash_counter <= 24'd0;
+//                end
+//            end
+    
 //            if (question_num != prev_question) begin
-//                led_feedback <= 16'b0;
-//                led_timer <= 0;
+//                led_feedback  <= 16'b0;
+//                flash_active  <= 1'b0;
+//                flash_counter <= 24'd0;
 //                prev_question <= question_num;
 //            end
-//            // Detect score increase ? correct answer
 //            else if (score > prev_score) begin
-//                led_feedback <= 16'hFFFF;  // turn ON all LEDs
-//                led_timer <= 24'd6_000_000; // ~0.1s blink at 100MHz
-//                prev_score <= score;
+//                led_feedback  <= 16'hFFFF;
+//                flash_active  <= 1'b1;
+//                flash_counter <= 24'd0;
+//                prev_score    <= score;
 //            end
-//            // Count down the LED timer (keep LEDs on briefly)
-//            else if (led_timer > 0) begin
-//                led_timer <= led_timer - 1;
-//                if (led_timer == 1)
-//                    led_feedback <= 16'b0;  // turn off when timer expires
+//            else if (flash_active) begin
+//                if (flash_counter >= FLASH_DURATION - 1) begin
+//                    led_feedback  <= 16'b0;
+//                    flash_active  <= 1'b0;
+//                    flash_counter <= 24'd0;
+//                end else begin
+//                    flash_counter <= flash_counter + 1;
+//                end
 //            end
 //        end
 //    end
-
-//    //================================================================
-//    // LED Output Assignment
-//    //================================================================
+    
 //    assign led = led_feedback;
+    
 //    //================================================================
-//    // 7-Segment Display (Shows Score)
+//    // 7-Segment Display - Shows Timer during game, Score at end
 //    //================================================================
-//    assign an = 4'b1110;  // Only rightmost digit
+//    localparam HOME = 2'b00;
+//    localparam PLAYING = 2'b01;
+//    localparam GAME_OVER = 2'b10;
+//    localparam CORRECT_PAUSE = 2'b11;
+    
+//    wire [3:0] timer_tens = timer_count / 10;
+//    wire [3:0] timer_ones = timer_count % 10;
+    
+//    reg [1:0] anode_counter = 2'b00;
+    
+//    always @(posedge clk_anode_switch) begin
+//        if (btn_up) begin
+//            anode_counter <= 2'b00;
+//        end else begin
+//            anode_counter <= anode_counter + 1;
+//        end
+//    end
+    
+//    reg [3:0] current_digit;
     
 //    always @(*) begin
-//        case (score)
+//        if (game_state == PLAYING || game_state == CORRECT_PAUSE) begin
+//            // Show timer (2 digits)
+//            case (anode_counter)
+//                2'b00: begin
+//                    an = 4'b1110;  // Rightmost digit (ones)
+//                    current_digit = timer_ones;
+//                end
+//                2'b01: begin
+//                    an = 4'b1101;  // Tens digit
+//                    current_digit = timer_tens;
+//                end
+//                2'b10: begin
+//                    an = 4'b1011;
+//                    current_digit = 4'd10;  // Blank
+//                end
+//                2'b11: begin
+//                    an = 4'b0111;
+//                    current_digit = 4'd10;  // Blank
+//                end
+//            endcase
+//        end else begin
+//            // Show score (single digit)
+//            an = 4'b1110;  // Rightmost digit only
+//            current_digit = score;
+//        end
+        
+//        // 7-segment decoder
+//        case (current_digit)
 //            4'd0: seg = 7'b1000000;
 //            4'd1: seg = 7'b1111001;
 //            4'd2: seg = 7'b0100100;
@@ -174,30 +245,32 @@
 //            4'd7: seg = 7'b1111000;
 //            4'd8: seg = 7'b0000000;
 //            4'd9: seg = 7'b0010000;
-//            default: seg = 7'b1111111;
+//            default: seg = 7'b1111111;  // Blank
 //        endcase
 //    end
 
 //endmodule
 
+
+
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Module: Top_Student
-// Description: Top module for OLED math game
+// Description: Top module for OLED math game with timer
 //////////////////////////////////////////////////////////////////////////////////
 
 module Top_Student (
     input clk, 
-    input btnC_raw,    // Center - Start/Next
-    input btnU_raw,    // Up (unused)
-    input btnD_raw,    // Down (unused) 
-    input btnL_raw,    // Left - Correct answer
-    input btnR_raw,    // Right - Wrong answer
+    input btnC_raw,
+    input btnU_raw,
+    input btnD_raw,
+    input btnL_raw,
+    input btnR_raw,
     input [15:0] sw,
     inout PS2Clk,
     inout PS2Data,
     output reg [6:0] seg, 
-    output [3:0] an,  
+    output reg [3:0] an,  
     output [15:0] led,
     output [7:0] JB 
 );
@@ -206,7 +279,7 @@ module Top_Student (
     // Clock Generation
     //================================================================
     wire clk_6p25M;
-    wire clk_led_flash;  // Clock for LED flash timing
+    wire clk_anode_switch;
     
     flexible_clock clk_6p25M_gen (
         .clk(clk), 
@@ -214,12 +287,10 @@ module Top_Student (
         .slow_clock(clk_6p25M)
     );
     
-    // Generate ~6.67Hz clock for LED flash (0.15s period)
-    // 100MHz / 15_000_000 = 6.67Hz (0.15s period)
-    flexible_clock clk_led_gen (
+    flexible_clock clk_anode_gen (
         .clk(clk),
-        .m(32'd15_000_000),
-        .slow_clock(clk_led_flash)
+        .m(32'd100_000),
+        .slow_clock(clk_anode_switch)
     );
     
     //================================================================
@@ -240,6 +311,7 @@ module Top_Student (
     wire [3:0] score, mistakes, question_num;
     wire [7:0] operand1, operand2, result;
     wire [1:0] operation;
+    wire [4:0] timer_count;
     
     game_state game_logic (
         .clk(clk),
@@ -254,7 +326,8 @@ module Top_Student (
         .operand1(operand1),
         .operand2(operand2),
         .result(result),
-        .operation(operation)
+        .operation(operation),
+        .timer_count(timer_count)
     );
 
     //================================================================
@@ -275,6 +348,7 @@ module Top_Student (
         .operand2(operand2),
         .result(result),
         .operation(operation),
+        .timer_count(timer_count),
         .pixel_data(pixel_data)
     );
     
@@ -307,136 +381,133 @@ module Top_Student (
     assign JB[6] = oled_vccen;
     assign JB[7] = oled_pmoden;
     
-//    //================================================================
-//    // LED Feedback Logic (Responsive & Visible)
-//    //================================================================
-//    reg [15:0] led_feedback = 16'b0;
-//    reg [3:0] prev_score = 4'd0;
-//    reg [3:0] prev_question = 4'd0;
-//    reg [1:0] prev_game_state = 2'b00;
-//    reg flash_active = 1'b0;
-
-//    always @(posedge clk_led_flash) begin
-//        if (btn_up) begin
-//            // Reset everything
-//            led_feedback <= 16'b0;
-//            prev_score <= 4'd0;
-//            prev_question <= 4'd0;
-//            prev_game_state <= 2'b00;
-//            flash_active <= 1'b0;
-//        end else begin
-//            // Detect game state change to HOME - reset prev_score
-//            if (game_state != prev_game_state) begin
-//                prev_game_state <= game_state;
-//                if (game_state == 2'b00) begin  // HOME state
-//                    prev_score <= 4'd0;
-//                    led_feedback <= 16'b0;
-//                    flash_active <= 1'b0;
-//                end
-//            end
-            
-//            // Detect new question - turn LEDs off
-//            if (question_num != prev_question) begin
-//                led_feedback <= 16'b0;
-//                flash_active <= 1'b0;
-//                prev_question <= question_num;
-//            end
-//            // Detect score increase - correct answer
-//            else if (score > prev_score) begin
-//                led_feedback <= 16'hFFFF;  // turn ON all LEDs
-//                flash_active <= 1'b1;      // start flash
-//                prev_score <= score;
-//            end
-//            // Turn off LEDs after one clock cycle (0.15s)
-//            else if (flash_active) begin
-//                led_feedback <= 16'b0;
-//                flash_active <= 1'b0;
-//            end
-//        end
-//    end
-
-//    //================================================================
-//    // LED Output Assignment
-//    //================================================================
-//    assign led = led_feedback;
-
-
-
-//================================================================
-// LED Feedback Logic (Instant Flash with 0.15s Duration)
-//================================================================
-reg [15:0] led_feedback = 16'b0;
-reg [3:0] prev_score = 4'd0;
-reg [3:0] prev_question = 4'd0;
-reg [1:0] prev_game_state = 2'b00;
-
-// Timer for 0.15s flash duration
-reg [23:0] flash_counter = 24'd0;
-reg flash_active = 1'b0;
-localparam FLASH_DURATION = 24'd15_000_000; // 0.15s at 100MHz
-
-always @(posedge clk) begin
-    if (btn_up) begin
-        led_feedback    <= 16'b0;
-        prev_score      <= 4'd0;
-        prev_question   <= 4'd0;
-        prev_game_state <= 2'b00;
-        flash_active    <= 1'b0;
-        flash_counter   <= 24'd0;
-    end else begin
-        // Detect game state change ? reset when returning to HOME
-        if (game_state != prev_game_state) begin
-            prev_game_state <= game_state;
-            if (game_state == 2'b00) begin
-                prev_score    <= 4'd0;
-                led_feedback  <= 16'b0;
-                flash_active  <= 1'b0;
-                flash_counter <= 24'd0;
+    //================================================================
+    // LED Feedback Logic
+    //================================================================
+    reg [15:0] led_feedback = 16'b0;
+    reg [3:0] prev_score = 4'd0;
+    reg [3:0] prev_question = 4'd0;
+    reg [1:0] prev_game_state = 2'b00;
+    
+    reg [23:0] flash_counter = 24'd0;
+    reg flash_active = 1'b0;
+    localparam FLASH_DURATION = 24'd15_000_000;
+    
+    always @(posedge clk) begin
+        if (btn_up) begin
+            led_feedback    <= 16'b0;
+            prev_score      <= 4'd0;
+            prev_question   <= 4'd0;
+            prev_game_state <= 2'b00;
+            flash_active    <= 1'b0;
+            flash_counter   <= 24'd0;
+        end else begin
+            if (game_state != prev_game_state) begin
+                prev_game_state <= game_state;
+                if (game_state == 2'b00) begin
+                    prev_score    <= 4'd0;
+                    led_feedback  <= 16'b0;
+                    flash_active  <= 1'b0;
+                    flash_counter <= 24'd0;
+                end
             end
-        end
-
-        // Detect new question ? turn LEDs off
-        if (question_num != prev_question) begin
-            led_feedback  <= 16'b0;
-            flash_active  <= 1'b0;
-            flash_counter <= 24'd0;
-            prev_question <= question_num;
-        end
-        // Detect score increase ? correct answer (INSTANT flash start)
-        else if (score > prev_score) begin
-            led_feedback  <= 16'hFFFF;  // Turn ON instantly
-            flash_active  <= 1'b1;
-            flash_counter <= 24'd0;     // Reset timer
-            prev_score    <= score;
-        end
-        // Handle flash timing
-        else if (flash_active) begin
-            if (flash_counter >= FLASH_DURATION - 1) begin
-                // Timer expired - turn off LEDs
+    
+            if (question_num != prev_question) begin
                 led_feedback  <= 16'b0;
                 flash_active  <= 1'b0;
                 flash_counter <= 24'd0;
-            end else begin
-                // Keep counting
-                flash_counter <= flash_counter + 1;
+                prev_question <= question_num;
+            end
+            else if (score > prev_score) begin
+                led_feedback  <= 16'hFFFF;
+                flash_active  <= 1'b1;
+                flash_counter <= 24'd0;
+                prev_score    <= score;
+            end
+            else if (flash_active) begin
+                if (flash_counter >= FLASH_DURATION - 1) begin
+                    led_feedback  <= 16'b0;
+                    flash_active  <= 1'b0;
+                    flash_counter <= 24'd0;
+                end else begin
+                    flash_counter <= flash_counter + 1;
+                end
             end
         end
     end
-end
-
-//================================================================
-// LED Output Assignment
-//================================================================
-assign led = led_feedback;
-
+    
+    assign led = led_feedback;
     
     //================================================================
-    // 7-Segment Display (Shows Score)
+    // 7-Segment Display - Shows Timer during game, Score at end
     //================================================================
-    assign an = 4'b1110;  // Only rightmost digit
+    localparam HOME = 2'b00;
+    localparam PLAYING = 2'b01;
+    localparam GAME_OVER = 2'b10;
+    localparam CORRECT_PAUSE = 2'b11;
+    
+    wire [3:0] timer_tens = timer_count / 10;
+    wire [3:0] timer_ones = timer_count % 10;
+    wire [3:0] score_tens = score / 10;
+    wire [3:0] score_ones = score % 10;
+    
+    reg [1:0] anode_counter = 2'b00;
+    
+    always @(posedge clk_anode_switch) begin
+        if (btn_up) begin
+            anode_counter <= 2'b00;
+        end else begin
+            anode_counter <= anode_counter + 1;
+        end
+    end
+    
+    reg [3:0] current_digit;
     
     always @(*) begin
-        case (score)
+        if (game_state == PLAYING || game_state == CORRECT_PAUSE) begin
+            // Show timer (2 digits)
+            case (anode_counter)
+                2'b00: begin
+                    an = 4'b1110;  // Rightmost digit (ones)
+                    current_digit = timer_ones;
+                end
+                2'b01: begin
+                    an = 4'b1101;  // Tens digit
+                    current_digit = (timer_count >= 10) ? timer_tens : 4'd10;  // Blank if less than 10
+                end
+                2'b10: begin
+                    an = 4'b1011;
+                    current_digit = 4'd10;  // Blank
+                end
+                2'b11: begin
+                    an = 4'b0111;
+                    current_digit = 4'd10;  // Blank
+                end
+            endcase
+        end else begin
+            // Show score (2 digits for HOME and GAME_OVER)
+            case (anode_counter)
+                2'b00: begin
+                    an = 4'b1110;  // Rightmost digit (ones)
+                    current_digit = score_ones;
+                end
+                2'b01: begin
+                    an = 4'b1101;  // Tens digit
+                    current_digit = (score >= 10) ? score_tens : 4'd10;  // Blank if less than 10
+                end
+                2'b10: begin
+                    an = 4'b1011;
+                    current_digit = 4'd10;  // Blank
+                end
+                2'b11: begin
+                    an = 4'b0111;
+                    current_digit = 4'd10;  // Blank
+                end
+            endcase
+        end
+        
+        // 7-segment decoder
+        case (current_digit)
             4'd0: seg = 7'b1000000;
             4'd1: seg = 7'b1111001;
             4'd2: seg = 7'b0100100;
@@ -447,7 +518,7 @@ assign led = led_feedback;
             4'd7: seg = 7'b1111000;
             4'd8: seg = 7'b0000000;
             4'd9: seg = 7'b0010000;
-            default: seg = 7'b1111111;
+            default: seg = 7'b1111111;  // Blank
         endcase
     end
 

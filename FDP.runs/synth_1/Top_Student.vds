@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Mon Oct 13 19:49:47 2025
-# Process ID: 27824
+# Start of session at: Mon Oct 13 23:36:57 2025
+# Process ID: 20688
 # Current directory: C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.runs/synth_1
 # Command line: vivado.exe -log Top_Student.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Student.tcl
 # Log file: C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.runs/synth_1/Top_Student.vds
@@ -15,12 +15,16 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27876 
+INFO: Helper process launched with PID 13556 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 357.781 ; gain = 100.094
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.992 . Memory (MB): peak = 357.895 ; gain = 100.043
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/Top_Student.v:189]
+INFO: [Synth 8-6157] synthesizing module 'Top_Student' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/Top_Student.v:262]
 	Parameter FLASH_DURATION bound to: 24'b111001001110000111000000 
+	Parameter HOME bound to: 2'b00 
+	Parameter PLAYING bound to: 2'b01 
+	Parameter GAME_OVER bound to: 2'b10 
+	Parameter CORRECT_PAUSE bound to: 2'b11 
 INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/flexible_clock.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (1#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/flexible_clock.v:23]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/debounce.v:22]
@@ -28,26 +32,28 @@ INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/sarav/EE2026_lab/F
 	Parameter DEBOUNCE_MS bound to: 200 - type: integer 
 	Parameter PULSE_MS bound to: 5 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/debounce.v:22]
-INFO: [Synth 8-6157] synthesizing module 'game_state' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:7]
+INFO: [Synth 8-6157] synthesizing module 'game_state' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:328]
 	Parameter HOME bound to: 2'b00 
 	Parameter PLAYING bound to: 2'b01 
 	Parameter GAME_OVER bound to: 2'b10 
+	Parameter CORRECT_PAUSE bound to: 2'b11 
 	Parameter OP_ADD bound to: 2'b00 
 	Parameter OP_SUB bound to: 2'b01 
 	Parameter OP_DIV bound to: 2'b10 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:93]
-INFO: [Synth 8-6155] done synthesizing module 'game_state' (3#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:7]
-INFO: [Synth 8-6157] synthesizing module 'game_display' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:9]
+	Parameter OP_MUL bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'game_state' (3#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:328]
+WARNING: [Synth 8-350] instance 'game_logic' of module 'game_state' requires 15 connections, but only 14 given [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/Top_Student.v:316]
+INFO: [Synth 8-6157] synthesizing module 'game_display' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:555]
 	Parameter WIDTH bound to: 96 - type: integer 
 	Parameter HEIGHT bound to: 64 - type: integer 
 	Parameter HOME bound to: 2'b00 
 	Parameter PLAYING bound to: 2'b01 
 	Parameter GAME_OVER bound to: 2'b10 
+	Parameter CORRECT_PAUSE bound to: 2'b11 
 	Parameter COLOR_HEADER bound to: 16'b1111110001100000 
 	Parameter COLOR_BG bound to: 16'b0101110101000101 
 	Parameter COLOR_BOTTOM bound to: 16'b1111111111111111 
 	Parameter COLOR_TEXT bound to: 16'b1111111111111111 
-	Parameter COLOR_TEXT_DARK bound to: 16'b0000000000000000 
 	Parameter COLOR_BTN_GREEN bound to: 16'b0000011111100000 
 	Parameter COLOR_BTN_RED bound to: 16'b1111100000000000 
 	Parameter COLOR_PROGRESS_BG bound to: 16'b1000010000010000 
@@ -56,8 +62,8 @@ INFO: [Synth 8-6157] synthesizing module 'game_display' [C:/Users/sarav/EE2026_l
 	Parameter BTN_RADIUS bound to: 8 - type: integer 
 	Parameter BTN_LEFT_X bound to: 32 - type: integer 
 	Parameter BTN_RIGHT_X bound to: 64 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:146]
-INFO: [Synth 8-6155] done synthesizing module 'game_display' (4#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:9]
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:749]
+INFO: [Synth 8-6155] done synthesizing module 'game_display' (4#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_display.v:555]
 INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -113,17 +119,16 @@ INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final
 INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
 WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
 INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (5#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (6#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/Top_Student.v:189]
-WARNING: [Synth 8-3917] design Top_Student has port an[3] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[2] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[1] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[0] driven by constant 0
+INFO: [Synth 8-6155] done synthesizing module 'Top_Student' (6#1) [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/Top_Student.v:262]
 WARNING: [Synth 8-3917] design Top_Student has port JB[2] driven by constant 0
-WARNING: [Synth 8-3331] design game_display has unconnected port clk_6p25M
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[3]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[2]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[1]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[0]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[3]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[2]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[1]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[0]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port PS2Clk
 WARNING: [Synth 8-3331] design Top_Student has unconnected port PS2Data
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
@@ -143,7 +148,7 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 412.539 ; gain = 154.852
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 415.332 ; gain = 157.480
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -156,10 +161,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 412.539 ; gain = 154.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 415.332 ; gain = 157.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 412.539 ; gain = 154.852
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 415.332 ; gain = 157.480
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -175,39 +180,37 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 758.766 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 763.180 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "question_num" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "questions" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "questions" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "questions" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "questions" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'game_state'
-DSP Debug: swapped A/B pins for adder 000002510CC4F6B0
-DSP Debug: swapped A/B pins for adder 000002510CC4F710
+WARNING: [Synth 8-6014] Unused sequential element operand1_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:508]
+WARNING: [Synth 8-6014] Unused sequential element operand2_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:509]
+WARNING: [Synth 8-6014] Unused sequential element result_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:510]
+INFO: [Synth 8-5544] ROM "final_score" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+DSP Debug: swapped A/B pins for adder 0000019BD7807ED0
+DSP Debug: swapped A/B pins for adder 0000019BD6FE8FE0
+INFO: [Synth 8-5544] ROM "final_score" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cur_char" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "cur_char" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -239,14 +242,7 @@ INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is 
 INFO: [Synth 8-5544] ROM "led_feedback" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "led_feedback" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "seg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    HOME |                              001 |                               00
-                 PLAYING |                              010 |                               01
-               GAME_OVER |                              100 |                               10
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'game_state'
+INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -285,7 +281,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -299,49 +295,66 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 7     
+	   2 Input     27 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
+	   3 Input      9 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 13    
-	   2 Input      7 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 4     
 	   2 Input      6 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 10    
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 12    
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               40 Bit    Registers := 1     
+	               27 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
 	                8 Bit    Registers := 13    
+	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 5     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 32    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 33    
++---ROMs : 
+	                              ROMs := 3     
 +---Muxes : 
 	   2 Input     40 Bit        Muxes := 3     
 	  32 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     27 Bit        Muxes := 2     
+	   2 Input     27 Bit        Muxes := 3     
+	   4 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
 	  32 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
-	  13 Input     16 Bit        Muxes := 1     
-	  41 Input      8 Bit        Muxes := 4     
-	   3 Input      8 Bit        Muxes := 3     
-	   2 Input      8 Bit        Muxes := 12    
-	   2 Input      7 Bit        Muxes := 7     
-	   5 Input      7 Bit        Muxes := 2     
+	  12 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 16    
+	   2 Input      7 Bit        Muxes := 8     
+	   9 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
 	   6 Input      7 Bit        Muxes := 1     
-	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
 	  32 Input      6 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 22    
-	  26 Input      5 Bit        Muxes := 5     
-	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 9     
+	   8 Input      5 Bit        Muxes := 23    
+	  27 Input      5 Bit        Muxes := 5     
 	  32 Input      5 Bit        Muxes := 1     
-	   3 Input      4 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 6     
 	   8 Input      4 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 20    
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 27    
-	   3 Input      1 Bit        Muxes := 9     
-	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 22    
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 38    
+	   4 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -352,12 +365,15 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module Top_Student 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 5     
+	   4 Input      4 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 10    
 	   5 Input      1 Bit        Muxes := 1     
 Module flexible_clock 
@@ -376,41 +392,63 @@ Detailed RTL Component Info :
 Module game_state 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 3     
+	   2 Input     27 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
+	               27 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
 	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---ROMs : 
+	                              ROMs := 3     
 +---Muxes : 
-	  41 Input      8 Bit        Muxes := 4     
-	   3 Input      8 Bit        Muxes := 3     
-	   3 Input      4 Bit        Muxes := 3     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
-	   3 Input      1 Bit        Muxes := 9     
+	   4 Input     27 Bit        Muxes := 2     
+	   2 Input     27 Bit        Muxes := 3     
+	   4 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   4 Input      4 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 19    
 Module game_display 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 7     
+	   3 Input      9 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 3     
 	   2 Input      7 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 10    
+	   2 Input      3 Bit       Adders := 12    
++---Registers : 
+	                4 Bit    Registers := 1     
 +---Muxes : 
-	  13 Input     16 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 12    
+	  12 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 16    
+	   9 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 7     
-	   5 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 1     
 	   6 Input      7 Bit        Muxes := 1     
-	   4 Input      6 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 22    
-	  26 Input      5 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 3     
+	   8 Input      5 Bit        Muxes := 23    
+	  27 Input      5 Bit        Muxes := 5     
 	   2 Input      5 Bit        Muxes := 1     
 	   8 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 20    
-	   2 Input      1 Bit        Muxes := 4     
-	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 22    
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
 Module Oled_Display 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -447,23 +485,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element clk_led_gen/slow_clock_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/flexible_clock.v:31]
 INFO: [Synth 8-5544] ROM "led_feedback" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5545] ROM "clk_6p25M_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element deb_D/pb_out_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/debounce.v:64]
-INFO: [Synth 8-5546] ROM "oled_driver/fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "oled_driver/fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clk_anode_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element operand1_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:508]
+WARNING: [Synth 8-6014] Unused sequential element operand2_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:509]
+WARNING: [Synth 8-6014] Unused sequential element result_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.srcs/sources_1/new/game_state.v:510]
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "clk_anode_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_6p25M_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-3917] design Top_Student has port an[3] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[2] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[1] driven by constant 1
-WARNING: [Synth 8-3917] design Top_Student has port an[0] driven by constant 0
 WARNING: [Synth 8-3917] design Top_Student has port JB[2] driven by constant 0
-WARNING: [Synth 8-3331] design game_display has unconnected port clk_6p25M
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[3]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[2]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[1]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[0]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[3]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[2]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[1]
+WARNING: [Synth 8-3331] design game_display has unconnected port question_num[0]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port PS2Clk
 WARNING: [Synth 8-3331] design Top_Student has unconnected port PS2Data
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[15]
@@ -482,25 +522,41 @@ WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[3]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[2]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[1]
 WARNING: [Synth 8-3331] design Top_Student has unconnected port sw[0]
-INFO: [Synth 8-3886] merging instance 'game_logic/operand1_reg[7]' (FDRE) to 'game_logic/operand1_reg[6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\game_logic/operand1_reg[6] )
-INFO: [Synth 8-3886] merging instance 'game_logic/operand2_reg[7]' (FDRE) to 'game_logic/operand2_reg[4]'
-INFO: [Synth 8-3886] merging instance 'game_logic/operand2_reg[6]' (FDRE) to 'game_logic/operand2_reg[4]'
-INFO: [Synth 8-3886] merging instance 'game_logic/operand2_reg[4]' (FDRE) to 'game_logic/operand2_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\game_logic/operand2_reg[5] )
-INFO: [Synth 8-3886] merging instance 'game_logic/result_reg[7]' (FDRE) to 'game_logic/result_reg[5]'
-INFO: [Synth 8-3886] merging instance 'game_logic/result_reg[6]' (FDRE) to 'game_logic/result_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\game_logic/result_reg[5] )
 WARNING: [Synth 8-3332] Sequential element (deb_D/tick_1ms_reg) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (deb_D/pb_sync_0_reg) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (deb_D/pb_sync_1_reg) is unused and will be removed from module Top_Student.
 WARNING: [Synth 8-3332] Sequential element (deb_D/pb_state_reg) is unused and will be removed from module Top_Student.
-WARNING: [Synth 8-3332] Sequential element (game_logic/operand1_reg[6]) is unused and will be removed from module Top_Student.
-WARNING: [Synth 8-3332] Sequential element (game_logic/operand2_reg[5]) is unused and will be removed from module Top_Student.
-WARNING: [Synth 8-3332] Sequential element (game_logic/result_reg[5]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (deb_D/pb_out_reg) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (game_logic/mistakes_reg[3]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (game_logic/mistakes_reg[2]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (game_logic/mistakes_reg[1]) is unused and will be removed from module Top_Student.
+WARNING: [Synth 8-3332] Sequential element (game_logic/mistakes_reg[0]) is unused and will be removed from module Top_Student.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+--------------+---------------+----------------+
+|Module Name | RTL Object   | Depth x Width | Implemented As | 
++------------+--------------+---------------+----------------+
+|game_state  | p_0_out      | 512x8         | LUT            | 
+|game_state  | operand1_reg | 512x8         | Block RAM      | 
+|game_state  | operand2_reg | 512x8         | Block RAM      | 
+|game_state  | result_reg   | 512x8         | Block RAM      | 
+|game_state  | p_0_out      | 512x8         | LUT            | 
+|game_state  | operand1_reg | 512x8         | Block RAM      | 
+|game_state  | operand2_reg | 512x8         | Block RAM      | 
++------------+--------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance i_4/game_logic/operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/game_logic/operand2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/game_logic/result_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -511,13 +567,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 758.766 ; gain = 501.078
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 763.180 ; gain = 505.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 811.539 ; gain = 553.852
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 827.109 ; gain = 569.258
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -528,8 +584,11 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance result_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -553,7 +612,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -566,7 +625,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -578,25 +637,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -609,48 +668,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |   122|
-|3     |LUT1   |    35|
-|4     |LUT2   |   214|
-|5     |LUT3   |   160|
-|6     |LUT4   |   194|
-|7     |LUT5   |   219|
-|8     |LUT6   |   560|
-|9     |MUXF7  |    11|
-|10    |MUXF8  |     3|
-|11    |FDRE   |   318|
-|12    |FDRE_1 |    31|
-|13    |FDSE   |    21|
-|14    |FDSE_1 |     1|
-|15    |IBUF   |     5|
-|16    |OBUF   |    35|
-+------+-------+------+
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |CARRY4     |   157|
+|3     |LUT1       |    67|
+|4     |LUT2       |   259|
+|5     |LUT3       |   217|
+|6     |LUT4       |   271|
+|7     |LUT5       |   284|
+|8     |LUT6       |   676|
+|9     |MUXF7      |    22|
+|10    |MUXF8      |     1|
+|11    |RAMB18E1_1 |     2|
+|12    |FDRE       |   421|
+|13    |FDRE_1     |    31|
+|14    |FDSE       |    28|
+|15    |FDSE_1     |     1|
+|16    |IBUF       |     5|
+|17    |OBUF       |    35|
++------+-----------+------+
 
 Report Instance Areas: 
-+------+----------------+---------------+------+
-|      |Instance        |Module         |Cells |
-+------+----------------+---------------+------+
-|1     |top             |               |  1931|
-|2     |  clk_6p25M_gen |flexible_clock |    53|
-|3     |  deb_C         |debounce       |    71|
-|4     |  deb_L         |debounce_0     |    71|
-|5     |  deb_R         |debounce_1     |    71|
-|6     |  deb_U         |debounce_2     |    73|
-|7     |  game_logic    |game_state     |   139|
-|8     |  oled_driver   |Oled_Display   |  1221|
-+------+----------------+---------------+------+
++------+----------------+-----------------+------+
+|      |Instance        |Module           |Cells |
++------+----------------+-----------------+------+
+|1     |top             |                 |  2479|
+|2     |  clk_6p25M_gen |flexible_clock   |    53|
+|3     |  clk_anode_gen |flexible_clock_0 |    54|
+|4     |  deb_C         |debounce         |    71|
+|5     |  deb_L         |debounce_1       |    71|
+|6     |  deb_R         |debounce_2       |    71|
+|7     |  deb_U         |debounce_3       |    75|
+|8     |  display       |game_display     |    57|
+|9     |  game_logic    |game_state       |   466|
+|10    |  oled_driver   |Oled_Display     |  1245|
++------+----------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 902.301 ; gain = 644.449
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 860.707 ; gain = 256.793
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 860.707 ; gain = 603.020
+Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 902.301 ; gain = 296.602
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 902.301 ; gain = 644.449
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 173 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 219 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -660,11 +722,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDSE_1 => FDSE (inverted pins: C): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-89 Infos, 66 Warnings, 0 Critical Warnings and 0 Errors encountered.
+82 Infos, 71 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 860.707 ; gain = 615.707
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 902.301 ; gain = 657.418
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/sarav/EE2026_lab/Final_project/maths game/FDP/FDP.runs/synth_1/Top_Student.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Top_Student_utilization_synth.rpt -pb Top_Student_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 860.707 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 13 19:50:13 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 902.301 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 13 23:37:26 2025...
