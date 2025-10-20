@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.runs/impl_1'
+HD_PWD='C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

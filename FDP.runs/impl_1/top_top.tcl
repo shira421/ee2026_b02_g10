@@ -65,16 +65,15 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.cache/wt [current_project]
-  set_property parent.project_path C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.xpr [current_project]
-  set_property ip_output_repo C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.cache/wt [current_project]
+  set_property parent.project_path C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr [current_project]
+  set_property ip_output_repo C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.runs/synth_1/top_top.dcp
-  read_xdc C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc
+  add_files -quiet C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1/top_top.dcp
+  read_xdc C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc
   link_design -top top_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1760951053">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1760974025">
   <File Type="PA-TCL" Name="top_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_top.vds"/>
   <File Type="RDS-UTIL" Name="top_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="top_top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="top_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/polynomial_engine.v">
@@ -219,6 +222,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ti85_display_module.sv">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/ti85_display_module.sv"/>
         <Attr Name="ImportTime" Val="1760711347"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -265,14 +269,25 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/FDP/archive_project_summary.txt">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../polynomial_working.xpr/FDP/archive_project_summary.txt"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/polynomial_working.xpr/FDP/archive_project_summary.txt"/>
         <Attr Name="ImportTime" Val="1760944965"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/cos_lut.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/cos_lut.v"/>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/cos_lut.v"/>
         <Attr Name="ImportTime" Val="1760948052"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/archive_project_summary.txt"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/ti85_display_module.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/FDP.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv"/>
+        <Attr Name="ImportTime" Val="1760944966"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
