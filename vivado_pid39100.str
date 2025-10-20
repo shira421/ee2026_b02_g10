@@ -389,3 +389,7 @@ selectCodeEditor("ti85_display_module.sv", 312, 292); // ce (w, ck)
 typeControlKey((HResource) null, "ti85_display_module.sv", 'c'); // ce (w, ck)
 // [GUI Memory]: 115 MB (+905kb) [00:15:13]
 // [GUI Memory]: 123 MB (+1626kb) [00:15:33]
+// Elapsed time: 160 seconds
+closeMainWindow("FDP - [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr] - Vivado 2018.2"); // ck
+// aj (ck): Save Project: addNotify
+dismissDialog("Save Project"); // aj (ck)

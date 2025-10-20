@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon Oct 20 23:29:20 2025
+| Date             : Tue Oct 21 00:13:00 2025
 | Host             : dorn_pc running 64-bit major release  (build 9200)
 | Command          : report_power -file top_top_power_routed.rpt -pb top_top_power_summary_routed.pb -rpx top_top_power_routed.rpx
 | Design           : top_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.476        |
+| Total On-Chip Power (W)  | 0.477        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.403        |
+| Dynamic (W)              | 0.404        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 82.6         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.161 |    13714 |       --- |             --- |
-|   LUT as Logic |     0.153 |     9683 |     20800 |           46.55 |
+| Slice Logic    |     0.163 |    13783 |       --- |             --- |
+|   LUT as Logic |     0.155 |     9714 |     20800 |           46.70 |
 |   CARRY4       |     0.008 |     1483 |      8150 |           18.20 |
-|   Register     |    <0.001 |      607 |     41600 |            1.46 |
-|   F7/F8 Muxes  |    <0.001 |       33 |     32600 |            0.10 |
+|   Register     |    <0.001 |      608 |     41600 |            1.46 |
+|   F7/F8 Muxes  |    <0.001 |       73 |     32600 |            0.22 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       44 |       --- |             --- |
-| Signals        |     0.158 |    12292 |       --- |             --- |
+| Signals        |     0.157 |    12279 |       --- |             --- |
 | DSPs           |     0.078 |       76 |        90 |           84.44 |
 | I/O            |     0.004 |       40 |       106 |           37.74 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.476 |          |           |                 |
+| Total          |     0.477 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.409 |       0.399 |      0.010 |
+| Vccint    |       1.000 |     0.411 |       0.400 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -143,26 +143,26 @@ Table of Contents
 +----------------------------------------+-----------+
 | Name                                   | Power (W) |
 +----------------------------------------+-----------+
-| top_top                                |     0.403 |
+| top_top                                |     0.404 |
 |   c0                                   |    <0.001 |
-|   f0                                   |     0.003 |
+|   f0                                   |     0.002 |
 |     d0                                 |    <0.001 |
 |     d1                                 |    <0.001 |
 |     d2                                 |    <0.001 |
 |     d3                                 |    <0.001 |
 |     d4                                 |    <0.001 |
-|   f1                                   |     0.270 |
+|   f1                                   |     0.271 |
 |     confirmation_screen_inst           |     0.004 |
 |     equation_input_inst                |     0.004 |
-|     graph_display_1                    |     0.118 |
-|     graph_display_2                    |     0.121 |
+|     graph_display_1                    |     0.121 |
+|     graph_display_2                    |     0.120 |
 |     keypad_inst                        |    <0.001 |
 |     keypad_screen_inst                 |    <0.001 |
 |     menu_logic_inst                    |     0.015 |
 |     pixel_output_generator_inst        |     0.001 |
 |     pixel_output_state_graph_menu_inst |     0.003 |
-|     ti85_display_inst                  |     0.002 |
-|   g0                                   |     0.039 |
+|     ti85_display_inst                  |     0.001 |
+|   g0                                   |     0.038 |
 |   g1                                   |     0.055 |
 +----------------------------------------+-----------+
 
