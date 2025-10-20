@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log Equations_mode.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Equations_mode.tcl
+    with args -log top_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_top.tcl
 
 
 ****** Vivado v2018.2 (64-bit)
@@ -8,107 +8,255 @@
   **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source Equations_mode.tcl -notrace
-Command: synth_design -top Equations_mode -part xc7a35tcpg236-1
+source top_top.tcl -notrace
+Command: synth_design -top top_top -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26936 
+INFO: Helper process launched with PID 5676 
+WARNING: [Synth 8-992] keypad_enable is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:636]
+WARNING: [Synth 8-992] graph1_type_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:209]
+WARNING: [Synth 8-992] graph2_type_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:209]
+WARNING: [Synth 8-992] row_pos_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:210]
+WARNING: [Synth 8-992] col_pos_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:210]
+WARNING: [Synth 8-992] cursor_pos_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:211]
+WARNING: [Synth 8-992] all_inputs_confirmed_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:211]
+WARNING: [Synth 8-992] fsm_state_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:212]
+WARNING: [Synth 8-992] temp_coeff_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:213]
+WARNING: [Synth 8-992] digit_count_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:214]
+WARNING: [Synth 8-992] g1_cos_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g1_sin_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g2_cos_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g2_sin_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g1_poly_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g1_poly_coeff_b_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g1_poly_coeff_c_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g2_poly_coeff_a_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] g2_poly_coeff_b_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] g2_poly_coeff_c_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] current_graph_slot_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:218]
+WARNING: [Synth 8-992] current_coeff_pos_debug is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:219]
+WARNING: [Synth 8-992] pixel_index_1 is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:226]
+WARNING: [Synth 8-992] pixel_index_2 is already implicitly declared earlier [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:226]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 358.012 ; gain = 100.410
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 370.352 ; gain = 112.840
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Equations_mode' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/Top_Student.v:7]
-	Parameter STATE_MENU bound to: 2'b00 
-	Parameter STATE_QUADRATIC bound to: 2'b11 
-INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/flexible_clock.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (1#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/flexible_clock.v:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/debounce.v:22]
+INFO: [Synth 8-6157] synthesizing module 'top_top' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:145]
+INFO: [Synth 8-6157] synthesizing module 'freq_625m' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/clocking_functions.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'freq_625m' (1#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/clocking_functions.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debouncer_parent' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/debouncer_parent.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v:23]
 	Parameter SAMPLE_COUNT bound to: 100000 - type: integer 
-	Parameter DEBOUNCE_MS bound to: 200 - type: integer 
-	Parameter PULSE_MS bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/debounce.v:22]
-INFO: [Synth 8-6157] synthesizing module 'MouseCtl_Verilog_Wrapper' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/verilog_mouse_wrapper.v:8]
-INFO: [Synth 8-638] synthesizing module 'MouseCtl' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
-	Parameter SYSCLK_FREQUENCY_HZ bound to: 100000000 - type: integer 
-	Parameter CHECK_PERIOD_MS bound to: 500 - type: integer 
-	Parameter TIMEOUT_PERIOD_MS bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'Ps2Interface' declared at 'C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:156' bound to instance 'Inst_Ps2Interface' of component 'Ps2Interface' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:374]
-INFO: [Synth 8-638] synthesizing module 'Ps2Interface' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
-INFO: [Synth 8-256] done synthesizing module 'Ps2Interface' (3#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Ps2Interface.vhd:184]
-WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:455]
-WARNING: [Synth 8-6014] Unused sequential element x_inter_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:461]
-WARNING: [Synth 8-6014] Unused sequential element inc_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:519]
-WARNING: [Synth 8-6014] Unused sequential element y_inter_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:525]
-INFO: [Synth 8-256] done synthesizing module 'MouseCtl' (4#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Mouse_Control.vhd:212]
-INFO: [Synth 8-6155] done synthesizing module 'MouseCtl_Verilog_Wrapper' (5#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/verilog_mouse_wrapper.v:8]
-INFO: [Synth 8-6157] synthesizing module 'equation_menu' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/equations_menu.v:14]
-	Parameter WIDTH bound to: 96 - type: integer 
-	Parameter HEIGHT bound to: 64 - type: integer 
-	Parameter BOX_LEFT bound to: 4 - type: integer 
-	Parameter BOX_RIGHT bound to: 91 - type: integer 
-	Parameter COLOR_BG bound to: 16'b0000000000000000 
-	Parameter COLOR_TEXT bound to: 16'b1111111111111111 
-	Parameter COLOR_LINE bound to: 16'b0111101111101111 
-	Parameter COLOR_HOVER bound to: 16'b0010000100100100 
-	Parameter Y_OPTION1_START bound to: 0 - type: integer 
-	Parameter Y_OPTION1_END bound to: 15 - type: integer 
-	Parameter Y_OPTION2_START bound to: 16 - type: integer 
-	Parameter Y_OPTION2_END bound to: 31 - type: integer 
-	Parameter Y_OPTION3_START bound to: 32 - type: integer 
-	Parameter Y_OPTION3_END bound to: 47 - type: integer 
-	Parameter Y_OPTION4_START bound to: 48 - type: integer 
-	Parameter Y_OPTION4_END bound to: 63 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'equation_menu' (6#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/equations_menu.v:14]
-INFO: [Synth 8-6157] synthesizing module 'quadratic_input' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:8]
-	Parameter WIDTH bound to: 96 - type: integer 
-	Parameter HEIGHT bound to: 64 - type: integer 
-	Parameter COLOR_BG bound to: 16'b0000000000000000 
-	Parameter COLOR_TEXT bound to: 16'b1111111111111111 
-	Parameter COLOR_BOX bound to: 16'b0001100011000011 
-	Parameter COLOR_BOX_ACTIVE bound to: 16'b0000011111100000 
-	Parameter COLOR_BORDER bound to: 16'b0111101111101111 
-	Parameter COLOR_BUTTON bound to: 16'b0100001000001000 
-	Parameter COLOR_BUTTON_ACTIVE bound to: 16'b1111110100100000 
-	Parameter COLOR_CLR_BUTTON bound to: 16'b1111100000000000 
-	Parameter BOX_WIDTH bound to: 28 - type: integer 
-	Parameter BOX_HEIGHT bound to: 12 - type: integer 
-	Parameter BOX_A_X1 bound to: 4 - type: integer 
-	Parameter BOX_A_Y1 bound to: 20 - type: integer 
-	Parameter BOX_A_X2 bound to: 32 - type: integer 
-	Parameter BOX_A_Y2 bound to: 32 - type: integer 
-	Parameter BOX_B_X1 bound to: 34 - type: integer 
-	Parameter BOX_B_Y1 bound to: 20 - type: integer 
-	Parameter BOX_B_X2 bound to: 62 - type: integer 
-	Parameter BOX_B_Y2 bound to: 32 - type: integer 
-	Parameter BOX_C_X1 bound to: 64 - type: integer 
-	Parameter BOX_C_Y1 bound to: 20 - type: integer 
-	Parameter BOX_C_X2 bound to: 92 - type: integer 
-	Parameter BOX_C_Y2 bound to: 32 - type: integer 
-	Parameter BTN_CLR_X1 bound to: 10 - type: integer 
-	Parameter BTN_CLR_Y1 bound to: 45 - type: integer 
-	Parameter BTN_CLR_X2 bound to: 40 - type: integer 
-	Parameter BTN_CLR_Y2 bound to: 55 - type: integer 
-	Parameter BTN_SOLVE_X1 bound to: 56 - type: integer 
-	Parameter BTN_SOLVE_Y1 bound to: 45 - type: integer 
-	Parameter BTN_SOLVE_X2 bound to: 86 - type: integer 
-	Parameter BTN_SOLVE_Y2 bound to: 55 - type: integer 
-	Parameter DEBOUNCE_TIME bound to: 16'b1100001101010000 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:185]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:252]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:284]
-INFO: [Synth 8-6157] synthesizing module 'quadratic_solver' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_solver.v:9]
-	Parameter WIDTH bound to: 96 - type: integer 
-	Parameter HEIGHT bound to: 64 - type: integer 
-	Parameter COLOR_BG bound to: 16'b0000000000000000 
-	Parameter COLOR_RESULT bound to: 16'b0000011111111111 
-	Parameter COLOR_ERROR bound to: 16'b1111100000000000 
-INFO: [Synth 8-6155] done synthesizing module 'quadratic_solver' (7#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_solver.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'quadratic_input' (8#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:8]
-WARNING: [Synth 8-689] width (10) of port connection 'coeff_a' does not match port width (11) of module 'quadratic_input' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/Top_Student.v:210]
-WARNING: [Synth 8-689] width (10) of port connection 'coeff_b' does not match port width (11) of module 'quadratic_input' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/Top_Student.v:211]
-WARNING: [Synth 8-689] width (10) of port connection 'coeff_c' does not match port width (11) of module 'quadratic_input' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/Top_Student.v:212]
-INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
+	Parameter DEBOUNCE_MS bound to: 100 - type: integer 
+	Parameter PULSE_MS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer_parent' (3#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/debouncer_parent.v:23]
+INFO: [Synth 8-6157] synthesizing module 'graphing_calculator_top' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:449]
+	Parameter STATE_MAIN_MENU bound to: 3'b000 
+	Parameter STATE_GRAPH_MENU bound to: 3'b001 
+	Parameter STATE_INPUT bound to: 3'b010 
+	Parameter STATE_GRAPHING bound to: 3'b011 
+INFO: [Synth 8-6157] synthesizing module 'menu_logic_module' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/menu_logic_module.v:22]
+	Parameter POLYNOMIAL bound to: 2'b00 
+	Parameter COSINE bound to: 2'b01 
+	Parameter SINE bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'menu_logic_module' (4#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/menu_logic_module.v:22]
+INFO: [Synth 8-6157] synthesizing module 'keypad_logic_module' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
+	Parameter keypad_matrix bound to: 48'b000100100011010001010110011110001001101000001011 
+INFO: [Synth 8-6155] done synthesizing module 'keypad_logic_module' (5#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'equation_input_module' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:182]
+	Parameter POLY bound to: 2'b00 
+	Parameter COS bound to: 2'b01 
+	Parameter SIN bound to: 2'b10 
+	Parameter GRAPH1 bound to: 2'b00 
+	Parameter GRAPH2 bound to: 2'b01 
+	Parameter NOT_SET bound to: 8'b01111111 
+WARNING: [Synth 8-6014] Unused sequential element total_coeffs_entered_reg was removed.  [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:266]
+WARNING: [Synth 8-6014] Unused sequential element final_coeff_reg was removed.  [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'equation_input_module' (6#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:182]
+INFO: [Synth 8-6157] synthesizing module 'ti85_display_module' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:4]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter TI85_X_START bound to: 36 - type: integer 
+	Parameter TI85_Y_START bound to: 24 - type: integer 
+	Parameter GRAPHING_X_START bound to: 24 - type: integer 
+	Parameter GRAPHING_Y_START bound to: 35 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:201]
+WARNING: [Synth 8-6014] Unused sequential element font_row_reg was removed.  [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:186]
+WARNING: [Synth 8-6014] Unused sequential element is_text_pixel_reg was removed.  [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:223]
+INFO: [Synth 8-6155] done synthesizing module 'ti85_display_module' (7#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'pixel_output_generator' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:233]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter LINE1_X_START bound to: 0 - type: integer 
+	Parameter LINE1_Y_START bound to: 24 - type: integer 
+	Parameter LINE2_X_START bound to: 15 - type: integer 
+	Parameter LINE2_Y_START bound to: 35 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:384]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:259]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:268]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:277]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:286]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:295]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:304]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:313]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:322]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:331]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:340]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:349]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:358]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:367]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:259]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:268]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:277]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:286]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:295]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:304]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:313]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:322]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:331]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:340]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:349]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:358]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:367]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_generator' (8#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:233]
+INFO: [Synth 8-6157] synthesizing module 'pixel_output_state_graph_menu' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:481]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter TitleY bound to: 4 - type: integer 
+	Parameter Row1Y bound to: 24 - type: integer 
+	Parameter Row2Y bound to: 40 - type: integer 
+	Parameter CharWidth bound to: 6 - type: integer 
+	Parameter TitleStartX bound to: 9 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_state_graph_menu' (9#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:481]
+INFO: [Synth 8-6157] synthesizing module 'confirmation_screen' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:893]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter Line1Y bound to: 18 - type: integer 
+	Parameter Line2Y bound to: 30 - type: integer 
+	Parameter Line3Y bound to: 42 - type: integer 
+	Parameter CharWidth bound to: 6 - type: integer 
+	Parameter Line1StartX bound to: 0 - type: integer 
+	Parameter Line2StartX bound to: 9 - type: integer 
+	Parameter Line3StartX bound to: 24 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:909]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:918]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:927]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:936]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:945]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:954]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:963]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:972]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:981]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:990]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:999]
+INFO: [Common 17-14] Message 'Synth 8-155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'confirmation_screen' (10#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:893]
+INFO: [Synth 8-6157] synthesizing module 'equation_display' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:1883]
+	Parameter POLYNOMIAL bound to: 2'b00 
+	Parameter COSINE bound to: 2'b01 
+	Parameter SINE bound to: 2'b10 
+	Parameter NOT_SET bound to: 8'b01111111 
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
+	Parameter COLOR_BLACK bound to: 16'b0000000000000000 
+	Parameter COLOR_GREEN bound to: 16'b0000011111100000 
+	Parameter CHAR_WIDTH bound to: 6 - type: integer 
+	Parameter CHAR_HEIGHT bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'equation_display' (11#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:1883]
+INFO: [Synth 8-6157] synthesizing module 'keypad_screen' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2576]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter ButtonWidth bound to: 16 - type: integer 
+	Parameter ButtonHeight bound to: 12 - type: integer 
+	Parameter ButtonSpacingX bound to: 8 - type: integer 
+	Parameter ButtonSpacingY bound to: 4 - type: integer 
+	Parameter KeypadStartX bound to: 12 - type: integer 
+	Parameter KeypadStartY bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2715]
+INFO: [Synth 8-6155] done synthesizing module 'keypad_screen' (12#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2576]
+INFO: [Synth 8-6157] synthesizing module 'graph_plotter' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:322]
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+	Parameter SCREEN_HEIGHT bound to: 64 - type: integer 
+	Parameter POLY bound to: 2'b00 
+	Parameter COS bound to: 2'b01 
+	Parameter SIN bound to: 2'b10 
+	Parameter NOT_SET bound to: 8'b01111111 
+	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
+	Parameter COLOR_BLACK bound to: 16'b0000000000000000 
+	Parameter COLOR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOR_RED bound to: 16'b1111100000000000 
+	Parameter COLOR_MAGENTA bound to: 16'b1111100000011111 
+	Parameter COLOR_GRAY bound to: 16'b1011110111110111 
+INFO: [Synth 8-6157] synthesizing module 'cos_lut' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/cos_lut.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'cos_lut' (13#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/cos_lut.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'graph_plotter' (14#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:322]
+INFO: [Synth 8-6155] done synthesizing module 'graphing_calculator_top' (15#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:449]
+INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -159,26 +307,44 @@ INFO: [Synth 8-6157] synthesizing module 'Oled_Display' [C:/Users/sarav/EE2026_l
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:123]
-INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:198]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:346]
-INFO: [Synth 8-6155] done synthesizing module 'Oled_Display' (9#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/imports/Desktop/Oled_Display.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'Equations_mode' (10#1) [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/Top_Student.v:7]
-WARNING: [Synth 8-3917] design Equations_mode has port seg[6] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[5] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[4] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[3] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[2] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[1] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[0] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[3] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[2] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[1] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[0] driven by constant 0
-WARNING: [Synth 8-3917] design Equations_mode has port JB[2] driven by constant 0
-WARNING: [Synth 8-3331] design Equations_mode has unconnected port led[5]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:110]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:185]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:333]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display' (16#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_top' (17#1) [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:145]
+WARNING: [Synth 8-3331] design graph_plotter has unconnected port clk
+WARNING: [Synth 8-3331] design graph_plotter has unconnected port reset
+WARNING: [Synth 8-3331] design equation_display has unconnected port clk
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[7]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[6]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[5]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[4]
+WARNING: [Synth 8-3331] design graphing_calculator_top has unconnected port main_menu_switch
+WARNING: [Synth 8-3331] design top_top has unconnected port JB[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port JA[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[15]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[10]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 440.527 ; gain = 182.926
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 435.340 ; gain = 177.828
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -191,230 +357,134 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 440.527 ; gain = 182.926
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 435.340 ; gain = 177.828
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 440.527 ; gain = 182.926
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 435.340 ; gain = 177.828
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/constrs_1/new/my_basys3.xdc]
-Finished Parsing XDC File [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/constrs_1/new/my_basys3.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/constrs_1/new/my_basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Equations_mode_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/Equations_mode_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[7]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 789.227 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 780.898 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 789.227 ; gain = 531.625
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 780.898 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 789.227 ; gain = 531.625
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 780.898 ; gain = 523.387
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 789.227 ; gain = 531.625
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 780.898 ; gain = 523.387
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5545] ROM "slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Ps2Interface'
-INFO: [Synth 8-5546] ROM "reset_bit_count" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busy" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "read_data" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_tx_data" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "ps2_clk_h" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "delay_100us_counter_enable" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "delay_20us_counter_enable" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "delay_63clk_counter_enable" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MouseCtl'
-INFO: [Synth 8-5545] ROM "periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "timeout" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "reset_periodic_check_cnt" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "new_event" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "highlighted_option" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "highlighted_option" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "pixel_data0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5545] ROM "solution_type" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "pixel_data0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5545] ROM "solution_type" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char_row3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5546] ROM "switch_to_digit" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "switch_to_digit" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Oled_Display'
+INFO: [Synth 8-5546] ROM "slow_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "enter_pressed" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5587] ROM size for "get_line2_char" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "get_line3_char" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5544] ROM "g2_coeff_c_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_b_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_a_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_c_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_b_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_a_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_color" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii14" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii17" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii18" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii21" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii22" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii25" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii26" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii29" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii30" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii33" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii34" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii37" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii38" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "cos_val" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'graphing_calculator_top'
+INFO: [Synth 8-5544] ROM "keypad_enable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "screen1_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'oled_display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Equations_mode'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    idle |                00000000000000001 |                            00000
-            rx_down_edge |                00000000000000010 |                            00011
-                rx_clk_l |                00000000000000100 |                            00010
-                rx_clk_h |                00000000000001000 |                            00001
-         rx_error_parity |                00000000000010000 |                            00100
-           rx_data_ready |                00000000000100000 |                            00101
-          tx_force_clk_l |                00000000001000000 |                            00110
-      tx_bring_data_down |                00000000010000000 |                            00111
-          tx_release_clk |                00000000100000000 |                            01000
- tx_first_wait_down_edge |                00000001000000000 |                            01001
-                tx_clk_l |                00000010000000000 |                            01010
-         tx_wait_up_edge |                00000100000000000 |                            01011
-tx_wait_up_edge_before_ack |                00001000000000000 |                            01101
-             tx_wait_ack |                00010000000000000 |                            01110
-         tx_received_ack |                00100000000000000 |                            01111
-         tx_error_no_ack |                01000000000000000 |                            10000
-                tx_clk_h |                10000000000000000 |                            01100
+         STATE_MAIN_MENU |                               00 |                              000
+        STATE_GRAPH_MENU |                               01 |                              001
+             STATE_INPUT |                               10 |                              010
+          STATE_GRAPHING |                               11 |                              011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Ps2Interface'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                   reset | 0000000000000000000000000000000000001 |                           000000
-          reset_wait_ack | 0000000000000000000000000000000000010 |                           000001
-reset_wait_bat_completion | 0000000000000000000000000000000000100 |                           000010
-           reset_wait_id | 0000000000000000000000000000000001000 |                           000011
-reset_set_sample_rate_200 | 0000000000000000000000000000000010000 |                           000100
-reset_set_sample_rate_200_wait_ack | 0000000000000000000000000000000100000 |                           000101
-reset_send_sample_rate_200 | 0000000000000000000000000000001000000 |                           000110
-reset_send_sample_rate_200_wait_ack | 0000000000000000000000000000010000000 |                           000111
-reset_set_sample_rate_100 | 0000000000000000000000000000100000000 |                           001000
-reset_set_sample_rate_100_wait_ack | 0000000000000000000000000001000000000 |                           001001
-reset_send_sample_rate_100 | 0000000000000000000000000010000000000 |                           001010
-reset_send_sample_rate_100_wait_ack | 0000000000000000000000000100000000000 |                           001011
-reset_set_sample_rate_80 | 0000000000000000000000001000000000000 |                           001100
-reset_set_sample_rate_80_wait_ack | 0000000000000000000000010000000000000 |                           001101
-reset_send_sample_rate_80 | 0000000000000000000000100000000000000 |                           001110
-reset_send_sample_rate_80_wait_ack | 0000000000000000000001000000000000000 |                           001111
-           reset_read_id | 0000000000000000000010000000000000000 |                           010000
-  reset_read_id_wait_ack | 0000000000000000000100000000000000000 |                           010001
-   reset_read_id_wait_id | 0000000000000000001000000000000000000 |                           010010
-    reset_set_resolution | 0000000000000000010000000000000000000 |                           010011
-reset_set_resolution_wait_ack | 0000000000000000100000000000000000000 |                           010100
-   reset_send_resolution | 0000000000000001000000000000000000000 |                           010101
-reset_send_resolution_wait_ack | 0000000000000010000000000000000000000 |                           010110
-reset_set_sample_rate_40 | 0000000000000100000000000000000000000 |                           010111
-reset_set_sample_rate_40_wait_ack | 0000000000001000000000000000000000000 |                           011000
-reset_send_sample_rate_40 | 0000000000010000000000000000000000000 |                           011001
-reset_send_sample_rate_40_wait_ack | 0000000000100000000000000000000000000 |                           011010
-  reset_enable_reporting | 0000000001000000000000000000000000000 |                           011011
-reset_enable_reporting_wait_ack | 0000000010000000000000000000000000000 |                           011100
-             read_byte_1 | 0000000100000000000000000000000000000 |                           011101
-             read_byte_2 | 0000001000000000000000000000000000000 |                           011110
-             read_byte_3 | 0000010000000000000000000000000000000 |                           011111
-             read_byte_4 | 0000100000000000000000000000000000000 |                           100000
-          mark_new_event | 0001000000000000000000000000000000000 |                           100100
-           check_read_id | 0010000000000000000000000000000000000 |                           100001
-  check_read_id_wait_ack | 0100000000000000000000000000000000000 |                           100010
-   check_read_id_wait_id | 1000000000000000000000000000000000000 |                           100011
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MouseCtl'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'graphing_calculator_top'
+WARNING: [Synth 8-327] inferring latch for variable 'screen1_data_reg' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:822]
+WARNING: [Synth 8-327] inferring latch for variable 'screen2_data_reg' [C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:823]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -451,113 +521,93 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
            WaitNextFrame | 00000000000000000000001000000000 |                            10001
                SendPixel | 00000000000000000010000000000000 |                            10000
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Oled_Display'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-              STATE_MENU |                                0 |                               00
-         STATE_QUADRATIC |                                1 |                               11
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Equations_mode'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'oled_display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 789.227 ; gain = 531.625
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 780.898 ; gain = 523.387
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'graph_plotter:/cos_lut_g1_prev' (cos_lut) to 'graph_plotter:/cos_lut_g2_prev'
+INFO: [Synth 8-223] decloning instance 'graph_plotter:/cos_lut_g1_curr' (cos_lut) to 'graph_plotter:/cos_lut_g2_curr'
+INFO: [Synth 8-223] decloning instance 'graph_plotter:/cos_lut_g1_next' (cos_lut) to 'graph_plotter:/cos_lut_g2_next'
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter                |           2|      8604|
+|2     |graphing_calculator_top__GC0 |           1|     30468|
+|3     |top_top__GC0                 |           1|      5383|
++------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     33 Bit       Adders := 2     
-	   2 Input     33 Bit       Adders := 3     
-	   3 Input     32 Bit       Adders := 15    
-	   2 Input     32 Bit       Adders := 16    
-	   2 Input     26 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
-	   2 Input     17 Bit       Adders := 1     
-	   2 Input     12 Bit       Adders := 4     
-	   2 Input     11 Bit       Adders := 7     
-	   2 Input     10 Bit       Adders := 4     
-	   2 Input      8 Bit       Adders := 19    
-	   2 Input      7 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 39    
-	   2 Input      2 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 12    
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     17 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 16    
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 12    
+	   2 Input      7 Bit       Adders := 42    
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      5 Bit       Adders := 8     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 29    
+	   2 Input      2 Bit       Adders := 5     
 +---Registers : 
-	               40 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               27 Bit    Registers := 1     
-	               26 Bit    Registers := 1     
-	               24 Bit    Registers := 2     
-	               17 Bit    Registers := 1     
+	               40 Bit    Registers := 2     
+	               17 Bit    Registers := 2     
 	               16 Bit    Registers := 2     
-	               12 Bit    Registers := 7     
-	               11 Bit    Registers := 5     
-	                8 Bit    Registers := 14    
-	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 16    
-	                3 Bit    Registers := 3     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 75    
+	                8 Bit    Registers := 21    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 48    
 +---Muxes : 
-	   2 Input     40 Bit        Muxes := 3     
-	  37 Input     37 Bit        Muxes := 1     
-	   2 Input     37 Bit        Muxes := 69    
-	   2 Input     33 Bit        Muxes := 3     
-	   2 Input     32 Bit        Muxes := 46    
-	  32 Input     32 Bit        Muxes := 1     
-	   2 Input     27 Bit        Muxes := 1     
-	   2 Input     26 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
-	  32 Input     20 Bit        Muxes := 1     
-	  17 Input     17 Bit        Muxes := 1     
-	   2 Input     17 Bit        Muxes := 19    
-	   7 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 5     
+	   2 Input     40 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 10    
+	  32 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 131   
+	   4 Input     16 Bit        Muxes := 17    
+	   6 Input     16 Bit        Muxes := 2     
 	   3 Input     16 Bit        Muxes := 1     
-	   4 Input     16 Bit        Muxes := 1     
-	   5 Input     16 Bit        Muxes := 1     
-	  10 Input     15 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 10    
-	   2 Input     11 Bit        Muxes := 34    
-	   4 Input     11 Bit        Muxes := 6     
-	   2 Input     10 Bit        Muxes := 4     
-	   2 Input      9 Bit        Muxes := 2     
-	  37 Input      8 Bit        Muxes := 3     
-	   2 Input      8 Bit        Muxes := 26    
-	  11 Input      8 Bit        Muxes := 1     
-	   9 Input      7 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 17    
-	  10 Input      7 Bit        Muxes := 1     
-	  32 Input      6 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 103   
+	   5 Input     16 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 5     
+	   5 Input     11 Bit        Muxes := 1     
+	  49 Input      8 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 7     
+	   2 Input      7 Bit        Muxes := 33    
+	   8 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 3     
+	  12 Input      7 Bit        Muxes := 1     
+	   7 Input      7 Bit        Muxes := 2     
+	   5 Input      7 Bit        Muxes := 2     
+	  14 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 18    
+	   4 Input      6 Bit        Muxes := 5     
+	   7 Input      6 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 194   
+	  11 Input      5 Bit        Muxes := 2     
+	  14 Input      5 Bit        Muxes := 1     
 	  23 Input      5 Bit        Muxes := 3     
-	   2 Input      5 Bit        Muxes := 4     
-	  28 Input      5 Bit        Muxes := 6     
-	  32 Input      5 Bit        Muxes := 1     
-	  37 Input      4 Bit        Muxes := 1     
-	   8 Input      4 Bit        Muxes := 9     
-	  11 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 81    
-	   4 Input      4 Bit        Muxes := 9     
-	   2 Input      3 Bit        Muxes := 41    
-	   4 Input      3 Bit        Muxes := 2     
-	   5 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 28    
+	  32 Input      5 Bit        Muxes := 24    
+	   2 Input      5 Bit        Muxes := 5     
+	  12 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	  15 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 2     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 8     
 	   4 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 207   
-	  17 Input      1 Bit        Muxes := 4     
-	  37 Input      1 Bit        Muxes := 20    
-	   4 Input      1 Bit        Muxes := 24    
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 63    
+	   4 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -565,19 +615,229 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module Equations_mode 
+Module cos_lut__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	  49 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module cos_lut__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	  49 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module cos_lut 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	  49 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module graph_plotter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 6     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 6     
+	   6 Input     16 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 12    
+	   2 Input      6 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 2     
+Module menu_logic_module 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module keypad_logic_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 4     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	  12 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
 	   2 Input      1 Bit        Muxes := 6     
-Module flexible_clock 
+Module equation_input_module 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 11    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 1     
+Module ti85_display_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
 +---Registers : 
 	                1 Bit    Registers := 1     
 +---Muxes : 
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 20    
+	  11 Input      5 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 1     
+Module pixel_output_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  12 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 26    
+	  14 Input      5 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module pixel_output_state_graph_menu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   7 Input      7 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 6     
+	   5 Input      7 Bit        Muxes := 2     
+	  14 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 42    
+	  23 Input      5 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+Module confirmation_screen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 6     
+Module equation_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 26    
+	   2 Input      3 Bit       Adders := 17    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 117   
+	   5 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 5     
+	   5 Input     11 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 62    
+	  32 Input      5 Bit        Muxes := 22    
+	   3 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+Module keypad_screen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 3     
+	   7 Input      6 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 12    
+Module graphing_calculator_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   4 Input      1 Bit        Muxes := 1     
+Module freq_625m 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
 Module debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -585,139 +845,27 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
-Module Ps2Interface 
+Module oled_display__1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     11 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 3     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
-	               11 Bit    Registers := 2     
-	                8 Bit    Registers := 1     
-	                7 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 17    
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
 +---Muxes : 
-	  17 Input     17 Bit        Muxes := 1     
-	   2 Input     17 Bit        Muxes := 18    
-	   2 Input     11 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-	  17 Input      1 Bit        Muxes := 4     
-Module MouseCtl 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     26 Bit       Adders := 1     
-	   2 Input     24 Bit       Adders := 1     
-	   2 Input     12 Bit       Adders := 4     
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	               26 Bit    Registers := 1     
-	               24 Bit    Registers := 1     
-	               12 Bit    Registers := 6     
-	                8 Bit    Registers := 3     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 17    
-+---Muxes : 
-	  37 Input     37 Bit        Muxes := 1     
-	   2 Input     37 Bit        Muxes := 69    
-	   2 Input     26 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 10    
-	   2 Input      9 Bit        Muxes := 2     
-	  37 Input      8 Bit        Muxes := 3     
-	  37 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-	  37 Input      1 Bit        Muxes := 20    
-Module equation_menu 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 12    
-+---Registers : 
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
-+---Muxes : 
-	   7 Input     16 Bit        Muxes := 1     
-	   9 Input      7 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 17    
-	   8 Input      5 Bit        Muxes := 17    
-	   8 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 18    
-	   4 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
-Module quadratic_solver 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     33 Bit       Adders := 2     
-	   2 Input     33 Bit       Adders := 3     
-	   3 Input     32 Bit       Adders := 15    
-	   2 Input     32 Bit       Adders := 15    
-	   2 Input     10 Bit       Adders := 4     
-	   2 Input      8 Bit       Adders := 8     
-	   2 Input      3 Bit       Adders := 10    
-+---Registers : 
-	               32 Bit    Registers := 4     
-	               27 Bit    Registers := 1     
-	               24 Bit    Registers := 1     
-	               12 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     33 Bit        Muxes := 3     
-	   2 Input     32 Bit        Muxes := 44    
-	   2 Input     27 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 2     
-	   3 Input     16 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 4     
-	   2 Input      8 Bit        Muxes := 9     
-	  10 Input      7 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 36    
-	  23 Input      5 Bit        Muxes := 3     
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
-	   8 Input      4 Bit        Muxes := 6     
-	   2 Input      3 Bit        Muxes := 7     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 4     
-Module quadratic_input 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 6     
-	   2 Input      3 Bit       Adders := 17    
-	   2 Input      2 Bit       Adders := 3     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	               11 Bit    Registers := 3     
-	                4 Bit    Registers := 12    
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 8     
-+---Muxes : 
-	   2 Input     16 Bit        Muxes := 2     
-	   4 Input     16 Bit        Muxes := 1     
-	   5 Input     16 Bit        Muxes := 1     
-	  10 Input     15 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 33    
-	   4 Input     11 Bit        Muxes := 6     
-	  11 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 17    
-	   8 Input      5 Bit        Muxes := 50    
-	  28 Input      5 Bit        Muxes := 6     
-	   8 Input      4 Bit        Muxes := 2     
-	  11 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 81    
-	   4 Input      4 Bit        Muxes := 9     
-	   5 Input      3 Bit        Muxes := 1     
-	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 16    
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 25    
-	   4 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 175   
-	   4 Input      1 Bit        Muxes := 24    
-Module Oled_Display 
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module oled_display 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     17 Bit       Adders := 1     
@@ -753,182 +901,181 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element clk_25M_gen/slow_clock_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/flexible_clock.v:31]
-WARNING: [Synth 8-6014] Unused sequential element clk_12p5M_gen/slow_clock_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/flexible_clock.v:31]
-WARNING: [Synth 8-6014] Unused sequential element slow_clk_gen/slow_clock_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/flexible_clock.v:31]
-INFO: [Synth 8-5545] ROM "clk_6p25M_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "i_mouse_ctl/periodic_check_tick" won't be mapped to RAM because address size (26) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "i_mouse_ctl/timeout" won't be mapped to RAM because it is too sparse
-DSP Report: Generating DSP four_ac_reg, operation Mode is: (0 or A*B).
-DSP Report: register four_ac_reg is absorbed into DSP four_ac_reg.
-DSP Report: operator four_ac0 is absorbed into DSP four_ac_reg.
-DSP Report: Generating DSP b_squared_reg, operation Mode is: (0 or A*B).
-DSP Report: register b_squared_reg is absorbed into DSP b_squared_reg.
-DSP Report: operator b_squared0 is absorbed into DSP b_squared_reg.
-INFO: [Synth 8-4471] merging register 'digit_a_reg[1][3:0]' into 'digit_a_reg[1][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:210]
-INFO: [Synth 8-4471] merging register 'digit_b_reg[1][3:0]' into 'digit_b_reg[1][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:211]
-INFO: [Synth 8-4471] merging register 'digit_c_reg[1][3:0]' into 'digit_c_reg[1][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:212]
-INFO: [Synth 8-4471] merging register 'digit_a_reg[2][3:0]' into 'digit_a_reg[2][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:210]
-INFO: [Synth 8-4471] merging register 'digit_b_reg[2][3:0]' into 'digit_b_reg[2][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:211]
-INFO: [Synth 8-4471] merging register 'digit_c_reg[2][3:0]' into 'digit_c_reg[2][3:0]' [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:212]
-WARNING: [Synth 8-6014] Unused sequential element digit_a_reg[1] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:210]
-WARNING: [Synth 8-6014] Unused sequential element digit_b_reg[1] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:211]
-WARNING: [Synth 8-6014] Unused sequential element digit_c_reg[1] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:212]
-WARNING: [Synth 8-6014] Unused sequential element digit_a_reg[2] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:210]
-WARNING: [Synth 8-6014] Unused sequential element digit_b_reg[2] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:211]
-WARNING: [Synth 8-6014] Unused sequential element digit_c_reg[2] was removed.  [C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.srcs/sources_1/new/quadratic_input.v:212]
-INFO: [Synth 8-5546] ROM "switch_to_digit" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP calculate_cos3_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos3_return1 is absorbed into DSP calculate_cos3_return1.
+DSP Report: Generating DSP calculate_poly3_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly3_return2 is absorbed into DSP calculate_poly3_return2.
+DSP Report: Generating DSP calculate_poly3_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly3_return0 is absorbed into DSP calculate_poly3_return0.
+DSP Report: operator calculate_poly3_return2 is absorbed into DSP calculate_poly3_return0.
+DSP Report: Generating DSP calculate_cos4_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos4_return1 is absorbed into DSP calculate_cos4_return1.
+DSP Report: Generating DSP calculate_poly4_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly4_return2 is absorbed into DSP calculate_poly4_return2.
+DSP Report: Generating DSP calculate_poly1_return3, operation Mode is: A*B.
+DSP Report: operator calculate_poly1_return3 is absorbed into DSP calculate_poly1_return3.
+DSP Report: Generating DSP calculate_poly4_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly4_return0 is absorbed into DSP calculate_poly4_return0.
+DSP Report: operator calculate_poly4_return2 is absorbed into DSP calculate_poly4_return0.
+DSP Report: Generating DSP calculate_cos2_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos2_return1 is absorbed into DSP calculate_cos2_return1.
+DSP Report: Generating DSP calculate_poly2_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly2_return2 is absorbed into DSP calculate_poly2_return2.
+DSP Report: Generating DSP calculate_poly_return3, operation Mode is: A*B.
+DSP Report: operator calculate_poly_return3 is absorbed into DSP calculate_poly_return3.
+DSP Report: Generating DSP calculate_poly2_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly2_return0 is absorbed into DSP calculate_poly2_return0.
+DSP Report: operator calculate_poly2_return2 is absorbed into DSP calculate_poly2_return0.
+DSP Report: Generating DSP calculate_cos0_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos0_return1 is absorbed into DSP calculate_cos0_return1.
+DSP Report: Generating DSP calculate_poly0_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly0_return2 is absorbed into DSP calculate_poly0_return2.
+DSP Report: Generating DSP calculate_poly0_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly0_return0 is absorbed into DSP calculate_poly0_return0.
+DSP Report: operator calculate_poly0_return2 is absorbed into DSP calculate_poly0_return0.
+DSP Report: Generating DSP calculate_cos1_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos1_return1 is absorbed into DSP calculate_cos1_return1.
+DSP Report: Generating DSP calculate_poly1_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly1_return2 is absorbed into DSP calculate_poly1_return2.
+DSP Report: Generating DSP calculate_poly1_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly1_return0 is absorbed into DSP calculate_poly1_return0.
+DSP Report: operator calculate_poly1_return2 is absorbed into DSP calculate_poly1_return0.
+DSP Report: Generating DSP calculate_cos_return1, operation Mode is: A*B.
+DSP Report: operator calculate_cos_return1 is absorbed into DSP calculate_cos_return1.
+DSP Report: Generating DSP calculate_poly_return2, operation Mode is: A*B.
+DSP Report: operator calculate_poly_return2 is absorbed into DSP calculate_poly_return2.
+DSP Report: Generating DSP calculate_poly_return0, operation Mode is: C+A*B.
+DSP Report: operator calculate_poly_return0 is absorbed into DSP calculate_poly_return0.
+DSP Report: operator calculate_poly_return2 is absorbed into DSP calculate_poly_return0.
+INFO: [Synth 8-5544] ROM "p_0_out" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "clk_6p25M_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-3917] design Equations_mode has port seg[6] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[5] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[4] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[3] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[2] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[1] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port seg[0] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[3] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[2] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[1] driven by constant 1
-WARNING: [Synth 8-3917] design Equations_mode has port an[0] driven by constant 0
-WARNING: [Synth 8-3917] design Equations_mode has port JB[2] driven by constant 0
-WARNING: [Synth 8-3331] design Equations_mode has unconnected port led[5]
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[16]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[17]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[17]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[18]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[18]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[19]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[19]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[20]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[20]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[21]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[21]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[22]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[22]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[23]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[23]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[24]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[24]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[25]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[25]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[26]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[26]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[27]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[27]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[28]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[28]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[29]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[29]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[30]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/sqrt_disc_reg[30]' (FDR) to 'quadratic_inst/solver_inst/sqrt_disc_reg[31]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (quadratic_inst/solver_inst/\sqrt_disc_reg[31] )
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/discriminant_reg[31]' (FDR) to 'quadratic_inst/solver_inst/discriminant_reg[27]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/discriminant_reg[30]' (FDR) to 'quadratic_inst/solver_inst/discriminant_reg[27]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/discriminant_reg[29]' (FDR) to 'quadratic_inst/solver_inst/discriminant_reg[27]'
-INFO: [Synth 8-3886] merging instance 'quadratic_inst/solver_inst/discriminant_reg[28]' (FDR) to 'quadratic_inst/solver_inst/discriminant_reg[27]'
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_new_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_overflow_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_inc_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_max_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_sign_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/x_pos_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/xpos_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_new_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_overflow_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_inc_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_max_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_sign_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/y_pos_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[11]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[10]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[9]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[8]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[7]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[6]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[5]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[4]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/ypos_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/zpos_reg[3]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/zpos_reg[2]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/zpos_reg[1]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/zpos_reg[0]) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/left_down_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-WARNING: [Synth 8-3332] Sequential element (i_mouse_ctl/left_reg) is unused and will be removed from module MouseCtl_Verilog_Wrapper.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design top_top has port led[7] driven by constant 0
+WARNING: [Synth 8-3331] design top_top has unconnected port JB[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port JA[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[15]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[10]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[5]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[0]
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[0]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[1]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[2]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[3]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[5]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[6]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[7]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[8]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[9]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[10]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[11]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[12]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[13]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/keypad_screen_inst/pixel_data_reg[14]' (FDR) to 'f1i_1/keypad_screen_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[0]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[1]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[2]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[3]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[5]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[6]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[7]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[8]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[9]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[10]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[11]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[12]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[13]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[14]' (FD) to 'f1i_1/pixel_output_state_graph_menu_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_1/\state_prev_reg[2] )
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/digit_count_reg[1]' (FDCE) to 'f1i_1/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/temp_coeff_reg[4]' (FDCE) to 'f1i_1/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/temp_coeff_reg[5]' (FDCE) to 'f1i_1/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/temp_coeff_reg[6]' (FDCE) to 'f1i_1/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_1/\equation_input_inst/temp_coeff_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_1/\equation_input_inst/current_graph_slot_reg[1] )
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_sin_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_sin_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_cos_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_cos_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_c_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_c_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_b_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_b_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g2_poly_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_sin_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_sin_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_cos_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_cos_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_c_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_c_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_b_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_b_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_a_reg[4]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_1/equation_input_inst/g1_poly_coeff_a_reg[5]' (FDPE) to 'f1i_1/equation_input_inst/g1_poly_coeff_a_reg[6]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 832.234 ; gain = 574.633
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:50 . Memory (MB): peak = 968.887 ; gain = 711.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
+ROM:
++--------------------+----------------+---------------+----------------+
+|Module Name         | RTL Object     | Depth x Width | Implemented As | 
++--------------------+----------------+---------------+----------------+
+|confirmation_screen | get_line1_char | 32x7          | LUT            | 
+|cos_lut             | cos_val        | 64x8          | LUT            | 
+|cos_lut             | cos_val        | 64x8          | LUT            | 
+|cos_lut             | cos_val        | 64x8          | LUT            | 
+|confirmation_screen | get_line1_char | 32x7          | LUT            | 
++--------------------+----------------+---------------+----------------+
+
+
 DSP: Preliminary Mapping  Report (see note below)
-+-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|quadratic_solver | (0 or A*B)  | 14     | 11     | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|quadratic_solver | (0 or A*B)  | 11     | 11     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-+-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B       | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -936,34 +1083,39 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter                |           2|      7807|
+|2     |graphing_calculator_top__GC0 |           1|     11579|
+|3     |top_top__GC0                 |           1|      1911|
++------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 834.148 ; gain = 576.547
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 968.887 ; gain = 711.375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 950.496 ; gain = 692.895
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:57 . Memory (MB): peak = 968.887 ; gain = 711.375
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter                |           2|      7807|
+|2     |graphing_calculator_top__GC0 |           1|     11579|
+|3     |top_top__GC0                 |           1|      1911|
++------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'menu_inst/btn_down_prev_reg' (FDR) to 'quadratic_inst/btn_select_prev_reg'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:01:00 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -983,13 +1135,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop mouse_inst/i_mouse_ctl/Inst_Ps2Interface/ps2_clk_h_reg is being inverted and renamed to mouse_inst/i_mouse_ctl/Inst_Ps2Interface/ps2_clk_h_reg_inv.
-INFO: [Synth 8-5365] Flop mouse_inst/i_mouse_ctl/Inst_Ps2Interface/ps2_data_h_reg is being inverted and renamed to mouse_inst/i_mouse_ctl/Inst_Ps2Interface/ps2_data_h_reg_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:01:01 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1002,7 +1152,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:01:01 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1014,25 +1164,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1045,73 +1195,78 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+--------+------+
-|      |Cell    |Count |
-+------+--------+------+
-|1     |BUFG    |     2|
-|2     |CARRY4  |  1626|
-|3     |DSP48E1 |     2|
-|4     |LUT1    |   271|
-|5     |LUT2    |  1067|
-|6     |LUT3    |  1695|
-|7     |LUT4    |  3090|
-|8     |LUT5    |  2109|
-|9     |LUT6    |  2171|
-|10    |MUXF7   |     5|
-|11    |FDCE    |    53|
-|12    |FDPE    |     4|
-|13    |FDRE    |   693|
-|14    |FDRE_1  |    31|
-|15    |FDSE    |    26|
-|16    |FDSE_1  |     1|
-|17    |IBUF    |    17|
-|18    |IOBUF   |     2|
-|19    |OBUF    |    34|
-|20    |OBUFT   |     1|
-+------+--------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |  1183|
+|3     |DSP48E1   |    28|
+|4     |DSP48E1_1 |    12|
+|5     |LUT1      |   331|
+|6     |LUT2      |  2097|
+|7     |LUT3      |  1311|
+|8     |LUT4      |  1726|
+|9     |LUT5      |  1570|
+|10    |LUT6      |  2696|
+|11    |MUXF7     |    32|
+|12    |MUXF8     |     1|
+|13    |FDCE      |    61|
+|14    |FDE_1     |    64|
+|15    |FDPE      |    50|
+|16    |FDRE      |   349|
+|17    |FDSE      |    20|
+|18    |IBUF      |     8|
+|19    |OBUF      |    22|
+|20    |OBUFT     |    10|
++------+----------+------+
 
 Report Instance Areas: 
-+------+------------------------+-------------------------+------+
-|      |Instance                |Module                   |Cells |
-+------+------------------------+-------------------------+------+
-|1     |top                     |                         | 12900|
-|2     |  clk_6p25M_gen         |flexible_clock           |    52|
-|3     |  deb_C                 |debounce                 |    74|
-|4     |  deb_D                 |debounce_0               |    74|
-|5     |  deb_L                 |debounce_1               |    73|
-|6     |  deb_R                 |debounce_2               |    74|
-|7     |  deb_U                 |debounce_3               |    75|
-|8     |  menu_inst             |equation_menu            |    17|
-|9     |  mouse_inst            |MouseCtl_Verilog_Wrapper |   447|
-|10    |    i_mouse_ctl         |MouseCtl                 |   447|
-|11    |      Inst_Ps2Interface |Ps2Interface             |   256|
-|12    |  oled_inst             |Oled_Display             |  1820|
-|13    |  quadratic_inst        |quadratic_input          |  9655|
-|14    |    solver_inst         |quadratic_solver         |  9119|
-+------+------------------------+-------------------------+------+
++------+---------------------------------------+------------------------------+------+
+|      |Instance                               |Module                        |Cells |
++------+---------------------------------------+------------------------------+------+
+|1     |top                                    |                              | 11573|
+|2     |  c0                                   |freq_625m                     |    15|
+|3     |  f0                                   |debouncer_parent              |   368|
+|4     |    d0                                 |debounce                      |    73|
+|5     |    d1                                 |debounce_2                    |    74|
+|6     |    d2                                 |debounce_3                    |    74|
+|7     |    d3                                 |debounce_4                    |    73|
+|8     |    d4                                 |debounce_5                    |    74|
+|9     |  f1                                   |graphing_calculator_top       |  6122|
+|10    |    confirmation_screen_inst           |confirmation_screen           |   135|
+|11    |    equation_input_inst                |equation_input_module         |   782|
+|12    |    graph_display_1                    |graph_plotter                 |  2074|
+|13    |    graph_display_2                    |graph_plotter_1               |  2078|
+|14    |    keypad_inst                        |keypad_logic_module           |    44|
+|15    |    keypad_screen_inst                 |keypad_screen                 |    24|
+|16    |    menu_logic_inst                    |menu_logic_module             |   656|
+|17    |    pixel_output_generator_inst        |pixel_output_generator        |    99|
+|18    |    pixel_output_state_graph_menu_inst |pixel_output_state_graph_menu |   144|
+|19    |    ti85_display_inst                  |ti85_display_module           |    80|
+|20    |  g0                                   |oled_display                  |  1104|
+|21    |  g1                                   |oled_display_0                |  1819|
++------+---------------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 140 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 1137.246 ; gain = 530.945
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1137.246 ; gain = 879.645
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 1074.238 ; gain = 471.168
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:01:02 . Memory (MB): peak = 1074.238 ; gain = 816.727
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1684 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1328 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 34 instances were transformed.
-  FDRE_1 => FDRE (inverted pins: C): 31 instances
-  FDSE_1 => FDSE (inverted pins: C): 1 instances
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  A total of 64 instances were transformed.
+  FDE_1 => FDRE (inverted pins: C): 64 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-203 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+262 Infos, 99 Warnings, 12 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1137.246 ; gain = 892.688
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:01:05 . Memory (MB): peak = 1074.238 ; gain = 829.605
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.runs/synth_1/Equations_mode.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file Equations_mode_utilization_synth.rpt -pb Equations_mode_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1137.246 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 14 13:10:31 2025...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.runs/synth_1/top_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_top_utilization_synth.rpt -pb top_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1074.238 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 20 17:05:22 2025...

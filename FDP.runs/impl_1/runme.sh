@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/sarav/EE2026_lab/Final_project/euqations/FDP/FDP.runs/impl_1'
+HD_PWD='C:/Users/samue/Desktop/polynomial_working.xpr/FDP/FDP.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log Equations_mode.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Equations_mode.tcl -notrace
+EAStep vivado -log top_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_top.tcl -notrace
 
 
