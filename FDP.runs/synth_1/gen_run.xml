@@ -265,13 +265,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/FDP/archive_project_summary.txt">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../archive_project_summary.txt"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../polynomial_working.xpr/FDP/archive_project_summary.txt"/>
         <Attr Name="ImportTime" Val="1760944965"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/cos_lut.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../FDP.srcs/sources_1/new/cos_lut.v"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../polynomial_working.xpr/FDP/FDP.srcs/sources_1/new/cos_lut.v"/>
         <Attr Name="ImportTime" Val="1760948052"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
