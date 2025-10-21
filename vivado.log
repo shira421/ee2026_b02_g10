@@ -2,23 +2,21 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue Oct 21 22:47:11 2025
-# Process ID: 21928
-# Current directory: C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21908 C:\Users\samue\Downloads\ee2026_b02_g10-project-akshay\ee2026_b02_g10-project-akshay\FDP.xpr
-# Log file: C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay/vivado.log
-# Journal file: C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay\vivado.jou
+# Start of session at: Tue Oct 21 23:15:58 2025
+# Process ID: 8424
+# Current directory: C:/Users/samue/Documents/vivado/ee2026_b02_g10
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27764 C:\Users\samue\Documents\vivado\ee2026_b02_g10\FDP.xpr
+# Log file: C:/Users/samue/Documents/vivado/ee2026_b02_g10/vivado.log
+# Journal file: C:/Users/samue/Documents/vivado/ee2026_b02_g10\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay/FDP.xpr
-INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
-Current project path is 'C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay'
+open_project C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.xpr
 INFO: [Project 1-313] Project file moved from 'C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP' since last save.
 Scanning sources...
 Finished scanning sources
-WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/samue/Downloads/ee2026_b02_g10-project-akshay/ee2026_b02_g10-project-akshay/FDP.ip_user_files', nor could it be found using path 'C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.ip_user_files'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.ip_user_files', nor could it be found using path 'C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 21 22:47:32 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 21 23:16:22 2025...
