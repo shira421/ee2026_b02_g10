@@ -1,0 +1,1368 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Oct 21 13:57:51 2025
+# Process ID: 41488
+# Current directory: C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.runs/synth_1
+# Command line: vivado.exe -log top_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_top.tcl
+# Log file: C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.runs/synth_1/top_top.vds
+# Journal file: C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_top.tcl -notrace
+Command: synth_design -top top_top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6192 
+WARNING: [Synth 8-992] keypad_enable is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:636]
+WARNING: [Synth 8-992] graph1_type_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:209]
+WARNING: [Synth 8-992] graph2_type_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:209]
+WARNING: [Synth 8-992] row_pos_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:210]
+WARNING: [Synth 8-992] col_pos_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:210]
+WARNING: [Synth 8-992] cursor_pos_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:211]
+WARNING: [Synth 8-992] all_inputs_confirmed_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:211]
+WARNING: [Synth 8-992] fsm_state_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:212]
+WARNING: [Synth 8-992] temp_coeff_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:213]
+WARNING: [Synth 8-992] digit_count_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:214]
+WARNING: [Synth 8-992] g1_cos_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g1_sin_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g2_cos_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g2_sin_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:215]
+WARNING: [Synth 8-992] g1_poly_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g1_poly_coeff_b_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g1_poly_coeff_c_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:216]
+WARNING: [Synth 8-992] g2_poly_coeff_a_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] g2_poly_coeff_b_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] g2_poly_coeff_c_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:217]
+WARNING: [Synth 8-992] current_graph_slot_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:218]
+WARNING: [Synth 8-992] current_coeff_pos_debug is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:219]
+WARNING: [Synth 8-992] pixel_index_1 is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:226]
+WARNING: [Synth 8-992] pixel_index_2 is already implicitly declared earlier [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:226]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 370.598 ; gain = 113.098
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_top' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:145]
+INFO: [Synth 8-6157] synthesizing module 'freq_625m' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/clocking_functions.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'freq_625m' (1#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/clocking_functions.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debouncer_parent' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/debouncer_parent.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v:23]
+	Parameter SAMPLE_COUNT bound to: 100000 - type: integer 
+	Parameter DEBOUNCE_MS bound to: 100 - type: integer 
+	Parameter PULSE_MS bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer_parent' (3#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/debouncer_parent.v:23]
+INFO: [Synth 8-6157] synthesizing module 'graphing_calculator_top' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:449]
+	Parameter STATE_MAIN_MENU bound to: 3'b000 
+	Parameter STATE_GRAPH_MENU bound to: 3'b001 
+	Parameter STATE_INPUT bound to: 3'b010 
+	Parameter STATE_GRAPHING bound to: 3'b011 
+INFO: [Synth 8-6157] synthesizing module 'menu_logic_module' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/menu_logic_module.v:22]
+	Parameter POLYNOMIAL bound to: 2'b00 
+	Parameter COSINE bound to: 2'b01 
+	Parameter SINE bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'menu_logic_module' (4#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/menu_logic_module.v:22]
+INFO: [Synth 8-6157] synthesizing module 'keypad_logic_module' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
+	Parameter keypad_matrix bound to: 48'b000100100011010001010110011110001001101000001011 
+INFO: [Synth 8-6155] done synthesizing module 'keypad_logic_module' (5#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'equation_input_module' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:182]
+	Parameter POLY bound to: 2'b00 
+	Parameter COS bound to: 2'b01 
+	Parameter SIN bound to: 2'b10 
+	Parameter GRAPH1 bound to: 2'b00 
+	Parameter GRAPH2 bound to: 2'b01 
+	Parameter NOT_SET bound to: 8'b01111111 
+WARNING: [Synth 8-6014] Unused sequential element total_coeffs_entered_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:266]
+WARNING: [Synth 8-6014] Unused sequential element final_coeff_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'equation_input_module' (6#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/equation_input_module.v:182]
+INFO: [Synth 8-6157] synthesizing module 'ti85_display_module' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:4]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter TI85_X_START bound to: 36 - type: integer 
+	Parameter TI85_Y_START bound to: 24 - type: integer 
+	Parameter GRAPHING_X_START bound to: 24 - type: integer 
+	Parameter GRAPHING_Y_START bound to: 35 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:201]
+WARNING: [Synth 8-6014] Unused sequential element font_row_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:186]
+WARNING: [Synth 8-6014] Unused sequential element is_text_pixel_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:223]
+INFO: [Synth 8-6155] done synthesizing module 'ti85_display_module' (7#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'pixel_output_generator' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:233]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter LINE1_X_START bound to: 0 - type: integer 
+	Parameter LINE1_Y_START bound to: 24 - type: integer 
+	Parameter LINE2_X_START bound to: 15 - type: integer 
+	Parameter LINE2_Y_START bound to: 35 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:384]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:259]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:268]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:277]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:286]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:295]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:304]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:313]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:322]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:331]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:340]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:349]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:358]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:367]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:259]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:268]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:277]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:286]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:295]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:304]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:313]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:322]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:331]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:340]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:349]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:358]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:367]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_generator' (8#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:233]
+INFO: [Synth 8-6157] synthesizing module 'pixel_output_state_graph_menu' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:481]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter TitleY bound to: 4 - type: integer 
+	Parameter Row1Y bound to: 24 - type: integer 
+	Parameter Row2Y bound to: 40 - type: integer 
+	Parameter CharWidth bound to: 6 - type: integer 
+	Parameter TitleStartX bound to: 9 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:500]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:509]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:518]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:527]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:536]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:545]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:554]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:563]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:572]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:581]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:590]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:599]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:608]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:617]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:626]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:635]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:644]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:653]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:662]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:671]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:680]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_state_graph_menu' (9#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:481]
+INFO: [Synth 8-6157] synthesizing module 'confirmation_screen' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:893]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter Line1Y bound to: 18 - type: integer 
+	Parameter Line2Y bound to: 30 - type: integer 
+	Parameter Line3Y bound to: 42 - type: integer 
+	Parameter CharWidth bound to: 6 - type: integer 
+	Parameter Line1StartX bound to: 0 - type: integer 
+	Parameter Line2StartX bound to: 9 - type: integer 
+	Parameter Line3StartX bound to: 24 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:909]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:918]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:927]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:936]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:945]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:954]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:963]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:972]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:981]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:990]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:999]
+INFO: [Common 17-14] Message 'Synth 8-155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'confirmation_screen' (10#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:893]
+INFO: [Synth 8-6157] synthesizing module 'equation_display' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:1883]
+	Parameter POLYNOMIAL bound to: 2'b00 
+	Parameter COSINE bound to: 2'b01 
+	Parameter SINE bound to: 2'b10 
+	Parameter NOT_SET bound to: 8'b01111111 
+	Parameter SCREEN_WIDTH bound to: 96 - type: integer 
+	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
+	Parameter COLOR_BLACK bound to: 16'b0000000000000000 
+	Parameter COLOR_GREEN bound to: 16'b0000011111100000 
+	Parameter CHAR_WIDTH bound to: 6 - type: integer 
+	Parameter CHAR_HEIGHT bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'equation_display' (11#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:1883]
+INFO: [Synth 8-6157] synthesizing module 'keypad_screen' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2576]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter ButtonWidth bound to: 16 - type: integer 
+	Parameter ButtonHeight bound to: 12 - type: integer 
+	Parameter ButtonSpacingX bound to: 8 - type: integer 
+	Parameter ButtonSpacingY bound to: 4 - type: integer 
+	Parameter KeypadStartX bound to: 12 - type: integer 
+	Parameter KeypadStartY bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2715]
+INFO: [Synth 8-6155] done synthesizing module 'keypad_screen' (12#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv:2576]
+INFO: [Synth 8-6157] synthesizing module 'graph_plotter' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:183]
+	Parameter POLY bound to: 2'b00 
+	Parameter COS bound to: 2'b01 
+	Parameter SIN bound to: 2'b10 
+	Parameter NOT_SET bound to: 8'b01111111 
+	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
+	Parameter COLOR_BLACK bound to: 16'b0000000000000000 
+	Parameter COLOR_BLUE bound to: 16'b0000000000011111 
+	Parameter COLOR_RED bound to: 16'b1111100000000000 
+	Parameter COLOR_MAGENTA bound to: 16'b1111100000011111 
+	Parameter COLOR_GRAY bound to: 16'b1011110111110111 
+INFO: [Synth 8-6157] synthesizing module 'trig_lut' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'trig_lut' (13#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:8]
+INFO: [Synth 8-6157] synthesizing module 'text_display' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:117]
+	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
+INFO: [Synth 8-6157] synthesizing module 'digit_rom' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'digit_rom' (14#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'text_display' (15#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:117]
+WARNING: [Synth 8-6014] Unused sequential element da_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:256]
+WARNING: [Synth 8-6014] Unused sequential element db_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:257]
+WARNING: [Synth 8-6014] Unused sequential element dc_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:258]
+WARNING: [Synth 8-6014] Unused sequential element xs1_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:261]
+WARNING: [Synth 8-6014] Unused sequential element ys1_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:262]
+WARNING: [Synth 8-6014] Unused sequential element disc_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:267]
+WARNING: [Synth 8-6014] Unused sequential element sq_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:269]
+WARNING: [Synth 8-6014] Unused sequential element xs2_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:272]
+WARNING: [Synth 8-6014] Unused sequential element ys2_reg was removed.  [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:273]
+INFO: [Synth 8-6155] done synthesizing module 'graph_plotter' (16#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graph_plotter.v:183]
+INFO: [Synth 8-6155] done synthesizing module 'graphing_calculator_top' (17#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:449]
+INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter PixelCount bound to: 6144 - type: integer 
+	Parameter PixelCountWidth bound to: 13 - type: integer 
+	Parameter ClkFreq bound to: 6250000 - type: integer 
+	Parameter FrameFreq bound to: 60 - type: integer 
+	Parameter FrameDiv bound to: 104166 - type: integer 
+	Parameter FrameDivWidth bound to: 17 - type: integer 
+	Parameter PowerDelay bound to: 20 - type: integer 
+	Parameter ResetDelay bound to: 3 - type: integer 
+	Parameter VccEnDelay bound to: 20 - type: integer 
+	Parameter StartupCompleteDelay bound to: 100 - type: integer 
+	Parameter MaxDelay bound to: 100 - type: integer 
+	Parameter MaxDelayCount bound to: 625000 - type: integer 
+	Parameter StateCount bound to: 32 - type: integer 
+	Parameter StateWidth bound to: 5 - type: integer 
+	Parameter PowerUp bound to: 5'b00000 
+	Parameter Reset bound to: 5'b00001 
+	Parameter ReleaseReset bound to: 5'b00011 
+	Parameter EnableDriver bound to: 5'b00010 
+	Parameter DisplayOff bound to: 5'b00110 
+	Parameter SetRemapDisplayFormat bound to: 5'b00111 
+	Parameter SetStartLine bound to: 5'b00101 
+	Parameter SetOffset bound to: 5'b00100 
+	Parameter SetNormalDisplay bound to: 5'b01100 
+	Parameter SetMultiplexRatio bound to: 5'b01101 
+	Parameter SetMasterConfiguration bound to: 5'b01111 
+	Parameter DisablePowerSave bound to: 5'b01110 
+	Parameter SetPhaseAdjust bound to: 5'b01010 
+	Parameter SetDisplayClock bound to: 5'b01011 
+	Parameter SetSecondPrechargeA bound to: 5'b01001 
+	Parameter SetSecondPrechargeB bound to: 5'b01000 
+	Parameter SetSecondPrechargeC bound to: 5'b11000 
+	Parameter SetPrechargeLevel bound to: 5'b11001 
+	Parameter SetVCOMH bound to: 5'b11011 
+	Parameter SetMasterCurrent bound to: 5'b11010 
+	Parameter SetContrastA bound to: 5'b11110 
+	Parameter SetContrastB bound to: 5'b11111 
+	Parameter SetContrastC bound to: 5'b11101 
+	Parameter DisableScrolling bound to: 5'b11100 
+	Parameter ClearScreen bound to: 5'b10100 
+	Parameter VccEn bound to: 5'b10101 
+	Parameter DisplayOn bound to: 5'b10111 
+	Parameter PrepareNextFrame bound to: 5'b10110 
+	Parameter SetColAddress bound to: 5'b10010 
+	Parameter SetRowAddress bound to: 5'b10011 
+	Parameter WaitNextFrame bound to: 5'b10001 
+	Parameter SendPixel bound to: 5'b10000 
+	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
+	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:110]
+INFO: [Synth 8-226] default block is never used [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:185]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:333]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display' (18#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_top' (19#1) [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/top_top.v:145]
+WARNING: [Synth 8-3331] design equation_display has unconnected port clk
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[7]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[6]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[5]
+WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[4]
+WARNING: [Synth 8-3331] design graphing_calculator_top has unconnected port main_menu_switch
+WARNING: [Synth 8-3331] design top_top has unconnected port JB[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port JA[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[15]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[10]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 442.281 ; gain = 184.781
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 442.281 ; gain = 184.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 442.281 ; gain = 184.781
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[7]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 792.578 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 792.578 ; gain = 535.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 792.578 ; gain = 535.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 792.578 ; gain = 535.078
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "slow_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "enter_pressed" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5587] ROM size for "get_line2_char" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "get_line3_char" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5544] ROM "g2_coeff_c_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_b_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_a_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_c_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_b_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "g2_coeff_a_pos" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_color" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii9" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii10" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii13" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii14" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii17" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii18" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii21" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii22" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii25" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii26" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii29" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii30" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii33" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii34" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii37" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "digit_to_ascii38" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "trig_val" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sol_x_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sol_cnt_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sol_x_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sol_cnt_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sol_cnt" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "b" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'graphing_calculator_top'
+INFO: [Synth 8-5544] ROM "keypad_enable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "screen1_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'oled_display'
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+         STATE_MAIN_MENU |                               00 |                              000
+        STATE_GRAPH_MENU |                               01 |                              001
+             STATE_INPUT |                               10 |                              010
+          STATE_GRAPHING |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'graphing_calculator_top'
+WARNING: [Synth 8-327] inferring latch for variable 'screen1_data_reg' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:822]
+WARNING: [Synth 8-327] inferring latch for variable 'screen2_data_reg' [C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.srcs/sources_1/new/graphing_calculator_top.v:823]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 PowerUp | 00000000100000000000000000000000 |                            00000
+                   Reset | 00000000000100000000000000000000 |                            00001
+            ReleaseReset | 00000000000000000000100000000000 |                            00011
+            EnableDriver | 00000000000000000001000000000000 |                            00010
+              DisplayOff | 00000000000000000100000000000000 |                            00110
+   SetRemapDisplayFormat | 00000100000000000000000000000000 |                            00111
+            SetStartLine | 00001000000000000000000000000000 |                            00101
+               SetOffset | 10000000000000000000000000000000 |                            00100
+        SetNormalDisplay | 00000000000000000000000010000000 |                            01100
+       SetMultiplexRatio | 00000000000000000000000000100000 |                            01101
+  SetMasterConfiguration | 00000000000000000000000001000000 |                            01111
+        DisablePowerSave | 00000000000000000000000000000100 |                            01110
+          SetPhaseAdjust | 00000000000000000000000000001000 |                            01010
+         SetDisplayClock | 00000000001000000000000000000000 |                            01011
+     SetSecondPrechargeA | 00000000010000000000000000000000 |                            01001
+     SetSecondPrechargeB | 01000000000000000000000000000000 |                            01000
+     SetSecondPrechargeC | 00000010000000000000000000000000 |                            11000
+       SetPrechargeLevel | 00000001000000000000000000000000 |                            11001
+                SetVCOMH | 00000000000000010000000000000000 |                            11011
+        SetMasterCurrent | 00000000000000100000000000000000 |                            11010
+            SetContrastA | 00000000000001000000000000000000 |                            11110
+            SetContrastB | 00100000000000000000000000000000 |                            11111
+            SetContrastC | 00000000000000000000000000000001 |                            11101
+        DisableScrolling | 00000000000000000000000000000010 |                            11100
+             ClearScreen | 00000000000000000000000000010000 |                            10100
+                   VccEn | 00010000000000000000000000000000 |                            10101
+               DisplayOn | 00000000000010000000000000000000 |                            10111
+        PrepareNextFrame | 00000000000000001000000000000000 |                            10110
+           SetColAddress | 00000000000000000000010000000000 |                            10010
+           SetRowAddress | 00000000000000000000000100000000 |                            10011
+           WaitNextFrame | 00000000000000000000001000000000 |                            10001
+               SendPixel | 00000000000000000010000000000000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'oled_display'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 792.578 ; gain = 535.078
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter__GBM0          |           1|     22008|
+|2     |graph_plotter__GBM1          |           1|      4271|
+|3     |graph_plotter__GBM2          |           1|       290|
+|4     |graph_plotter__GBM3          |           1|       273|
+|5     |graphing_calculator_top__GC0 |           1|     30468|
+|6     |top_top__GC0                 |           1|      5383|
++------+-----------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 28    
+	   3 Input     32 Bit       Adders := 20    
+	   3 Input     18 Bit       Adders := 4     
+	   2 Input     17 Bit       Adders := 14    
+	   2 Input     16 Bit       Adders := 20    
+	   3 Input     16 Bit       Adders := 6     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 12    
+	   2 Input      7 Bit       Adders := 30    
+	   2 Input      6 Bit       Adders := 15    
+	   2 Input      5 Bit       Adders := 12    
+	   2 Input      4 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 29    
+	   2 Input      2 Bit       Adders := 5     
++---Registers : 
+	               40 Bit    Registers := 2     
+	               17 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 29    
+	                7 Bit    Registers := 8     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 11    
+	                1 Bit    Registers := 50    
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 64    
+	  32 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 139   
+	   3 Input     16 Bit        Muxes := 15    
+	   5 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 5     
+	   2 Input     11 Bit        Muxes := 5     
+	   5 Input     11 Bit        Muxes := 1     
+	  49 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 13    
+	   2 Input      7 Bit        Muxes := 15    
+	   8 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 3     
+	  12 Input      7 Bit        Muxes := 1     
+	   7 Input      7 Bit        Muxes := 2     
+	   5 Input      7 Bit        Muxes := 2     
+	  14 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 14    
+	   4 Input      6 Bit        Muxes := 5     
+	   7 Input      6 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 194   
+	  11 Input      5 Bit        Muxes := 2     
+	  14 Input      5 Bit        Muxes := 1     
+	  23 Input      5 Bit        Muxes := 3     
+	  32 Input      5 Bit        Muxes := 24    
+	   2 Input      5 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 29    
+	   3 Input      4 Bit        Muxes := 2     
+	  12 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 18    
+	   3 Input      2 Bit        Muxes := 3     
+	  12 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 83    
+	   8 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module trig_lut 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input     16 Bit       Adders := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 4     
+	   3 Input     16 Bit        Muxes := 1     
+	  49 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+Module digit_rom 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 1     
+Module text_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 13    
+	   3 Input      4 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module graph_plotter 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 9     
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     18 Bit       Adders := 2     
+	   2 Input     17 Bit       Adders := 6     
+	   2 Input     16 Bit       Adders := 6     
+	   3 Input     16 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 6     
++---Registers : 
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 23    
+	   3 Input     16 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 6     
+	   2 Input      2 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 12    
+Module menu_logic_module 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	  12 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module keypad_logic_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 4     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	  12 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 6     
+Module equation_input_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 11    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 1     
+Module ti85_display_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 20    
+	  11 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module pixel_output_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  12 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 26    
+	  14 Input      5 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module pixel_output_state_graph_menu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   7 Input      7 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 6     
+	   5 Input      7 Bit        Muxes := 2     
+	  14 Input      7 Bit        Muxes := 2     
+	   4 Input      7 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 2     
+	   8 Input      5 Bit        Muxes := 42    
+	  23 Input      5 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+Module confirmation_screen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 6     
+Module equation_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 26    
+	   2 Input      3 Bit       Adders := 17    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 117   
+	   5 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 5     
+	   5 Input     11 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 62    
+	  32 Input      5 Bit        Muxes := 22    
+	   3 Input      3 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+Module keypad_screen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 3     
+	   7 Input      6 Bit        Muxes := 1     
+	   8 Input      5 Bit        Muxes := 12    
+Module graphing_calculator_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 17    
+	   4 Input      1 Bit        Muxes := 1     
+Module freq_625m 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module debounce 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
+Module oled_display__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module oled_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "sol_cnt_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sol_x_prev" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP g2_y_prev2, operation Mode is: A*B.
+DSP Report: operator g2_y_prev2 is absorbed into DSP g2_y_prev2.
+DSP Report: Generating DSP g2_y_prev1, operation Mode is: A*(B:0x29).
+DSP Report: operator g2_y_prev1 is absorbed into DSP g2_y_prev1.
+DSP Report: Generating DSP calc_poly6_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly6_return2 is absorbed into DSP calc_poly6_return2.
+DSP Report: Generating DSP calc_poly6_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly6_return0 is absorbed into DSP calc_poly6_return0.
+DSP Report: operator calc_poly6_return2 is absorbed into DSP calc_poly6_return0.
+DSP Report: Generating DSP calc_poly5_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly5_return2 is absorbed into DSP calc_poly5_return2.
+DSP Report: Generating DSP calc_poly5_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly5_return3 is absorbed into DSP calc_poly5_return3.
+DSP Report: Generating DSP calc_poly5_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly5_return0 is absorbed into DSP calc_poly5_return0.
+DSP Report: operator calc_poly5_return2 is absorbed into DSP calc_poly5_return0.
+DSP Report: Generating DSP calc_poly7_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly7_return2 is absorbed into DSP calc_poly7_return2.
+DSP Report: Generating DSP calc_poly7_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly7_return3 is absorbed into DSP calc_poly7_return3.
+DSP Report: Generating DSP calc_poly7_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly7_return0 is absorbed into DSP calc_poly7_return0.
+DSP Report: operator calc_poly7_return2 is absorbed into DSP calc_poly7_return0.
+DSP Report: Generating DSP g1_y_prev2, operation Mode is: A*B.
+DSP Report: operator g1_y_prev2 is absorbed into DSP g1_y_prev2.
+DSP Report: Generating DSP g1_y_prev1, operation Mode is: A*(B:0x29).
+DSP Report: operator g1_y_prev1 is absorbed into DSP g1_y_prev1.
+DSP Report: Generating DSP calc_poly3_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly3_return2 is absorbed into DSP calc_poly3_return2.
+DSP Report: Generating DSP calc_poly3_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly3_return0 is absorbed into DSP calc_poly3_return0.
+DSP Report: operator calc_poly3_return2 is absorbed into DSP calc_poly3_return0.
+DSP Report: Generating DSP calc_poly2_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly2_return2 is absorbed into DSP calc_poly2_return2.
+DSP Report: Generating DSP calc_poly2_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly2_return3 is absorbed into DSP calc_poly2_return3.
+DSP Report: Generating DSP calc_poly2_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly2_return0 is absorbed into DSP calc_poly2_return0.
+DSP Report: operator calc_poly2_return2 is absorbed into DSP calc_poly2_return0.
+DSP Report: Generating DSP calc_poly4_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly4_return2 is absorbed into DSP calc_poly4_return2.
+DSP Report: Generating DSP calc_poly4_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly4_return3 is absorbed into DSP calc_poly4_return3.
+DSP Report: Generating DSP calc_poly4_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly4_return0 is absorbed into DSP calc_poly4_return0.
+DSP Report: operator calc_poly4_return2 is absorbed into DSP calc_poly4_return0.
+DSP Report: Generating DSP sol_cnt3, operation Mode is: A*B.
+DSP Report: operator sol_cnt3 is absorbed into DSP sol_cnt3.
+DSP Report: Generating DSP sol_cnt2, operation Mode is: C+A*B+1.
+DSP Report: operator sol_cnt2 is absorbed into DSP sol_cnt2.
+DSP Report: operator sol_cnt3 is absorbed into DSP sol_cnt2.
+DSP Report: Generating DSP a0, operation Mode is: (C:0xfffffff00000)+A*B.
+DSP Report: operator a0 is absorbed into DSP a0.
+DSP Report: operator sol_cnt3 is absorbed into DSP a0.
+DSP Report: Generating DSP a0, operation Mode is: PCIN-A*B.
+DSP Report: operator a0 is absorbed into DSP a0.
+DSP Report: operator sol_cnt3 is absorbed into DSP a0.
+DSP Report: Generating DSP calc_poly1_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly1_return2 is absorbed into DSP calc_poly1_return2.
+DSP Report: Generating DSP calc_poly1_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly1_return3 is absorbed into DSP calc_poly1_return3.
+DSP Report: Generating DSP calc_poly1_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly1_return0 is absorbed into DSP calc_poly1_return0.
+DSP Report: operator calc_poly1_return2 is absorbed into DSP calc_poly1_return0.
+DSP Report: Generating DSP calc_poly0_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly0_return2 is absorbed into DSP calc_poly0_return2.
+DSP Report: Generating DSP calc_poly0_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly0_return3 is absorbed into DSP calc_poly0_return3.
+DSP Report: Generating DSP calc_poly0_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly0_return0 is absorbed into DSP calc_poly0_return0.
+DSP Report: operator calc_poly0_return2 is absorbed into DSP calc_poly0_return0.
+DSP Report: Generating DSP calc_poly_return2, operation Mode is: A*B.
+DSP Report: operator calc_poly_return2 is absorbed into DSP calc_poly_return2.
+DSP Report: Generating DSP calc_poly_return3, operation Mode is: A*B.
+DSP Report: operator calc_poly_return3 is absorbed into DSP calc_poly_return3.
+DSP Report: Generating DSP calc_poly_return0, operation Mode is: C+A*B.
+DSP Report: operator calc_poly_return0 is absorbed into DSP calc_poly_return0.
+DSP Report: operator calc_poly_return2 is absorbed into DSP calc_poly_return0.
+INFO: [Synth 8-5544] ROM "p_0_out" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3917] design top_top has port led[7] driven by constant 0
+WARNING: [Synth 8-3331] design top_top has unconnected port JB[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port JA[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[15]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[10]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port led[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[14]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[13]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[12]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[11]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[9]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[8]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[7]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[6]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[5]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[4]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[3]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[2]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[1]
+WARNING: [Synth 8-3331] design top_top has unconnected port sw[0]
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[0]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[1]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[2]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[3]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[5]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[6]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[7]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[8]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[9]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[10]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[11]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[12]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[13]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/keypad_screen_inst/pixel_data_reg[14]' (FDR) to 'f1i_9/keypad_screen_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[0]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[1]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[2]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[3]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[5]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[6]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[7]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[8]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[9]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[10]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[11]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[12]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[13]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[14]' (FD) to 'f1i_9/pixel_output_state_graph_menu_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_9/\state_prev_reg[2] )
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/digit_count_reg[1]' (FDCE) to 'f1i_9/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/temp_coeff_reg[4]' (FDCE) to 'f1i_9/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/temp_coeff_reg[5]' (FDCE) to 'f1i_9/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/temp_coeff_reg[6]' (FDCE) to 'f1i_9/equation_input_inst/temp_coeff_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_9/\equation_input_inst/temp_coeff_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_9/\equation_input_inst/current_graph_slot_reg[1] )
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_sin_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_sin_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_cos_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_cos_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_c_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_c_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_b_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_b_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g2_poly_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_sin_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_sin_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_cos_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_cos_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_c_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_c_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_b_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_b_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_a_reg[4]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_9/equation_input_inst/g1_poly_coeff_a_reg[5]' (FDPE) to 'f1i_9/equation_input_inst/g1_poly_coeff_a_reg[6]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:52 . Memory (MB): peak = 1019.141 ; gain = 761.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++--------------------+----------------+---------------+----------------+
+|Module Name         | RTL Object     | Depth x Width | Implemented As | 
++--------------------+----------------+---------------+----------------+
+|confirmation_screen | get_line1_char | 32x7          | LUT            | 
+|trig_lut            | trig_val       | 64x8          | LUT            | 
+|confirmation_screen | get_line1_char | 32x7          | LUT            | 
++--------------------+----------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*(B:0x29)             | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*(B:0x29)             | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 20     | 16     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B+1                | 16     | 16     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | (C:0xfffffff00000)+A*B | 16     | 16     | 21     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | PCIN-A*B               | 20     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter__GBM0          |           2|     11459|
+|2     |graph_plotter__GBM1          |           2|      1922|
+|3     |graph_plotter__GBM2          |           2|        87|
+|4     |graph_plotter__GBM3          |           2|       185|
+|5     |graphing_calculator_top__GC0 |           1|     11579|
+|6     |top_top__GC0                 |           1|      1911|
++------+-----------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 1019.141 ; gain = 761.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 1019.141 ; gain = 761.641
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-----------------------------+------------+----------+
+|      |RTL Partition                |Replication |Instances |
++------+-----------------------------+------------+----------+
+|1     |graph_plotter__GBM0          |           2|     11459|
+|2     |graph_plotter__GBM1          |           2|      1922|
+|3     |graph_plotter__GBM2          |           2|        87|
+|4     |graph_plotter__GBM3          |           2|       185|
+|5     |graphing_calculator_top__GC0 |           1|     11579|
+|6     |top_top__GC0                 |           1|      1911|
++------+-----------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net \f1/graph_display_1/x_val [9] is driving 68 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net \f1/graph_display_2/x_val [9] is driving 68 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net n_0_10551 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net \f1/equation_input_inst/g1_poly_coeff_a_reg[7]_rep_n_0  is driving 66 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net n_0_4238 is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+INFO: [Synth 8-6064] Net \f1/equation_input_inst/g1_poly_coeff_b_reg_n_0_[7]  is driving 99 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
+INFO: [Synth 8-6064] Net \f1/equation_input_inst/g2_poly_coeff_b_reg_n_0_[7]  is driving 66 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:06 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:06 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:08 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |  3003|
+|3     |DSP48E1   |    44|
+|4     |DSP48E1_1 |    22|
+|5     |LUT1      |   757|
+|6     |LUT2      |  3038|
+|7     |LUT3      |  1744|
+|8     |LUT4      |  5619|
+|9     |LUT5      |  3470|
+|10    |LUT6      |  3309|
+|11    |MUXF7     |    34|
+|12    |MUXF8     |     1|
+|13    |FDCE      |    89|
+|14    |FDE_1     |    64|
+|15    |FDPE      |    51|
+|16    |FDRE      |   479|
+|17    |FDSE      |    20|
+|18    |IBUF      |     8|
+|19    |OBUF      |    22|
+|20    |OBUFT     |    10|
++------+----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+------------------------------+------+
+|      |Instance                               |Module                        |Cells |
++------+---------------------------------------+------------------------------+------+
+|1     |top                                    |                              | 21786|
+|2     |  c0                                   |freq_625m                     |    15|
+|3     |  f0                                   |debouncer_parent              |   368|
+|4     |    d0                                 |debounce                      |    73|
+|5     |    d1                                 |debounce_2                    |    74|
+|6     |    d2                                 |debounce_3                    |    74|
+|7     |    d3                                 |debounce_4                    |    73|
+|8     |    d4                                 |debounce_5                    |    74|
+|9     |  f1                                   |graphing_calculator_top       | 14046|
+|10    |    confirmation_screen_inst           |confirmation_screen           |   135|
+|11    |    equation_input_inst                |equation_input_module         |  7055|
+|12    |    graph_display_1                    |graph_plotter                 |  2593|
+|13    |    graph_display_2                    |graph_plotter_1               |  2598|
+|14    |    keypad_inst                        |keypad_logic_module           |    44|
+|15    |    keypad_screen_inst                 |keypad_screen                 |    24|
+|16    |    menu_logic_inst                    |menu_logic_module             |  1264|
+|17    |    pixel_output_generator_inst        |pixel_output_generator        |   103|
+|18    |    pixel_output_state_graph_menu_inst |pixel_output_state_graph_menu |   144|
+|19    |    ti85_display_inst                  |ti85_display_module           |    80|
+|20    |  g0                                   |oled_display                  |  1849|
+|21    |  g1                                   |oled_display_0                |  2561|
++------+---------------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:08 . Memory (MB): peak = 1106.754 ; gain = 849.254
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 1106.754 ; gain = 498.957
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:08 . Memory (MB): peak = 1106.754 ; gain = 849.254
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 3176 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  FDE_1 => FDRE (inverted pins: C): 64 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+278 Infos, 106 Warnings, 12 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:11 . Memory (MB): peak = 1106.754 ; gain = 861.934
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/sarav/EE2026_lab/Final_project/assistance_export.xpr/FDP/FDP.runs/synth_1/top_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_top_utilization_synth.rpt -pb top_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1106.754 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 21 13:59:07 2025...

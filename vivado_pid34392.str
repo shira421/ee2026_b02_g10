@@ -1,0 +1,174 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 34392
+License: Customer
+
+Current time: 	Sun Oct 19 10:08:28 SGT 2025
+Time zone: 	Singapore Time (Asia/Singapore)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 28
+
+Screen size: 2048x1152
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 388 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	sarav
+User home directory: C:/Users/sarav
+User working directory: C:/Users/sarav/Downloads/assistance_export.xpr/FDP
+User country: 	AU
+User language: 	en
+User locale: 	en_AU
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/sarav/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/sarav/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/sarav/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/sarav/Downloads/assistance_export.xpr/FDP/vivado.log
+Vivado journal file location: 	C:/Users/sarav/Downloads/assistance_export.xpr/FDP/vivado.jou
+Engine tmp dir: 	C:/Users/sarav/Downloads/assistance_export.xpr/FDP/.Xil/Vivado-34392-Akshay
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	207 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 642 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 21 MB (+19418kb) [00:00:05]
+// [Engine Memory]: 272 MB (+133564kb) [00:00:05]
+// [GUI Memory]: 24 MB (+2654kb) [00:00:10]
+// [GUI Memory]: 31 MB (+5296kb) [00:00:15]
+// [GUI Memory]: 35 MB (+3078kb) [00:00:20]
+// TclEventType: START_GUI
+// [Engine Memory]: 390 MB (+109621kb) [00:00:26]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\sarav\Downloads\assistance_export.xpr\FDP\FDP.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/sarav/Downloads/assistance_export.xpr/FDP/FDP.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/sarav/Downloads/assistance_export.xpr/FDP/FDP.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/samue/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14140-dorn_pc/PrjAr/_X_' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [GUI Memory]: 100 MB (+66248kb) [00:00:31]
+// [Engine Memory]: 528 MB (+123808kb) [00:00:31]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 599 MB (+47494kb) [00:00:32]
+// [Engine Memory]: 630 MB (+1006kb) [00:00:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 642 MB. GUI used memory: 46 MB. Current time: 10/19/25 10:08:29 AM SGT
+// Project name: FDP; location: C:/Users/sarav/Downloads/assistance_export.xpr/FDP; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 46 MB. Current time: 10/19/25 10:38:31 AM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 43 MB. Current time: 10/19/25 11:08:34 AM SGT
+// [GUI Memory]: 106 MB (+518kb) [01:08:29]
+// [GUI Memory]: 112 MB (+1050kb) [01:08:54]
+// [GUI Memory]: 118 MB (+741kb) [01:09:19]
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 11:38:36 AM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 44 MB. Current time: 10/19/25 12:08:39 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 43 MB. Current time: 10/19/25 12:38:42 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 43 MB. Current time: 10/19/25 1:30:29 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 2:00:31 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 43 MB. Current time: 10/19/25 2:30:33 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 3:00:36 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 3:30:39 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 4:00:42 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 4:30:45 PM SGT
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 42 MB. Current time: 10/19/25 5:00:47 PM SGT
+// Elapsed time: 26180 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v)]", 1); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v)]", 4); // B (D, ck)
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), menu_logic_inst : menu_logic_module (menu_logic_module.v)]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), menu_logic_inst : menu_logic_module (menu_logic_module.v)]", 5, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), keypad_inst : keypad_logic_module (keypad_logic_module.sv)]", 6, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), keypad_inst : keypad_logic_module (keypad_logic_module.sv)]", 6, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), equation_input_inst : equation_input_module (equation_input_module.v)]", 7, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), equation_input_inst : equation_input_module (equation_input_module.v)]", 7, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), x_val_gen_inst : x_value_generator (x_value_generator.v)]", 8, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), x_val_gen_inst : x_value_generator (x_value_generator.v)]", 8, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v)]", 9, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g2 : sine_func (sine_function.v)]", 13, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g1 : sine_func (sine_function.v)]", 10, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g1 : sine_func (sine_function.v)]", 10, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), cosine_func_g1 : cosine_func (cosine_function.v)]", 11, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), cosine_func_g1 : cosine_func (cosine_function.v)]", 11, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), poly_engine_g1 : polynomial_engine (polynomial_engine.v)]", 12, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), poly_engine_g1 : polynomial_engine (polynomial_engine.v)]", 12, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g2 : sine_func (sine_function.v)]", 13, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g2 : sine_func (sine_function.v)]", 13, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), cosine_func_g2 : cosine_func (cosine_function.v)]", 14, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), cosine_func_g2 : cosine_func (cosine_function.v)]", 14, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), poly_engine_g2 : polynomial_engine (polynomial_engine.v)]", 15, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), poly_engine_g2 : polynomial_engine (polynomial_engine.v)]", 15, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_state_graph_menu_inst : pixel_output_state_graph_menu (ti85_display_module.sv)]", 18, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_state_graph_menu_inst : pixel_output_state_graph_menu (ti85_display_module.sv)]", 18, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 245 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), ti85_display_inst : ti85_display_module (ti85_display_module.sv)]", 16, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), ti85_display_inst : ti85_display_module (ti85_display_module.sv)]", 16, false, false, false, false, false, true); // B (D, ck) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 660 MB. GUI used memory: 50 MB. Current time: 10/19/25 5:30:50 PM SGT
+// Elapsed time: 111 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 60 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), reset_message_display_inst_2 : reset_message_display_module (ti85_display_module.sv)]", 23, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), reset_message_display_inst_2 : reset_message_display_module (ti85_display_module.sv)]", 23, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), reset_message_display_inst : reset_message_display_module (ti85_display_module.sv)]", 22, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), reset_message_display_inst : reset_message_display_module (ti85_display_module.sv)]", 22, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), pixel_output_generator_inst : pixel_output_generator (ti85_display_module.sv)]", 17, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v)]", 4, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v)]", 4, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v)]", 4); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g1 : sine_func (sine_function.v)]", 10, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_top (top_top.v), f1 : graphing_calculator_top (graphing_calculator_top.v), y_output_inst : y_output_module (y_output_module.v), sine_func_g1 : sine_func (sine_function.v)]", 10, false, false, false, false, false, true); // B (D, ck) - Double Click
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21); // u (O, ck)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21); // u (O, ck)
+// Elapsed time: 60 seconds
+selectCodeEditor("sine_function.v", 53, 491); // ce (w, ck)
+selectCodeEditor("sine_function.v", 513, 491); // ce (w, ck)
