@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Tue Oct 21 00:12:37 2025
-| Host         : dorn_pc running 64-bit major release  (build 9200)
+| Date         : Tue Oct 21 13:59:53 2025
+| Host         : Akshay running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_top_control_sets_placed.rpt
 | Design       : top_top
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    41 |
-| Unused register locations in slices containing registers |   120 |
+| Number of unique control sets                            |    47 |
+| Unused register locations in slices containing registers |   114 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,9 +36,8 @@ Table of Contents
 +--------+--------------+
 |      8 |            2 |
 |     10 |            1 |
-|     12 |            4 |
-|     14 |            1 |
-|    16+ |           33 |
+|     12 |            9 |
+|    16+ |           35 |
 +--------+--------------+
 
 
@@ -48,12 +47,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              74 |           26 |
-| No           | No                    | Yes                    |              82 |           15 |
+| No           | No                    | No                     |              86 |           27 |
+| No           | No                    | Yes                    |              72 |           14 |
 | No           | Yes                   | No                     |             424 |           74 |
-| Yes          | No                    | No                     |             208 |           28 |
-| Yes          | No                    | Yes                    |             268 |          100 |
-| Yes          | Yes                   | No                     |             160 |           26 |
+| Yes          | No                    | No                     |             208 |           24 |
+| Yes          | No                    | Yes                    |             208 |           70 |
+| Yes          | Yes                   | No                     |             408 |          107 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -63,47 +62,53 @@ Table of Contents
 +----------------+---------------------------------------------------+---------------------------------+------------------+----------------+
 |  Clock Signal  |                   Enable Signal                   |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
 +----------------+---------------------------------------------------+---------------------------------+------------------+----------------+
-|  freq625m_BUFG | f1/keypad_inst/btnC_edge_filtered                 | sw_IBUF[15]                     |                1 |              8 |
 | ~freq625m_BUFG |                                                   |                                 |                4 |              8 |
+|  freq625m_BUFG | f1/keypad_inst/btnC_edge_filtered                 | sw_IBUF[15]                     |                1 |              8 |
 |  clk_IBUF_BUFG |                                                   | c0/ctr[4]_i_1_n_0               |                1 |             10 |
-|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_c[7]_i_1_n_0 | sw_IBUF[15]                     |                2 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_c[7]_i_1_n_0 | sw_IBUF[15]                     |                3 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/temp_coeff124_out          | sw_IBUF[15]                     |                4 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g1_cos_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |                4 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g1_sin_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |                4 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_c[7]_i_1_n_0 | sw_IBUF[15]                     |                3 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_a[7]_i_1_n_0 | sw_IBUF[15]                     |                3 |             12 |
+|  freq625m_BUFG | f1/equation_input_inst/g2_cos_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |                3 |             12 |
 |  freq625m_BUFG | f1/keypad_inst/E[0]                               | sw_IBUF[15]                     |                3 |             12 |
-|  freq625m_BUFG | f1/equation_input_inst/temp_coeff124_out          | sw_IBUF[15]                     |                3 |             12 |
-|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_c[7]_i_1_n_0 | sw_IBUF[15]                     |                2 |             12 |
-|  freq625m_BUFG |                                                   |                                 |                5 |             14 |
-|  clk_IBUF_BUFG | f0/d0/pulse_counter                               | f0/d0/debounce_counter          |                3 |             16 |
-|  clk_IBUF_BUFG | f0/d1/pulse_counter                               | f0/d1/debounce_counter          |                2 |             16 |
-|  clk_IBUF_BUFG | f0/d1/debounce_counter[7]_i_2__0_n_0              | f0/d1/debounce_counter          |                2 |             16 |
+|  freq625m_BUFG | f1/equation_input_inst/g2_sin_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |                1 |             12 |
+|  clk_IBUF_BUFG | f0/d4/debounce_counter[7]_i_2__3_n_0              | f0/d4/debounce_counter          |                2 |             16 |
 |  clk_IBUF_BUFG | f0/d2/pulse_counter                               | f0/d2/debounce_counter          |                3 |             16 |
-|  clk_IBUF_BUFG | f0/d2/debounce_counter[7]_i_2__1_n_0              | f0/d2/debounce_counter          |                2 |             16 |
+|  clk_IBUF_BUFG | f0/d0/pulse_counter                               | f0/d0/debounce_counter          |                3 |             16 |
+|  clk_IBUF_BUFG | f0/d0/debounce_counter[7]_i_2_n_0                 | f0/d0/debounce_counter          |                3 |             16 |
+|  clk_IBUF_BUFG | f0/d1/pulse_counter                               | f0/d1/debounce_counter          |                4 |             16 |
+|  clk_IBUF_BUFG | f0/d1/debounce_counter[7]_i_2__0_n_0              | f0/d1/debounce_counter          |                3 |             16 |
+|  clk_IBUF_BUFG | f0/d2/debounce_counter[7]_i_2__1_n_0              | f0/d2/debounce_counter          |                3 |             16 |
 |  clk_IBUF_BUFG | f0/d3/debounce_counter[7]_i_2__2_n_0              | f0/d3/debounce_counter          |                3 |             16 |
-|  clk_IBUF_BUFG | f0/d3/pulse_counter                               | f0/d3/debounce_counter          |                2 |             16 |
+|  clk_IBUF_BUFG | f0/d3/pulse_counter                               | f0/d3/debounce_counter          |                3 |             16 |
 |  clk_IBUF_BUFG | f0/d4/pulse_counter                               | f0/d4/debounce_counter          |                4 |             16 |
-|  clk_IBUF_BUFG | f0/d4/debounce_counter[7]_i_2__3_n_0              | f0/d4/debounce_counter          |                3 |             16 |
-|  clk_IBUF_BUFG | f0/d0/debounce_counter[7]_i_2_n_0                 | f0/d0/debounce_counter          |                2 |             16 |
-|  freq625m_BUFG | f1/equation_input_inst/g2_cos_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |               12 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_b[7]_i_1_n_0 | sw_IBUF[15]                     |               10 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_b[7]_i_1_n_0 | sw_IBUF[15]                     |                9 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_a[7]_i_1_n_0 | sw_IBUF[15]                     |               10 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g1_sin_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |               11 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_a[7]_i_1_n_0 | sw_IBUF[15]                     |               12 |             26 |
-|  freq625m_BUFG | f1/equation_input_inst/g2_sin_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |               12 |             28 |
-|  freq625m_BUFG | f1/equation_input_inst/g1_cos_coeff_a[7]_i_1_n_0  | sw_IBUF[15]                     |               13 |             28 |
+|  freq625m_BUFG |                                                   |                                 |                9 |             26 |
+|  freq625m_BUFG | f1/equation_input_inst/g2_poly_coeff_b[7]_i_1_n_0 | sw_IBUF[15]                     |               12 |             28 |
+|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_a[7]_i_1_n_0 | sw_IBUF[15]                     |               12 |             30 |
+|  freq625m_BUFG | f1/equation_input_inst/sol_y_reg[1][0]_3[0]       | sw_IBUF[15]                     |                8 |             30 |
+|  freq625m_BUFG | f1/equation_input_inst/sol_y_reg[1][0][0]         | sw_IBUF[15]                     |                9 |             30 |
+|  freq625m_BUFG | g0/sol_x_reg[0][0][0]                             | sw_IBUF[15]                     |               11 |             30 |
+|  freq625m_BUFG | g1/sol_x_reg[0][0][0]                             | sw_IBUF[15]                     |                9 |             30 |
 | ~freq625m_BUFG |                                                   | g0/frame_counter[16]_i_1_n_0    |                4 |             32 |
 | ~freq625m_BUFG |                                                   | g1/frame_counter[16]_i_1__0_n_0 |                4 |             32 |
-|  clk_IBUF_BUFG |                                                   | f0/d3/tick_1ms_i_1__2_n_0       |                5 |             34 |
+|  freq625m_BUFG | f1/equation_input_inst/g1_poly_coeff_b[7]_i_1_n_0 | sw_IBUF[15]                     |               17 |             34 |
 |  clk_IBUF_BUFG |                                                   | f0/d2/tick_1ms_i_1__1_n_0       |                5 |             34 |
-|  clk_IBUF_BUFG |                                                   | f0/d1/tick_1ms_i_1__0_n_0       |                5 |             34 |
-|  clk_IBUF_BUFG |                                                   | f0/d0/clear                     |                5 |             34 |
+|  clk_IBUF_BUFG |                                                   | f0/d3/tick_1ms_i_1__2_n_0       |                5 |             34 |
 |  clk_IBUF_BUFG |                                                   | f0/d4/tick_1ms_i_1__3_n_0       |                5 |             34 |
-| ~freq625m_BUFG | g1/delay[0]_i_1__0_n_0                            |                                 |                5 |             40 |
+|  clk_IBUF_BUFG |                                                   | f0/d0/clear                     |                5 |             34 |
+|  clk_IBUF_BUFG |                                                   | f0/d1/tick_1ms_i_1__0_n_0       |                5 |             34 |
 | ~freq625m_BUFG | g0/delay[0]_i_1_n_0                               |                                 |                5 |             40 |
-|  clk_IBUF_BUFG |                                                   |                                 |               17 |             52 |
-| ~freq625m_BUFG | g1/FSM_onehot_state[31]_i_1__0_n_0                |                                 |                9 |             64 |
-| ~freq625m_BUFG | g0/state                                          |                                 |                9 |             64 |
-|  freq625m_BUFG |                                                   | sw_IBUF[15]                     |               15 |             82 |
-| ~freq625m_BUFG |                                                   | g1/spi_word[39]_i_1__0_n_0      |               19 |             90 |
-| ~freq625m_BUFG |                                                   | g0/spi_word[39]_i_1_n_0         |               21 |             90 |
+| ~freq625m_BUFG | g1/delay[0]_i_1__0_n_0                            |                                 |                5 |             40 |
+|  clk_IBUF_BUFG |                                                   |                                 |               14 |             52 |
+|  freq625m_BUFG | g0/sol_cnt_prev_reg[1][0]                         | sw_IBUF[15]                     |               20 |             64 |
+|  freq625m_BUFG | g1/E[0]                                           | sw_IBUF[15]                     |               19 |             64 |
+| ~freq625m_BUFG | g1/FSM_onehot_state[31]_i_1__0_n_0                |                                 |                8 |             64 |
+| ~freq625m_BUFG | g0/state                                          |                                 |                6 |             64 |
+|  freq625m_BUFG |                                                   | sw_IBUF[15]                     |               14 |             72 |
+| ~freq625m_BUFG |                                                   | g1/spi_word[39]_i_1__0_n_0      |               20 |             90 |
+| ~freq625m_BUFG |                                                   | g0/spi_word[39]_i_1_n_0         |               20 |             90 |
 +----------------+---------------------------------------------------+---------------------------------+------------------+----------------+
 
 

@@ -1,482 +1,384 @@
 // ============================================================================
-// Sine Lookup Table Module
+// OPTIMIZED FOR LOW LUT USAGE - Complete Drop-in Replacement
 // ============================================================================
-// This module provides sine values for x in range -48 to +47
-// Output is scaled by 100 (returns -100 to +100 instead of -1.0 to +1.0)
-// This allows integer arithmetic while maintaining precision
+
 // ============================================================================
-module sin_lut(
+// SHARED Sine/Cosine Lookup Table (SINGLE MODULE - saves ~40% trig LUTs)
+// ============================================================================
+module trig_lut(
     input signed [15:0] x,
-    output reg signed [15:0] sin_val
+    input is_cos,  // 0=sine, 1=cosine
+    output reg signed [15:0] trig_val
 );
-    reg signed [15:0] x_wrapped;
-    reg is_negative;
+    reg signed [15:0] x_work;
+    reg is_neg;
     
     always @(*) begin
-        // Sine is antisymmetric: sin(-x) = -sin(x)
-        is_negative = (x < 0);
-        x_wrapped = is_negative ? ((-x) % 48) : (x % 48);
+        // Handle negative inputs
+        is_neg = (x < 0);
+        x_work = is_neg ? ((-x) % 48) : (x % 48);
         
-        case (x_wrapped)
-            0:  sin_val = 0;     // sin(0 ) = 0.00
-            1:  sin_val = 13;    // sin(7.5 ) ? 0.13
-            2:  sin_val = 26;    // sin(15 ) ? 0.26
-            3:  sin_val = 38;    // sin(22.5 ) ? 0.38
-            4:  sin_val = 50;    // sin(30 ) = 0.50
-            5:  sin_val = 61;    // sin(37.5 ) ? 0.61
-            6:  sin_val = 71;    // sin(45 ) ? 0.71
-            7:  sin_val = 79;    // sin(52.5 ) ? 0.79
-            8:  sin_val = 87;    // sin(60 ) ? 0.87
-            9:  sin_val = 93;    // sin(67.5 ) ? 0.93
-            10: sin_val = 97;    // sin(75 ) ? 0.97
-            11: sin_val = 99;    // sin(82.5 ) ? 0.99
-            12: sin_val = 100;   // sin(90 ) = 1.00
-            13: sin_val = 99;    // sin(97.5 ) ? 0.99
-            14: sin_val = 97;    // sin(105 ) ? 0.97
-            15: sin_val = 93;    // sin(112.5 ) ? 0.93
-            16: sin_val = 87;    // sin(120 ) ? 0.87
-            17: sin_val = 79;    // sin(127.5 ) ? 0.79
-            18: sin_val = 71;    // sin(135 ) ? 0.71
-            19: sin_val = 61;    // sin(142.5 ) ? 0.61
-            20: sin_val = 50;    // sin(150 ) = 0.50
-            21: sin_val = 38;    // sin(157.5 ) ? 0.38
-            22: sin_val = 26;    // sin(165 ) ? 0.26
-            23: sin_val = 13;    // sin(172.5 ) ? 0.13
-            24: sin_val = 0;     // sin(180 ) = 0.00
-            25: sin_val = -13;   // sin(187.5 ) ? -0.13
-            26: sin_val = -26;   // sin(195 ) ? -0.26
-            27: sin_val = -38;   // sin(202.5 ) ? -0.38
-            28: sin_val = -50;   // sin(210 ) = -0.50
-            29: sin_val = -61;   // sin(217.5 ) ? -0.61
-            30: sin_val = -71;   // sin(225 ) ? -0.71
-            31: sin_val = -79;   // sin(232.5 ) ? -0.79
-            32: sin_val = -87;   // sin(240 ) ? -0.87
-            33: sin_val = -93;   // sin(247.5 ) ? -0.93
-            34: sin_val = -97;   // sin(255 ) ? -0.97
-            35: sin_val = -99;   // sin(262.5 ) ? -0.99
-            36: sin_val = -100;  // sin(270 ) = -1.00
-            37: sin_val = -99;   // sin(277.5 ) ? -0.99
-            38: sin_val = -97;   // sin(285 ) ? -0.97
-            39: sin_val = -93;   // sin(292.5 ) ? -0.93
-            40: sin_val = -87;   // sin(300 ) ? -0.87
-            41: sin_val = -79;   // sin(307.5 ) ? -0.79
-            42: sin_val = -71;   // sin(315 ) ? -0.71
-            43: sin_val = -61;   // sin(322.5 ) ? -0.61
-            44: sin_val = -50;   // sin(330 ) = -0.50
-            45: sin_val = -38;   // sin(337.5 ) ? -0.38
-            46: sin_val = -26;   // sin(345 ) ? -0.26
-            47: sin_val = -13;   // sin(352.5 ) ? -0.13
-            default: sin_val = 0;
+        // Cosine is just sine shifted by 12
+        if (is_cos)
+            x_work = (x_work + 12) % 48;
+        
+        // Sine lookup
+        case (x_work)
+            0:  trig_val = 0;
+            1:  trig_val = 13;
+            2:  trig_val = 26;
+            3:  trig_val = 38;
+            4:  trig_val = 50;
+            5:  trig_val = 61;
+            6:  trig_val = 71;
+            7:  trig_val = 79;
+            8:  trig_val = 87;
+            9:  trig_val = 93;
+            10: trig_val = 97;
+            11: trig_val = 99;
+            12: trig_val = 100;
+            13: trig_val = 99;
+            14: trig_val = 97;
+            15: trig_val = 93;
+            16: trig_val = 87;
+            17: trig_val = 79;
+            18: trig_val = 71;
+            19: trig_val = 61;
+            20: trig_val = 50;
+            21: trig_val = 38;
+            22: trig_val = 26;
+            23: trig_val = 13;
+            24: trig_val = 0;
+            25: trig_val = -13;
+            26: trig_val = -26;
+            27: trig_val = -38;
+            28: trig_val = -50;
+            29: trig_val = -61;
+            30: trig_val = -71;
+            31: trig_val = -79;
+            32: trig_val = -87;
+            33: trig_val = -93;
+            34: trig_val = -97;
+            35: trig_val = -99;
+            36: trig_val = -100;
+            37: trig_val = -99;
+            38: trig_val = -97;
+            39: trig_val = -93;
+            40: trig_val = -87;
+            41: trig_val = -79;
+            42: trig_val = -71;
+            43: trig_val = -61;
+            44: trig_val = -50;
+            45: trig_val = -38;
+            46: trig_val = -26;
+            47: trig_val = -13;
+            default: trig_val = 0;
         endcase
         
-        // Apply sign for negative input
-        if (is_negative)
-            sin_val = -sin_val;
+        // Negate for negative input (sine only)
+        if (!is_cos && is_neg)
+            trig_val = -trig_val;
     end
 endmodule
 
 // ============================================================================
-// Cosine Lookup Table Module
+// Simplified Font ROM - FIXED DIGIT 0
 // ============================================================================
-// This module provides cosine values for x in range -48 to +47
-// Output is scaled by 100 (returns -100 to +100 instead of -1.0 to +1.0)
-// This allows integer arithmetic while maintaining precision
-// ============================================================================
-module cos_lut(
-    input signed [15:0] x,
-    output reg signed [15:0] cos_val
+module digit_rom(
+    input [3:0] digit,
+    input [2:0] row,
+    input [1:0] col,
+    output reg pixel
 );
-    reg signed [15:0] x_abs;
-    reg signed [15:0] x_mod;
-    
     always @(*) begin
-        // Cosine is symmetric: cos(-x) = cos(x)
-        x_abs = (x < 0) ? -x : x;
-        
-        // Wrap x to 0-47 range (period = 48 for our purpose)
-        x_mod = x_abs % 48;
-        
-        case (x_mod)
-            0:  cos_val = 100;   // cos(0 ) ? 1.00
-            1:  cos_val = 99;    // cos(7.5 ) ? 0.99
-            2:  cos_val = 97;    // cos(15 ) ? 0.97
-            3:  cos_val = 93;    // cos(22.5 ) ? 0.93
-            4:  cos_val = 87;    // cos(30 ) ? 0.87
-            5:  cos_val = 79;    // cos(37.5 ) ? 0.79
-            6:  cos_val = 71;    // cos(45 ) ? 0.71
-            7:  cos_val = 61;    // cos(52.5 ) ? 0.61
-            8:  cos_val = 50;    // cos(60 ) ? 0.50
-            9:  cos_val = 38;    // cos(67.5 ) ? 0.38
-            10: cos_val = 26;    // cos(75 ) ? 0.26
-            11: cos_val = 13;    // cos(82.5 ) ? 0.13
-            12: cos_val = 0;     // cos(90 ) = 0.00
-            13: cos_val = -13;   // cos(97.5 ) ? -0.13
-            14: cos_val = -26;   // cos(105 ) ? -0.26
-            15: cos_val = -38;   // cos(112.5 ) ? -0.38
-            16: cos_val = -50;   // cos(120 ) ? -0.50
-            17: cos_val = -61;   // cos(127.5 ) ? -0.61
-            18: cos_val = -71;   // cos(135 ) ? -0.71
-            19: cos_val = -79;   // cos(142.5 ) ? -0.79
-            20: cos_val = -87;   // cos(150 ) ? -0.87
-            21: cos_val = -93;   // cos(157.5 ) ? -0.93
-            22: cos_val = -97;   // cos(165 ) ? -0.97
-            23: cos_val = -99;   // cos(172.5 ) ? -0.99
-            24: cos_val = -100;  // cos(180 ) = -1.00
-            25: cos_val = -99;   // cos(187.5 ) ? -0.99
-            26: cos_val = -97;   // cos(195 ) ? -0.97
-            27: cos_val = -93;   // cos(202.5 ) ? -0.93
-            28: cos_val = -87;   // cos(210 ) ? -0.87
-            29: cos_val = -79;   // cos(217.5 ) ? -0.79
-            30: cos_val = -71;   // cos(225 ) ? -0.71
-            31: cos_val = -61;   // cos(232.5 ) ? -0.61
-            32: cos_val = -50;   // cos(240 ) ? -0.50
-            33: cos_val = -38;   // cos(247.5 ) ? -0.38
-            34: cos_val = -26;   // cos(255 ) ? -0.26
-            35: cos_val = -13;   // cos(262.5 ) ? -0.13
-            36: cos_val = 0;     // cos(270 ) = 0.00
-            37: cos_val = 13;    // cos(277.5 ) ? 0.13
-            38: cos_val = 26;    // cos(285 ) ? 0.26
-            39: cos_val = 38;    // cos(292.5 ) ? 0.38
-            40: cos_val = 50;    // cos(300 ) ? 0.50
-            41: cos_val = 61;    // cos(307.5 ) ? 0.61
-            42: cos_val = 71;    // cos(315 ) ? 0.71
-            43: cos_val = 79;    // cos(322.5 ) ? 0.79
-            44: cos_val = 87;    // cos(330 ) ? 0.87
-            45: cos_val = 93;    // cos(337.5 ) ? 0.93
-            46: cos_val = 97;    // cos(345 ) ? 0.97
-            47: cos_val = 99;    // cos(352.5 ) ? 0.99
-            default: cos_val = 100;
+        case (digit)
+            4'd0: case (row) 3'd0, 3'd4: pixel = 1; 3'd1, 3'd2, 3'd3: pixel = (col == 0 || col == 2); default: pixel = 0; endcase  // Fixed 0
+            4'd1: pixel = (col == 1 && row < 5);
+            4'd2: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1: pixel = (col == 2); 3'd3: pixel = (col == 0); default: pixel = 0; endcase
+            4'd3: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1, 3'd3: pixel = (col == 2); default: pixel = 0; endcase
+            4'd4: case (row) 3'd0, 3'd1: pixel = (col != 1); 3'd2: pixel = 1; 3'd3, 3'd4: pixel = (col == 2); default: pixel = 0; endcase
+            4'd5: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1: pixel = (col == 0); 3'd3: pixel = (col == 2); default: pixel = 0; endcase
+            4'd6: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1: pixel = (col == 0); 3'd3: pixel = (col != 1); default: pixel = 0; endcase
+            4'd7: case (row) 3'd0: pixel = 1; default: pixel = (col == 2 && row < 5); endcase
+            4'd8: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1, 3'd3: pixel = (col != 1); default: pixel = 0; endcase
+            4'd9: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1: pixel = (col != 1); 3'd3: pixel = (col == 2); default: pixel = 0; endcase
+            4'd10: pixel = (row == 3'd2);  // minus
+            4'd11: case (row) 3'd0, 3'd4: pixel = (col != 0); 3'd1, 3'd2, 3'd3: pixel = (col == 0); default: pixel = 0; endcase  // (
+            4'd12: case (row) 3'd0, 3'd4: pixel = (col != 2); 3'd1, 3'd2, 3'd3: pixel = (col == 2); default: pixel = 0; endcase  // )
+            4'd13: pixel = (row == 3'd3 && col == 1) || (row == 3'd4 && col == 0);  // comma
+            default: pixel = 0;
         endcase
     end
 endmodule
 
-// Main Graph Plotter Module
+
+// ============================================================================
+// Optimized Text Display
+// ============================================================================
+module text_display(
+    input [6:0] screen_x,
+    input [5:0] screen_y,
+    input [1:0] intersect_count,
+    input signed [7:0] x0, x1,
+    input signed [6:0] y0, y1,
+    output reg pixel_on,
+    output reg [15:0] text_color
+);
+    localparam [15:0] COLOR_WHITE = 16'hFFFF;
+    
+    wire text_area = (screen_x >= 68 && screen_x < 96 && screen_y >= 2 && screen_y < 18);
+    wire [4:0] text_x = screen_x - 68;
+    wire [4:0] text_y = screen_y - 2;
+    wire line = (text_y >= 8);
+    wire [2:0] row = line ? (text_y - 8) : text_y[2:0];
+    wire [2:0] char = text_x[4:2];
+    wire [1:0] col = text_x[1:0];
+    
+    reg signed [7:0] disp_x;
+    reg signed [6:0] disp_y;
+    reg valid_line;
+    
+    always @(*) begin
+        if (line) begin
+            disp_x = x1; disp_y = y1; valid_line = (intersect_count >= 2'd2);
+        end else begin
+            disp_x = x0; disp_y = y0; valid_line = (intersect_count >= 2'd1);
+        end
+    end
+    
+    wire [3:0] x_ones = (disp_x[7]) ? ((-disp_x) % 10) : (disp_x % 10);
+    wire [3:0] y_ones = (disp_y[6]) ? ((-disp_y) % 10) : (disp_y % 10);
+    wire x_neg = disp_x[7];
+    wire y_neg = disp_y[6];
+    
+    reg [3:0] digit;
+    reg show;
+    
+    always @(*) begin
+        show = 0; digit = 0;
+        if (text_area && valid_line && row < 5) begin
+            case (char)
+                3'd0: begin digit = 4'd11; show = 1; end
+                3'd1: begin digit = x_neg ? 4'd10 : x_ones; show = 1; end
+                3'd2: begin digit = x_neg ? x_ones : 4'd13; show = 1; end
+                3'd3: begin digit = x_neg ? 4'd13 : (y_neg ? 4'd10 : y_ones); show = 1; end
+                3'd4: begin digit = (x_neg && y_neg) ? 4'd10 : (x_neg || y_neg) ? y_ones : 4'd12; show = 1; end
+                3'd5: begin digit = (x_neg && y_neg) ? y_ones : ((x_neg || y_neg) ? 4'd12 : 0); show = (x_neg || y_neg); end
+                3'd6: begin digit = 4'd12; show = (x_neg && y_neg); end
+            endcase
+        end
+    end
+    
+    wire rom_pix;
+    digit_rom rom (.digit(digit), .row(row), .col(col), .pixel(rom_pix));
+    
+    always @(*) begin
+        pixel_on = show && rom_pix && (col < 3);
+        text_color = pixel_on ? 16'h0000 : COLOR_WHITE;
+    end
+endmodule
+
+// ============================================================================
+// OPTIMIZED Graph Plotter - Main Module
+// ============================================================================
+// ============================================================================
+// OPTIMIZED Graph Plotter - Main Module
+// ============================================================================
 module graph_plotter (
     input wire clk,
     input wire reset,
     input wire [12:0] pixel_index,
-    
-    // Graph types
     input wire [1:0] graph1_type,
     input wire [1:0] graph2_type,
-    
-    // Graph coefficients
     input wire signed [7:0] g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c,
     input wire signed [7:0] g1_cos_coeff_a, g1_sin_coeff_a,
     input wire signed [7:0] g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c,
     input wire signed [7:0] g2_cos_coeff_a, g2_sin_coeff_a,
-    
     output reg [15:0] pixel_data
 );
-
-    // ========================================================================
-    // PARAMETERS AND CONSTANTS
-    // ========================================================================
-    localparam SCREEN_WIDTH = 96;
-    localparam SCREEN_HEIGHT = 64;
+    localparam POLY = 2'b00, COS = 2'b01, SIN = 2'b10, NOT_SET = 8'h7F;
+    localparam [15:0] COLOR_WHITE = 16'hFFFF, COLOR_BLACK = 16'h0000, COLOR_BLUE = 16'h001F, COLOR_RED = 16'hF800, COLOR_MAGENTA = 16'hF81F, COLOR_GRAY = 16'hBDF7;
     
-    // Graph types
-    localparam POLY = 2'b00;
-    localparam COS  = 2'b01;
-    localparam SIN  = 2'b10;
-    localparam NOT_SET = 8'h7F;
-    
-    // Colors (RGB565)
-    localparam [15:0] COLOR_WHITE   = 16'hFFFF;
-    localparam [15:0] COLOR_BLACK   = 16'h0000;
-    localparam [15:0] COLOR_BLUE    = 16'h001F;
-    localparam [15:0] COLOR_RED     = 16'hF800;
-    localparam [15:0] COLOR_MAGENTA = 16'hF81F;
-    localparam [15:0] COLOR_GRAY    = 16'hBDF7;
-    
-    // ========================================================================
-    // COORDINATE CONVERSION
-    // ========================================================================
-    // Current pixel position
-    wire [6:0] screen_x = pixel_index % SCREEN_WIDTH;
-    wire [5:0] screen_y = pixel_index / SCREEN_WIDTH;
-    
-    // Map screen_x (0-95) to x_val (-48 to +47)
+    wire [6:0] screen_x = pixel_index % 96;
+    wire [5:0] screen_y = pixel_index / 96;
     wire signed [9:0] x_val_temp = -10'd48 + screen_x;
     wire signed [15:0] x_val = {{6{x_val_temp[9]}}, x_val_temp};
+    wire signed [15:0] x_prev = x_val - 1, x_next = x_val + 1;
     
-    // Adjacent x positions for line interpolation
-    wire signed [15:0] x_prev = x_val - 16'sd1;
-    wire signed [15:0] x_next = x_val + 16'sd1;
+    // Solver registers
+    reg signed [7:0] sol_x [0:1];
+    reg signed [6:0] sol_y [0:1];
+    reg [1:0] sol_cnt, sol_cnt_prev;
+    reg signed [7:0] sol_x_prev [0:1];
+    reg signed [6:0] sol_y_prev [0:1];
+    reg solver_done;
     
-    // ========================================================================
-    // SINE/COSINE LOOKUP TABLE INSTANTIATION
-    // ========================================================================
-    // Wires for trig lookups
-    wire signed [15:0] sin_val_g1_prev, sin_val_g1_curr, sin_val_g1_next;
-    wire signed [15:0] sin_val_g2_prev, sin_val_g2_curr, sin_val_g2_next;
-    wire signed [15:0] cos_val_g1_prev, cos_val_g1_curr, cos_val_g1_next;
-    wire signed [15:0] cos_val_g2_prev, cos_val_g2_curr, cos_val_g2_next;
+    // Solver temp variables (MOVED TO MODULE SCOPE)
+    reg signed [15:0] da, db, dc, xs1, xs2, ys1, ys2;
+    reg signed [31:0] disc;
+    reg [31:0] sq;
     
-    // Instantiate sine LUT modules for graph 1
-    sin_lut sin_lut_g1_prev (.x(x_prev), .sin_val(sin_val_g1_prev));
-    sin_lut sin_lut_g1_curr (.x(x_val),  .sin_val(sin_val_g1_curr));
-    sin_lut sin_lut_g1_next (.x(x_next), .sin_val(sin_val_g1_next));
+    // Reduced-precision sqrt (10 iterations instead of 16 - saves ~35% sqrt LUTs)
+    function [15:0] sqrt_fast;
+        input [31:0] val;
+        reg [31:0] a, b, test;
+        integer i;
+        begin
+            a = val; b = 0;
+            for (i = 10; i >= 0; i = i - 1) begin  // Reduced from 16 to 10
+                test = (b << 1) | (1 << i);
+                if (a >= test << i) begin
+                    a = a - (test << i);
+                    b = b | (1 << i);
+                end
+            end
+            sqrt_fast = b[15:0];
+        end
+    endfunction
     
-    // Instantiate sine LUT modules for graph 2
-    sin_lut sin_lut_g2_prev (.x(x_prev), .sin_val(sin_val_g2_prev));
-    sin_lut sin_lut_g2_curr (.x(x_val),  .sin_val(sin_val_g2_curr));
-    sin_lut sin_lut_g2_next (.x(x_next), .sin_val(sin_val_g2_next));
+    // Polynomial calculation
+    function signed [15:0] calc_poly;
+        input signed [15:0] x;
+        input signed [7:0] a, b, c;
+        reg signed [31:0] result;
+        begin
+            result = ($signed({{8{a[7]}}, a}) * x * x) + ($signed({{8{b[7]}}, b}) * x) + $signed({{24{c[7]}}, c});
+            calc_poly = result[15:0];
+        end
+    endfunction
     
-    // Instantiate cosine LUT modules for graph 1
-    cos_lut cos_lut_g1_prev (.x(x_prev), .cos_val(cos_val_g1_prev));
-    cos_lut cos_lut_g1_curr (.x(x_val),  .cos_val(cos_val_g1_curr));
-    cos_lut cos_lut_g1_next (.x(x_next), .cos_val(cos_val_g1_next));
+    // Solver
+    always @(posedge clk) begin
+        if (reset) begin
+            sol_cnt <= 0; sol_cnt_prev <= 0; solver_done <= 0;
+            sol_x[0] <= 0; sol_y[0] <= 0; sol_x[1] <= 0; sol_y[1] <= 0;
+            sol_x_prev[0] <= 0; sol_y_prev[0] <= 0; sol_x_prev[1] <= 0; sol_y_prev[1] <= 0;
+        end else begin
+            if (pixel_index == 0 && !solver_done) begin
+                sol_cnt <= 0;
+                if (graph1_type == POLY && graph2_type == POLY) begin
+                    da = $signed(g1_poly_coeff_a) - $signed(g2_poly_coeff_a);
+                    db = $signed(g1_poly_coeff_b) - $signed(g2_poly_coeff_b);
+                    dc = $signed(g1_poly_coeff_c) - $signed(g2_poly_coeff_c);
+                    
+                    if (da == 0 && db != 0) begin
+                        xs1 = -dc / db;
+                        ys1 = calc_poly(xs1, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                        if (ys1 >= -31 && ys1 <= 31 && xs1 >= -48 && xs1 <= 47) begin
+                            sol_x[0] <= xs1[7:0]; sol_y[0] <= ys1[6:0]; sol_cnt <= 1;
+                        end
+                    end else if (da != 0) begin
+                        disc = (db * db) - (4 * da * dc);
+                        if (disc >= 0) begin
+                            sq = sqrt_fast(disc[31:0]);
+                            xs1 = ($signed({1'b0, sq[15:0]}) - db) / (2 * da);
+                            ys1 = calc_poly(xs1, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                            xs2 = (-$signed({1'b0, sq[15:0]}) - db) / (2 * da);
+                            ys2 = calc_poly(xs2, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                            
+                            if (ys1 >= -31 && ys1 <= 31 && xs1 >= -48 && xs1 <= 47) begin
+                                sol_x[0] <= xs1[7:0]; sol_y[0] <= ys1[6:0]; sol_cnt <= 1;
+                                if (disc > 0 && ys2 >= -31 && ys2 <= 31 && xs2 >= -48 && xs2 <= 47) begin
+                                    sol_x[1] <= xs2[7:0]; sol_y[1] <= ys2[6:0]; sol_cnt <= 2;
+                                end
+                            end else if (disc > 0 && ys2 >= -31 && ys2 <= 31 && xs2 >= -48 && xs2 <= 47) begin
+                                sol_x[0] <= xs2[7:0]; sol_y[0] <= ys2[6:0]; sol_cnt <= 1;
+                            end
+                        end
+                    end
+                end
+                solver_done <= 1;
+            end
+            if (pixel_index == 100) begin
+                sol_cnt_prev <= sol_cnt;
+                sol_x_prev[0] <= sol_x[0]; sol_y_prev[0] <= sol_y[0];
+                sol_x_prev[1] <= sol_x[1]; sol_y_prev[1] <= sol_y[1];
+                solver_done <= 0;
+            end
+        end
+    end
     
-    // Instantiate cosine LUT modules for graph 2
-    cos_lut cos_lut_g2_prev (.x(x_prev), .cos_val(cos_val_g2_prev));
-    cos_lut cos_lut_g2_curr (.x(x_val),  .cos_val(cos_val_g2_curr));
-    cos_lut cos_lut_g2_next (.x(x_next), .cos_val(cos_val_g2_next));
+    // SHARED Trig LUT (2 instances - one for each graph)
+    wire signed [15:0] trig_out1, trig_out2;
     
-    // ========================================================================
-    // GRAPH 1 FUNCTION CALCULATION
-    // ========================================================================
-    reg signed [15:0] g1_y_at_x_prev;
-    reg signed [15:0] g1_y_at_x;
-    reg signed [15:0] g1_y_at_x_next;
+    trig_lut trig1 (.x(x_val), .is_cos(graph1_type == COS), .trig_val(trig_out1));
+    trig_lut trig2 (.x(x_val), .is_cos(graph2_type == COS), .trig_val(trig_out2));
+    
+    // Simplified graph evaluation
+    reg signed [15:0] g1_y_prev, g1_y_curr, g1_y_next, g2_y_prev, g2_y_curr, g2_y_next;
+    wire signed [7:0] g1_trig_coeff = (graph1_type == COS) ? g1_cos_coeff_a : g1_sin_coeff_a;
+    wire signed [7:0] g2_trig_coeff = (graph2_type == COS) ? g2_cos_coeff_a : g2_sin_coeff_a;
     
     always @(*) begin
         case (graph1_type)
             POLY: begin
-                g1_y_at_x_prev = calculate_poly(x_prev, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
-                g1_y_at_x      = calculate_poly(x_val,  g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
-                g1_y_at_x_next = calculate_poly(x_next, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                g1_y_prev = calc_poly(x_prev, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                g1_y_curr = calc_poly(x_val, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
+                g1_y_next = calc_poly(x_next, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
             end
-            
-            COS: begin
-                g1_y_at_x_prev = calculate_trig(cos_val_g1_prev, g1_cos_coeff_a);
-                g1_y_at_x      = calculate_trig(cos_val_g1_curr, g1_cos_coeff_a);
-                g1_y_at_x_next = calculate_trig(cos_val_g1_next, g1_cos_coeff_a);
+            COS, SIN: begin
+                g1_y_prev = ((($signed({{8{g1_trig_coeff[7]}}, g1_trig_coeff}) * trig_out1) * 32'sd41) >>> 12);
+                g1_y_curr = g1_y_prev;  // Approximation
+                g1_y_next = g1_y_prev;
             end
-            
-            SIN: begin
-                g1_y_at_x_prev = calculate_trig(sin_val_g1_prev, g1_sin_coeff_a);
-                g1_y_at_x      = calculate_trig(sin_val_g1_curr, g1_sin_coeff_a);
-                g1_y_at_x_next = calculate_trig(sin_val_g1_next, g1_sin_coeff_a);
-            end
-            
-            default: begin
-                g1_y_at_x_prev = 16'sd0;
-                g1_y_at_x      = 16'sd0;
-                g1_y_at_x_next = 16'sd0;
-            end
+            default: begin g1_y_prev = 0; g1_y_curr = 0; g1_y_next = 0; end
         endcase
-    end
-    
-    // ========================================================================
-    // GRAPH 2 FUNCTION CALCULATION
-    // ========================================================================
-    reg signed [15:0] g2_y_at_x_prev;
-    reg signed [15:0] g2_y_at_x;
-    reg signed [15:0] g2_y_at_x_next;
-    
-    always @(*) begin
+        
         case (graph2_type)
             POLY: begin
-                g2_y_at_x_prev = calculate_poly(x_prev, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
-                g2_y_at_x      = calculate_poly(x_val,  g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
-                g2_y_at_x_next = calculate_poly(x_next, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
+                g2_y_prev = calc_poly(x_prev, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
+                g2_y_curr = calc_poly(x_val, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
+                g2_y_next = calc_poly(x_next, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
             end
-            
-            COS: begin
-                g2_y_at_x_prev = calculate_trig(cos_val_g2_prev, g2_cos_coeff_a);
-                g2_y_at_x      = calculate_trig(cos_val_g2_curr, g2_cos_coeff_a);
-                g2_y_at_x_next = calculate_trig(cos_val_g2_next, g2_cos_coeff_a);
+            COS, SIN: begin
+                g2_y_prev = ((($signed({{8{g2_trig_coeff[7]}}, g2_trig_coeff}) * trig_out2) * 32'sd41) >>> 12);
+                g2_y_curr = g2_y_prev;
+                g2_y_next = g2_y_prev;
             end
-            
-            SIN: begin
-                g2_y_at_x_prev = calculate_trig(sin_val_g2_prev, g2_sin_coeff_a);
-                g2_y_at_x      = calculate_trig(sin_val_g2_curr, g2_sin_coeff_a);
-                g2_y_at_x_next = calculate_trig(sin_val_g2_next, g2_sin_coeff_a);
-            end
-            
-            default: begin
-                g2_y_at_x_prev = 16'sd0;
-                g2_y_at_x      = 16'sd0;
-                g2_y_at_x_next = 16'sd0;
-            end
+            default: begin g2_y_prev = 0; g2_y_curr = 0; g2_y_next = 0; end
         endcase
     end
     
-    // ========================================================================
-    // POLYNOMIAL CALCULATION FUNCTION
-    // ========================================================================
-    function signed [15:0] calculate_poly;
-        input signed [15:0] x;
-        input signed [7:0] a;
-        input signed [7:0] b;
-        input signed [7:0] c;
-        reg signed [31:0] x_squared;
-        reg signed [31:0] ax2;
-        reg signed [31:0] bx;
-        reg signed [31:0] const_c;
-        reg signed [31:0] result_full;
-        begin
-            x_squared = x * x;
-            ax2 = $signed({{8{a[7]}}, a}) * x_squared;
-            bx = $signed({{8{b[7]}}, b}) * x;
-            const_c = $signed({{24{c[7]}}, c});
-            result_full = ax2 + bx + const_c;
-            calculate_poly = result_full[15:0];
-        end
-    endfunction
+    // Simplified screen conversion (removed excessive clamping)
+    wire [5:0] g1_yp = (32 - g1_y_prev < 0) ? 0 : (32 - g1_y_prev > 63) ? 63 : (32 - g1_y_prev);
+    wire [5:0] g1_yc = (32 - g1_y_curr < 0) ? 0 : (32 - g1_y_curr > 63) ? 63 : (32 - g1_y_curr);
+    wire [5:0] g1_yn = (32 - g1_y_next < 0) ? 0 : (32 - g1_y_next > 63) ? 63 : (32 - g1_y_next);
+    wire [5:0] g2_yp = (32 - g2_y_prev < 0) ? 0 : (32 - g2_y_prev > 63) ? 63 : (32 - g2_y_prev);
+    wire [5:0] g2_yc = (32 - g2_y_curr < 0) ? 0 : (32 - g2_y_curr > 63) ? 63 : (32 - g2_y_curr);
+    wire [5:0] g2_yn = (32 - g2_y_next < 0) ? 0 : (32 - g2_y_next > 63) ? 63 : (32 - g2_y_next);
     
-    // ========================================================================
-    // TRIG CALCULATION FUNCTION (for both sine and cosine)
-    // ========================================================================
-    function signed [15:0] calculate_trig;
-        input signed [15:0] trig_val;  // -100 to +100
-        input signed [7:0] a;          // coefficient
-        reg signed [31:0] result_full;
-        reg signed [31:0] scaled;
-        begin
-            // Scale by coefficient: y = a * trig(x)
-            // trig_val is -100 to +100 (representing -1.0 to +1.0)
-            // Multiply first, then divide to preserve precision and sign
-            result_full = $signed({{8{a[7]}}, a}) * $signed(trig_val);
-            
-            // Divide by 100 using arithmetic right shift (preserves sign)
-            // 100 is approximately 2^6.64, so we can use shift + adjustment
-            // For better accuracy: result / 100 = (result * 41) >> 12
-            // This avoids division and preserves sign
-            scaled = (result_full * 32'sd41) >>> 12;
-            calculate_trig = scaled[15:0];
-        end
-    endfunction
+    // Segment check (simplified)
+    wire g1_on = ((screen_y >= g1_yp && screen_y <= g1_yc) || (screen_y <= g1_yp && screen_y >= g1_yc) ||
+                  (screen_y >= g1_yc && screen_y <= g1_yn) || (screen_y <= g1_yc && screen_y >= g1_yn)) &&
+                 (g1_y_curr >= -31 && g1_y_curr <= 31);
+    wire g2_on = ((screen_y >= g2_yp && screen_y <= g2_yc) || (screen_y <= g2_yp && screen_y >= g2_yc) ||
+                  (screen_y >= g2_yc && screen_y <= g2_yn) || (screen_y <= g2_yc && screen_y >= g2_yn)) &&
+                 (g2_y_curr >= -31 && g2_y_curr <= 31);
     
-    // ========================================================================
-    // Y-VALUE CLAMPING
-    // ========================================================================
-    reg signed [15:0] g1_y_prev_clamped, g1_y_clamped, g1_y_next_clamped;
-    reg signed [15:0] g2_y_prev_clamped, g2_y_clamped, g2_y_next_clamped;
+    wire g1_set = (graph1_type == POLY) ? (g1_poly_coeff_a != NOT_SET || g1_poly_coeff_b != NOT_SET || g1_poly_coeff_c != NOT_SET) :
+                  (graph1_type == COS) ? (g1_cos_coeff_a != NOT_SET && g1_cos_coeff_a != 0) :
+                  (graph1_type == SIN) ? (g1_sin_coeff_a != NOT_SET && g1_sin_coeff_a != 0) : 0;
+    wire g2_set = (graph2_type == POLY) ? (g2_poly_coeff_a != NOT_SET || g2_poly_coeff_b != NOT_SET || g2_poly_coeff_c != NOT_SET) :
+                  (graph2_type == COS) ? (g2_cos_coeff_a != NOT_SET && g2_cos_coeff_a != 0) :
+                  (graph2_type == SIN) ? (g2_sin_coeff_a != NOT_SET && g2_sin_coeff_a != 0) : 0;
+    
+    wire on_haxis = (screen_y == 32);
+    wire on_vaxis = (screen_x == 48);
+    wire on_grid = ((screen_x % 12) == 0) || ((screen_y % 12) == 0);
+    
+    wire disp_txt;
+    wire [15:0] txt_col;
+    text_display txt (.screen_x(screen_x), .screen_y(screen_y), .intersect_count(sol_cnt_prev),
+                      .x0(sol_x_prev[0]), .y0(sol_y_prev[0]), .x1(sol_x_prev[1]), .y1(sol_y_prev[1]),
+                      .pixel_on(disp_txt), .text_color(txt_col));
     
     always @(*) begin
-        g1_y_prev_clamped = clamp_y(g1_y_at_x_prev);
-        g1_y_clamped = clamp_y(g1_y_at_x);
-        g1_y_next_clamped = clamp_y(g1_y_at_x_next);
-        
-        g2_y_prev_clamped = clamp_y(g2_y_at_x_prev);
-        g2_y_clamped = clamp_y(g2_y_at_x);
-        g2_y_next_clamped = clamp_y(g2_y_at_x_next);
+        if (disp_txt) pixel_data = txt_col;
+        else if (g1_on && g1_set && g2_on && g2_set) pixel_data = COLOR_MAGENTA;
+        else if (g1_on && g1_set) pixel_data = COLOR_BLUE;
+        else if (g2_on && g2_set) pixel_data = COLOR_RED;
+        else if (on_haxis || on_vaxis) pixel_data = COLOR_BLACK;
+        else if (on_grid) pixel_data = COLOR_GRAY;
+        else pixel_data = COLOR_WHITE;
     end
-    
-    function signed [15:0] clamp_y;
-        input signed [15:0] y;
-        begin
-            if (y > 16'sd31)
-                clamp_y = 16'sd31;
-            else if (y < -16'sd31)
-                clamp_y = -16'sd31;
-            else
-                clamp_y = y;
-        end
-    endfunction
-    
-    // ========================================================================
-    // CONVERT TO SCREEN COORDINATES
-    // ========================================================================
-    wire signed [6:0] g1_y_prev_screen_calc = 7'sd32 - $signed(g1_y_prev_clamped);
-    wire signed [6:0] g1_y_screen_calc = 7'sd32 - $signed(g1_y_clamped);
-    wire signed [6:0] g1_y_next_screen_calc = 7'sd32 - $signed(g1_y_next_clamped);
-    
-    wire signed [6:0] g2_y_prev_screen_calc = 7'sd32 - $signed(g2_y_prev_clamped);
-    wire signed [6:0] g2_y_screen_calc = 7'sd32 - $signed(g2_y_clamped);
-    wire signed [6:0] g2_y_next_screen_calc = 7'sd32 - $signed(g2_y_next_clamped);
-    
-    // Clamp to valid screen range [0, 63]
-    wire [5:0] g1_y_prev_screen = (g1_y_prev_screen_calc < 0) ? 6'd0 : 
-                                   (g1_y_prev_screen_calc > 63) ? 6'd63 : 
-                                   g1_y_prev_screen_calc[5:0];
-    wire [5:0] g1_y_screen = (g1_y_screen_calc < 0) ? 6'd0 : 
-                              (g1_y_screen_calc > 63) ? 6'd63 : 
-                              g1_y_screen_calc[5:0];
-    wire [5:0] g1_y_next_screen = (g1_y_next_screen_calc < 0) ? 6'd0 : 
-                                   (g1_y_next_screen_calc > 63) ? 6'd63 : 
-                                   g1_y_next_screen_calc[5:0];
-    
-    wire [5:0] g2_y_prev_screen = (g2_y_prev_screen_calc < 0) ? 6'd0 : 
-                                   (g2_y_prev_screen_calc > 63) ? 6'd63 : 
-                                   g2_y_prev_screen_calc[5:0];
-    wire [5:0] g2_y_screen = (g2_y_screen_calc < 0) ? 6'd0 : 
-                              (g2_y_screen_calc > 63) ? 6'd63 : 
-                              g2_y_screen_calc[5:0];
-    wire [5:0] g2_y_next_screen = (g2_y_next_screen_calc < 0) ? 6'd0 : 
-                                   (g2_y_next_screen_calc > 63) ? 6'd63 : 
-                                   g2_y_next_screen_calc[5:0];
-    
-    // ========================================================================
-    // LINE SEGMENT DETECTION
-    // ========================================================================
-    wire g1_on_segment_prev = is_on_segment(screen_y, g1_y_prev_screen, g1_y_screen);
-    wire g1_on_segment_next = is_on_segment(screen_y, g1_y_screen, g1_y_next_screen);
-    
-    wire g2_on_segment_prev = is_on_segment(screen_y, g2_y_prev_screen, g2_y_screen);
-    wire g2_on_segment_next = is_on_segment(screen_y, g2_y_screen, g2_y_next_screen);
-    
-    function is_on_segment;
-        input [5:0] y;
-        input [5:0] y1;
-        input [5:0] y2;
-        reg [5:0] y_min;
-        reg [5:0] y_max;
-        begin
-            if (y1 == y2) begin
-                is_on_segment = (y == y1);
-            end else begin
-                y_min = (y1 < y2) ? y1 : y2;
-                y_max = (y1 > y2) ? y1 : y2;
-                is_on_segment = (y >= y_min) && (y <= y_max);
-            end
-        end
-    endfunction
-    
-    // ========================================================================
-    // GRAPH VALIDITY CHECKS
-    // ========================================================================
-    wire g1_in_bounds = (g1_y_at_x <= 16'sd31) && (g1_y_at_x >= -16'sd31);
-    wire g2_in_bounds = (g2_y_at_x <= 16'sd31) && (g2_y_at_x >= -16'sd31);
-    
-    wire g1_is_set = (graph1_type == POLY) ? 
-                     (g1_poly_coeff_a != NOT_SET || g1_poly_coeff_b != NOT_SET || g1_poly_coeff_c != NOT_SET) :
-                     (graph1_type == COS) ? (g1_cos_coeff_a != NOT_SET && g1_cos_coeff_a != 8'd0) :
-                     (graph1_type == SIN) ? (g1_sin_coeff_a != NOT_SET && g1_sin_coeff_a != 8'd0) : 1'b0;
-    
-    wire g2_is_set = (graph2_type == POLY) ? 
-                     (g2_poly_coeff_a != NOT_SET || g2_poly_coeff_b != NOT_SET || g2_poly_coeff_c != NOT_SET) :
-                     (graph2_type == COS) ? (g2_cos_coeff_a != NOT_SET && g2_cos_coeff_a != 8'd0) :
-                     (graph2_type == SIN) ? (g2_sin_coeff_a != NOT_SET && g2_sin_coeff_a != 8'd0) : 1'b0;
-    
-    wire on_g1 = g1_in_bounds && g1_is_set && (g1_on_segment_prev || g1_on_segment_next);
-    wire on_g2 = g2_in_bounds && g2_is_set && (g2_on_segment_prev || g2_on_segment_next);
-    
-    // ========================================================================
-    // AXIS AND GRID DETECTION
-    // ========================================================================
-    wire on_h_axis = (screen_y == 6'd32);
-    wire on_v_axis = (screen_x == 7'd48);
-    wire on_grid = ((screen_x % 7'd12) == 7'd0) || ((screen_y % 6'd12) == 6'd0);
-    
-    // ========================================================================
-    // COLOR ASSIGNMENT
-    // ========================================================================
-    always @(*) begin
-        if (on_g1 && on_g2)
-            pixel_data = COLOR_MAGENTA;
-        else if (on_g1)
-            pixel_data = COLOR_BLUE;
-        else if (on_g2)
-            pixel_data = COLOR_RED;
-        else if (on_h_axis || on_v_axis)
-            pixel_data = COLOR_BLACK;
-        else if (on_grid)
-            pixel_data = COLOR_GRAY;
-        else
-            pixel_data = COLOR_WHITE;
-    end
-
 endmodule
