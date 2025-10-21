@@ -82,7 +82,7 @@ module trig_lut(
 endmodule
 
 // ============================================================================
-// Simplified Font ROM (same as before)
+// Simplified Font ROM - FIXED DIGIT 0
 // ============================================================================
 module digit_rom(
     input [3:0] digit,
@@ -92,7 +92,7 @@ module digit_rom(
 );
     always @(*) begin
         case (digit)
-            4'd0: case (row) 3'd0: pixel = (col != 1); 3'd1, 3'd2, 3'd3: pixel = (col == 0 || col == 2); 3'd4: pixel = (col != 1); default: pixel = 0; endcase
+            4'd0: case (row) 3'd0, 3'd4: pixel = 1; 3'd1, 3'd2, 3'd3: pixel = (col == 0 || col == 2); default: pixel = 0; endcase  // Fixed 0
             4'd1: pixel = (col == 1 && row < 5);
             4'd2: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1: pixel = (col == 2); 3'd3: pixel = (col == 0); default: pixel = 0; endcase
             4'd3: case (row) 3'd0, 3'd2, 3'd4: pixel = 1; 3'd1, 3'd3: pixel = (col == 2); default: pixel = 0; endcase
@@ -110,6 +110,7 @@ module digit_rom(
         endcase
     end
 endmodule
+
 
 // ============================================================================
 // Optimized Text Display
@@ -177,6 +178,9 @@ module text_display(
     end
 endmodule
 
+// ============================================================================
+// OPTIMIZED Graph Plotter - Main Module
+// ============================================================================
 // ============================================================================
 // OPTIMIZED Graph Plotter - Main Module
 // ============================================================================
@@ -294,33 +298,18 @@ module graph_plotter (
         end
     end
     
-    // SHARED Trig LUT (2 instances instead of 12 - MASSIVE savings)
+    // SHARED Trig LUT (2 instances - one for each graph)
     wire signed [15:0] trig_out1, trig_out2;
-    reg signed [15:0] trig_in;
-    reg trig_sel;
     
-    trig_lut trig1 (.x(trig_in), .is_cos(trig_sel), .trig_val(trig_out1));
+    trig_lut trig1 (.x(x_val), .is_cos(graph1_type == COS), .trig_val(trig_out1));
+    trig_lut trig2 (.x(x_val), .is_cos(graph2_type == COS), .trig_val(trig_out2));
     
-    // Mux trig inputs (evaluate in stages)
-    reg [2:0] trig_stage;
-    always @(*) begin
-        case (trig_stage)
-            0: begin trig_in = x_prev; trig_sel = (graph1_type == COS); end
-            1: begin trig_in = x_val; trig_sel = (graph1_type == COS); end
-            2: begin trig_in = x_next; trig_sel = (graph1_type == COS); end
-            3: begin trig_in = x_prev; trig_sel = (graph2_type == COS); end
-            4: begin trig_in = x_val; trig_sel = (graph2_type == COS); end
-            default: begin trig_in = x_next; trig_sel = (graph2_type == COS); end
-        endcase
-    end
-    
-    // Simplified graph evaluation (reuse trig results)
+    // Simplified graph evaluation
     reg signed [15:0] g1_y_prev, g1_y_curr, g1_y_next, g2_y_prev, g2_y_curr, g2_y_next;
     wire signed [7:0] g1_trig_coeff = (graph1_type == COS) ? g1_cos_coeff_a : g1_sin_coeff_a;
     wire signed [7:0] g2_trig_coeff = (graph2_type == COS) ? g2_cos_coeff_a : g2_sin_coeff_a;
     
     always @(*) begin
-        trig_stage = 1;  // Use current position
         case (graph1_type)
             POLY: begin
                 g1_y_prev = calc_poly(x_prev, g1_poly_coeff_a, g1_poly_coeff_b, g1_poly_coeff_c);
@@ -342,7 +331,7 @@ module graph_plotter (
                 g2_y_next = calc_poly(x_next, g2_poly_coeff_a, g2_poly_coeff_b, g2_poly_coeff_c);
             end
             COS, SIN: begin
-                g2_y_prev = ((($signed({{8{g2_trig_coeff[7]}}, g2_trig_coeff}) * trig_out1) * 32'sd41) >>> 12);
+                g2_y_prev = ((($signed({{8{g2_trig_coeff[7]}}, g2_trig_coeff}) * trig_out2) * 32'sd41) >>> 12);
                 g2_y_curr = g2_y_prev;
                 g2_y_next = g2_y_prev;
             end
