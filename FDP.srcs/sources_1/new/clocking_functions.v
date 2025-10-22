@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/13/2025 03:38:38 PM
-// Design Name: 
-// Module Name: clocking_functions
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module freq_625m(input clk, output reg slow_clk);  
     reg [4:0] ctr; //for declaration of the variable itself must do ooutside the inital block

@@ -8,7 +8,7 @@ module graphing_calculator_top (
     input wire btnR,
     input wire btnU,
     input wire btnD,
-    input wire negative_sign,  // NEW: Connected to sw[10]
+    input wire negative_sign,  
     input wire [12:0] pixel_index_1, pixel_index_2,
     
     // Outputs to screens
@@ -348,7 +348,10 @@ module graphing_calculator_top (
                 screen1_data = state_graphing_menu_1;
                 screen2_data = state_graphing_menu_2;
             end
+            default: begin
+                screen1_data = state_main_menu_1;  // or some default value
+                screen2_data = state_main_menu_2;
+            end
         endcase
     end
-
 endmodule

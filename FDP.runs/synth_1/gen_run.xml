@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1761026270">
-  <File Type="PA-TCL" Name="top_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="top_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="top_top.vds"/>
-  <File Type="RDS-UTIL" Name="top_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="top_top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="top_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="top_top_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1761136068">
+  <File Type="PA-TCL" Name="project_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="project_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="project_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="project_top.vds"/>
+  <File Type="RDS-UTIL" Name="project_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="project_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="project_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="project_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="project_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/polynomial_engine.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/polynomial_engine.v"/>
         <Attr Name="ImportTime" Val="1760171385"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -145,6 +146,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cosine_function.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/cosine_function.v"/>
         <Attr Name="ImportTime" Val="1760171526"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -154,6 +156,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/sine_function.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/sine_function.v"/>
         <Attr Name="ImportTime" Val="1760171468"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -199,6 +202,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/y_output_module.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/y_output_module.v"/>
         <Attr Name="ImportTime" Val="1760249220"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -208,6 +212,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/x_value_generator.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/x_value_generator.v"/>
         <Attr Name="ImportTime" Val="1760548007"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -217,6 +222,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/ti85_display_module.sv">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/ti85_display_module.sv"/>
         <Attr Name="ImportTime" Val="1760711347"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -226,6 +232,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_top.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../../Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/top_top.v"/>
         <Attr Name="ImportTime" Val="1760545723"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -252,6 +259,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/sin_q14_lut_64.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -259,6 +267,57 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/cos_lut.v">
       <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/project_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/ti85_display_module.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Desktop/FDP.xpr/FDP/FDP.srcs/sources_1/new/ti85_display_module.sv"/>
+        <Attr Name="ImportTime" Val="1760944966"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/home_screen.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/text_renderer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Telegram Desktop/HOMESCREEN.xpr/FDP/FDP.srcs/sources_1/new/text_renderer.v"/>
+        <Attr Name="ImportTime" Val="1761134304"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/small_font_rom.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Telegram Desktop/HOMESCREEN.xpr/FDP/FDP.srcs/sources_1/new/small_font_rom.v"/>
+        <Attr Name="ImportTime" Val="1761134304"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/font_rom.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/Telegram Desktop/HOMESCREEN.xpr/FDP/FDP.srcs/sources_1/new/font_rom.v"/>
+        <Attr Name="ImportTime" Val="1761134304"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -266,7 +325,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_top"/>
+      <Option Name="TopModule" Val="project_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

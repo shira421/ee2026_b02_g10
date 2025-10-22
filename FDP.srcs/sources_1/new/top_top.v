@@ -36,48 +36,8 @@ module top_top(
     
         // Outputs to screens
         .screen1_data(screen1_data),
-        .screen2_data(screen2_data),
-        
-        // Debug outputs
-        .fsm_state_debug(fsm_state_debug),
-        .cursor_pos_debug(cursor_pos_debug),
-        .graph1_type_debug(graph1_type_debug),
-        .graph2_type_debug(graph2_type_debug),
-        .row_pos_debug(row_pos_debug),
-        .col_pos_debug(col_pos_debug),
-        .temp_coeff_debug(temp_coeff_debug),
-        .digit_count_debug(digit_count_debug),
-        .all_inputs_confirmed_debug(all_inputs_confirmed_debug),
-        .g1_cos_coeff_a_debug(g1_cos_coeff_a_debug), 
-        .g1_sin_coeff_a_debug(g1_sin_coeff_a_debug),
-        .g2_cos_coeff_a_debug(g2_cos_coeff_a_debug), 
-        .g2_sin_coeff_a_debug(g2_sin_coeff_a_debug),
-        .g1_poly_coeff_a_debug(g1_poly_coeff_a_debug),
-        .g1_poly_coeff_b_debug(g1_poly_coeff_b_debug), 
-        .g1_poly_coeff_c_debug(g1_poly_coeff_c_debug),
-        .g2_poly_coeff_a_debug(g2_poly_coeff_a_debug),
-        .g2_poly_coeff_b_debug(g2_poly_coeff_b_debug),
-        .g2_poly_coeff_c_debug(g2_poly_coeff_c_debug),
-        .current_graph_slot_debug(current_graph_slot_debug),
-        .current_coeff_pos_debug(current_coeff_pos_debug)
+        .screen2_data(screen2_data)
     );
-    
-    // Debug helpers
-    wire [1:0] graph1_type_debug, graph2_type_debug;
-    wire [1:0] row_pos_debug, col_pos_debug;
-    wire cursor_pos_debug, all_inputs_confirmed_debug;
-    wire [2:0] fsm_state_debug;
-    wire [7:0] temp_coeff_debug;
-    wire [1:0] digit_count_debug;
-    wire [7:0] g1_cos_coeff_a_debug, g1_sin_coeff_a_debug, g2_cos_coeff_a_debug, g2_sin_coeff_a_debug;
-    wire [7:0] g1_poly_coeff_a_debug, g1_poly_coeff_b_debug, g1_poly_coeff_c_debug;
-    wire [7:0] g2_poly_coeff_a_debug, g2_poly_coeff_b_debug, g2_poly_coeff_c_debug;
-    wire [1:0] current_graph_slot_debug;
-    wire [3:0] current_coeff_pos_debug;
-    
-    assign led[3:0] = current_coeff_pos_debug;
-    assign led[4] = all_inputs_confirmed_debug;
-    assign led[7:5] = fsm_state_debug;
     
     // Graphical output
     wire [12:0] pixel_index_1, pixel_index_2;

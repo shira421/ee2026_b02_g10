@@ -34,7 +34,7 @@ module project_top(
     
     //debouncer function
     wire btnCD, btnUD, btnLD, btnRD, btnDD;
-    debouncer_parent f0(
+    debouncer_parent b0(
         clk, btnC, btnU, btnL, btnR, btnD,
         btnCD, btnUD, btnLD, btnRD, btnDD
     );
@@ -78,6 +78,12 @@ module project_top(
     assign btnDD_game = (state == S3_game) ? btnDD : 1'b0;
     
     //instantiate the three main modules
+    wire [15:0] screen_2_home;
+    home_screen f0(
+        pixel_index_2,
+        screen_2_home
+        );
+    
     wire [15:0] screen_1_graph, screen_2_graph; //these are later multiplexed below
     graphing_calculator_top f1(
         clk,
@@ -134,7 +140,7 @@ module project_top(
     
     //sw0 for basic, sw1 for graph, sw2 for the game
     always@(*) begin
-        case(sw[2:0])
+        case(sw[3:1])
             3'b000 : next_state = S0_home;
             3'b001 : next_state = S1_basic;
             3'b010 : next_state = S2_graph;
@@ -145,12 +151,13 @@ module project_top(
     
     always@(*) begin
         case(state)
-            S0_home : begin end
-            S1_basic : begin screen_1_data = screen_1_graph; screen_2_data = screen_2_graph; end //insert the output of the graphical module here
-            S2_graph : begin end
+            S0_home : begin screen_2_data = screen_2_home; end
+            S1_basic : begin end //insert the output of the graphical module here
+            S2_graph : begin screen_1_data = screen_1_graph; screen_2_data = screen_2_graph; end
             S3_game : begin end
         endcase
     end
+    
     always@(posedge clk) begin
         state <= next_state;
     end

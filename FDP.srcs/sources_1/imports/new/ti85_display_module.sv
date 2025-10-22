@@ -1192,6 +1192,694 @@ module confirmation_screen (
     end
 endmodule
 
+////stage 3
+//module equation_display (
+//    input wire clk,
+//    input wire [12:0] pixel_index,
+//    input wire [1:0] graph1_type,
+//    input wire [1:0] graph2_type,
+//    input wire [7:0] g1_poly_coeff_a,
+//    input wire [7:0] g1_poly_coeff_b,
+//    input wire [7:0] g1_poly_coeff_c,
+//    input wire [7:0] g1_cos_coeff_a,
+//    input wire [7:0] g1_sin_coeff_a,
+//    input wire [7:0] g2_poly_coeff_a,
+//    input wire [7:0] g2_poly_coeff_b,
+//    input wire [7:0] g2_poly_coeff_c,
+//    input wire [7:0] g2_cos_coeff_a,
+//    input wire [7:0] g2_sin_coeff_a,
+//    input wire [7:0] temp_coeff,
+//    input wire [1:0] digit_count,
+//    input wire [1:0] current_graph_slot,
+//    input wire [3:0] current_coeff_pos,
+//    output reg [15:0] pixel_color
+//);
+
+//    // Parameters
+//    localparam POLYNOMIAL = 2'b00;
+//    localparam COSINE     = 2'b01;
+//    localparam SINE       = 2'b10;
+//    localparam NOT_SET    = 8'h7F;
+    
+//    localparam SCREEN_WIDTH = 96;
+//    localparam COLOR_WHITE = 16'hFFFF;
+//    localparam COLOR_BLACK = 16'h0000;
+//    localparam COLOR_GREEN = 16'h07E0;
+//    localparam CHAR_WIDTH = 6;
+//    localparam CHAR_HEIGHT = 7;
+    
+//    // Calculate pixel position
+//    wire [6:0] x = pixel_index % SCREEN_WIDTH;
+//    wire [5:0] y = pixel_index / SCREEN_WIDTH;
+    
+//    // 5x7 font bitmap - returns 5 bits for each row
+//    function [4:0] get_char_bitmap;
+//        input [7:0] ascii;
+//        input [2:0] row;
+//        case (ascii)
+//            "0": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b10011;
+//                3: get_char_bitmap = 5'b10101;
+//                4: get_char_bitmap = 5'b11001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "1": case(row)
+//                0: get_char_bitmap = 5'b00100;
+//                1: get_char_bitmap = 5'b01100;
+//                2: get_char_bitmap = 5'b00100;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "2": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b00001;
+//                3: get_char_bitmap = 5'b00110;
+//                4: get_char_bitmap = 5'b01000;
+//                5: get_char_bitmap = 5'b10000;
+//                6: get_char_bitmap = 5'b11111;
+//            endcase
+//            "3": case(row)
+//                0: get_char_bitmap = 5'b11110;
+//                1: get_char_bitmap = 5'b00001;
+//                2: get_char_bitmap = 5'b00001;
+//                3: get_char_bitmap = 5'b01110;
+//                4: get_char_bitmap = 5'b00001;
+//                5: get_char_bitmap = 5'b00001;
+//                6: get_char_bitmap = 5'b11110;
+//            endcase
+//            "4": case(row)
+//                0: get_char_bitmap = 5'b00010;
+//                1: get_char_bitmap = 5'b00110;
+//                2: get_char_bitmap = 5'b01010;
+//                3: get_char_bitmap = 5'b10010;
+//                4: get_char_bitmap = 5'b11111;
+//                5: get_char_bitmap = 5'b00010;
+//                6: get_char_bitmap = 5'b00010;
+//            endcase
+//            "5": case(row)
+//                0: get_char_bitmap = 5'b11111;
+//                1: get_char_bitmap = 5'b10000;
+//                2: get_char_bitmap = 5'b10000;
+//                3: get_char_bitmap = 5'b11110;
+//                4: get_char_bitmap = 5'b00001;
+//                5: get_char_bitmap = 5'b00001;
+//                6: get_char_bitmap = 5'b11110;
+//            endcase
+//            "6": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10000;
+//                2: get_char_bitmap = 5'b10000;
+//                3: get_char_bitmap = 5'b11110;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "7": case(row)
+//                0: get_char_bitmap = 5'b11111;
+//                1: get_char_bitmap = 5'b00001;
+//                2: get_char_bitmap = 5'b00010;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b01000;
+//                5: get_char_bitmap = 5'b01000;
+//                6: get_char_bitmap = 5'b01000;
+//            endcase
+//            "8": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b10001;
+//                3: get_char_bitmap = 5'b01110;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "9": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b10001;
+//                3: get_char_bitmap = 5'b01111;
+//                4: get_char_bitmap = 5'b00001;
+//                5: get_char_bitmap = 5'b00001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "+": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00100;
+//                2: get_char_bitmap = 5'b00100;
+//                3: get_char_bitmap = 5'b11111;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b00000;
+//            endcase
+//            "_": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b00000;
+//                3: get_char_bitmap = 5'b00000;
+//                4: get_char_bitmap = 5'b00000;
+//                5: get_char_bitmap = 5'b00000;
+//                6: get_char_bitmap = 5'b11111;
+//            endcase
+//            "X": case(row)
+//                0: get_char_bitmap = 5'b10001;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b01010;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b01010;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b10001;
+//            endcase
+//            "Y": case(row)
+//                0: get_char_bitmap = 5'b10001;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b10001;
+//                3: get_char_bitmap = 5'b01010;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b00100;
+//            endcase
+//            "=": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b11111;
+//                3: get_char_bitmap = 5'b00000;
+//                4: get_char_bitmap = 5'b11111;
+//                5: get_char_bitmap = 5'b00000;
+//                6: get_char_bitmap = 5'b00000;
+//            endcase
+//            "^": case(row)
+//                0: get_char_bitmap = 5'b00100;
+//                1: get_char_bitmap = 5'b01010;
+//                2: get_char_bitmap = 5'b10001;
+//                3: get_char_bitmap = 5'b00000;
+//                4: get_char_bitmap = 5'b00000;
+//                5: get_char_bitmap = 5'b00000;
+//                6: get_char_bitmap = 5'b00000;
+//            endcase
+//            "(": case(row)
+//                0: get_char_bitmap = 5'b00010;
+//                1: get_char_bitmap = 5'b00100;
+//                2: get_char_bitmap = 5'b01000;
+//                3: get_char_bitmap = 5'b01000;
+//                4: get_char_bitmap = 5'b01000;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b00010;
+//            endcase
+//            ")": case(row)
+//                0: get_char_bitmap = 5'b01000;
+//                1: get_char_bitmap = 5'b00100;
+//                2: get_char_bitmap = 5'b00010;
+//                3: get_char_bitmap = 5'b00010;
+//                4: get_char_bitmap = 5'b00010;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b01000;
+//            endcase
+//            "T": case(row)
+//                0: get_char_bitmap = 5'b11111;
+//                1: get_char_bitmap = 5'b00100;
+//                2: get_char_bitmap = 5'b00100;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b00100;
+//            endcase
+//            "I": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b00100;
+//                2: get_char_bitmap = 5'b00100;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "G": case(row)
+//                0: get_char_bitmap = 5'b01110;
+//                1: get_char_bitmap = 5'b10001;
+//                2: get_char_bitmap = 5'b10000;
+//                3: get_char_bitmap = 5'b10111;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "r": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b10110;
+//                3: get_char_bitmap = 5'b11001;
+//                4: get_char_bitmap = 5'b10000;
+//                5: get_char_bitmap = 5'b10000;
+//                6: get_char_bitmap = 5'b10000;
+//            endcase
+//            "a": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b01110;
+//                3: get_char_bitmap = 5'b00001;
+//                4: get_char_bitmap = 5'b01111;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01111;
+//            endcase
+//            "p": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b11110;
+//                3: get_char_bitmap = 5'b10001;
+//                4: get_char_bitmap = 5'b11110;
+//                5: get_char_bitmap = 5'b10000;
+//                6: get_char_bitmap = 5'b10000;
+//            endcase
+//            "h": case(row)
+//                0: get_char_bitmap = 5'b10000;
+//                1: get_char_bitmap = 5'b10000;
+//                2: get_char_bitmap = 5'b10110;
+//                3: get_char_bitmap = 5'b11001;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b10001;
+//            endcase
+//            "c": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b01110;
+//                3: get_char_bitmap = 5'b10000;
+//                4: get_char_bitmap = 5'b10000;
+//                5: get_char_bitmap = 5'b10000;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "o": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b01110;
+//                3: get_char_bitmap = 5'b10001;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "s": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b01110;
+//                3: get_char_bitmap = 5'b10000;
+//                4: get_char_bitmap = 5'b01110;
+//                5: get_char_bitmap = 5'b00001;
+//                6: get_char_bitmap = 5'b11110;
+//            endcase
+//            "i": case(row)
+//                0: get_char_bitmap = 5'b00100;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b01100;
+//                3: get_char_bitmap = 5'b00100;
+//                4: get_char_bitmap = 5'b00100;
+//                5: get_char_bitmap = 5'b00100;
+//                6: get_char_bitmap = 5'b01110;
+//            endcase
+//            "n": case(row)
+//                0: get_char_bitmap = 5'b00000;
+//                1: get_char_bitmap = 5'b00000;
+//                2: get_char_bitmap = 5'b10110;
+//                3: get_char_bitmap = 5'b11001;
+//                4: get_char_bitmap = 5'b10001;
+//                5: get_char_bitmap = 5'b10001;
+//                6: get_char_bitmap = 5'b10001;
+//            endcase
+//            default: get_char_bitmap = 5'b00000;
+//        endcase
+//    endfunction
+    
+//    // Helper function to get ASCII character from digit
+//    function [7:0] digit_to_ascii;
+//        input [3:0] digit;
+//        case (digit)
+//            4'd0: digit_to_ascii = "0";
+//            4'd1: digit_to_ascii = "1";
+//            4'd2: digit_to_ascii = "2";
+//            4'd3: digit_to_ascii = "3";
+//            4'd4: digit_to_ascii = "4";
+//            4'd5: digit_to_ascii = "5";
+//            4'd6: digit_to_ascii = "6";
+//            4'd7: digit_to_ascii = "7";
+//            4'd8: digit_to_ascii = "8";
+//            4'd9: digit_to_ascii = "9";
+//            default: digit_to_ascii = "_";
+//        endcase
+//    endfunction
+    
+//    // Function to check if pixel is in character (5x7 version)
+//    function is_pixel_in_char;
+//        input [6:0] px, py, char_x, char_y;
+//        input [7:0] ascii_char;
+//        reg [6:0] rel_x, rel_y;
+//        reg [4:0] row_bitmap;
+//        begin
+//            rel_x = px - char_x;
+//            rel_y = py - char_y;
+//            if (rel_x < 5 && rel_y < CHAR_HEIGHT) begin
+//                row_bitmap = get_char_bitmap(ascii_char, rel_y[2:0]);
+//                is_pixel_in_char = row_bitmap[4 - rel_x[2:0]];
+//            end else begin
+//                is_pixel_in_char = 0;
+//            end
+//        end
+//    endfunction
+    
+//    // Display logic
+//    always @(*) begin
+//        pixel_color = COLOR_BLACK;
+        
+//        // Header: TI85 Graph (y=2-9, centered)
+//        if (y >= 2 && y < 9) begin
+//            if (is_pixel_in_char(x, y, 24, 2, "T")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 30, 2, "I")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 36, 2, "8")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 42, 2, "5")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 48, 2, "G")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 54, 2, "r")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 60, 2, "a")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 66, 2, "p")) pixel_color = COLOR_GREEN;
+//            if (is_pixel_in_char(x, y, 72, 2, "h")) pixel_color = COLOR_GREEN;
+//        end
+        
+//        // Graph 1 (y=14-21)
+//        else if (y >= 14 && y < 21) begin
+//            case (graph1_type)
+//                POLYNOMIAL: begin
+//                    // Y =
+//                    if (is_pixel_in_char(x, y, 2, 14, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 8, 14, "=")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 0 && current_coeff_pos == 0 && digit_count > 0) begin
+//                        if (digit_count == 2) begin
+//                            if (is_pixel_in_char(x, y, 14, 14, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 20, 14, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 20, 14, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g1_poly_coeff_a != NOT_SET) begin
+//                        if (g1_poly_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 14, 14, digit_to_ascii(g1_poly_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 20, 14, digit_to_ascii(g1_poly_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 20, 14, digit_to_ascii(g1_poly_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 20, 14, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X^2 +
+//                    if (is_pixel_in_char(x, y, 26, 14, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 14, "^")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 14, "2")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 14, "+")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff B
+//                    if (current_graph_slot == 0 && current_coeff_pos == 1 && digit_count > 0) begin
+//                        if (digit_count == 2) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g1_poly_coeff_b != NOT_SET) begin
+//                        if (g1_poly_coeff_b >= 10) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(g1_poly_coeff_b / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_poly_coeff_b % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_poly_coeff_b))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 56, 14, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X +
+//                    if (is_pixel_in_char(x, y, 62, 14, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 14, "+")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff C
+//                    if (current_graph_slot == 0 && current_coeff_pos == 2 && digit_count > 0) begin
+//                        if (digit_count == 2) begin
+//                            if (is_pixel_in_char(x, y, 74, 14, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 80, 14, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 80, 14, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g1_poly_coeff_c != NOT_SET) begin
+//                        if (g1_poly_coeff_c >= 10) begin
+//                            if (is_pixel_in_char(x, y, 74, 14, digit_to_ascii(g1_poly_coeff_c / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 80, 14, digit_to_ascii(g1_poly_coeff_c % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 80, 14, digit_to_ascii(g1_poly_coeff_c))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 80, 14, "_")) pixel_color = COLOR_WHITE;
+//                    end
+//                end
+//                COSINE: begin
+//                    // Y = cos(
+//                    if (is_pixel_in_char(x, y, 14, 14, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 20, 14, "=")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 26, 14, "c")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 14, "o")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 14, "s")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 14, "(")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 0 && current_coeff_pos == 0 && digit_count > 0) begin
+//                        if (digit_count == 2) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g1_cos_coeff_a != NOT_SET) begin
+//                        if (g1_cos_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(g1_cos_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_cos_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_cos_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 56, 14, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X)
+//                    if (is_pixel_in_char(x, y, 62, 14, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 14, ")")) pixel_color = COLOR_WHITE;
+//                end
+//                SINE: begin
+//                    // Y = sin(
+//                    if (is_pixel_in_char(x, y, 14, 14, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 20, 14, "=")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 26, 14, "s")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 14, "i")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 14, "n")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 14, "(")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 0 && current_coeff_pos == 0 && digit_count > 0) begin
+//                        if (digit_count == 2) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g1_sin_coeff_a != NOT_SET) begin
+//                        if (g1_sin_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 50, 14, digit_to_ascii(g1_sin_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_sin_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 14, digit_to_ascii(g1_sin_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 56, 14, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X)
+//                    if (is_pixel_in_char(x, y, 62, 14, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 14, ")")) pixel_color = COLOR_WHITE;
+//                end
+//            endcase
+//        end
+            
+//        // Graph 2 (y=26-33)
+//        else if (y >= 26 && y < 33) begin
+//            // Calculate Graph 2 coefficient positions based on Graph 1 type
+//            reg [3:0] g2_coeff_a_pos, g2_coeff_b_pos, g2_coeff_c_pos;
+            
+//            case (graph1_type)
+//                POLYNOMIAL: begin
+//                    g2_coeff_a_pos = 4'd3;
+//                    g2_coeff_b_pos = 4'd4;
+//                    g2_coeff_c_pos = 4'd5;
+//                end
+//                COSINE, SINE: begin
+//                    g2_coeff_a_pos = 4'd1;
+//                    g2_coeff_b_pos = 4'd2;
+//                    g2_coeff_c_pos = 4'd3;
+//                end
+//                default: begin
+//                    g2_coeff_a_pos = 4'd3;
+//                    g2_coeff_b_pos = 4'd4;
+//                    g2_coeff_c_pos = 4'd5;
+//                end
+//            endcase
+            
+//            case (graph2_type)
+//                POLYNOMIAL: begin
+//                    // Y =
+//                    if (is_pixel_in_char(x, y, 2, 26, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 8, 26, "=")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 2'd1 && current_coeff_pos == g2_coeff_a_pos && digit_count > 2'd0) begin
+//                        if (digit_count == 2'd2) begin
+//                            if (is_pixel_in_char(x, y, 14, 26, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 20, 26, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 20, 26, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g2_poly_coeff_a != NOT_SET) begin
+//                        if (g2_poly_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 14, 26, digit_to_ascii(g2_poly_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 20, 26, digit_to_ascii(g2_poly_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 20, 26, digit_to_ascii(g2_poly_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 20, 26, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X^2 +
+//                    if (is_pixel_in_char(x, y, 26, 26, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 26, "^")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 26, "2")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 26, "+")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff B
+//                    if (current_graph_slot == 2'd1 && current_coeff_pos == g2_coeff_b_pos && digit_count > 2'd0) begin
+//                        // Currently editing - show temp_coeff
+//                        if (digit_count == 2'd2) begin
+//                            if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        // Not currently editing - show stored value
+//                        if (g2_poly_coeff_b != NOT_SET) begin
+//                            if (g2_poly_coeff_b >= 10) begin
+//                                if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(g2_poly_coeff_b / 10))) pixel_color = COLOR_WHITE;
+//                                if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_poly_coeff_b % 10))) pixel_color = COLOR_WHITE;
+//                            end else begin
+//                                if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_poly_coeff_b))) pixel_color = COLOR_WHITE;
+//                            end
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, "_")) pixel_color = COLOR_WHITE;
+//                        end
+//                    end
+                    
+//                    // X +
+//                    if (is_pixel_in_char(x, y, 62, 26, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 26, "+")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff C
+//                    if (current_graph_slot == 2'd1 && current_coeff_pos == g2_coeff_c_pos && digit_count > 2'd0) begin
+//                        // Currently editing - show temp_coeff
+//                        if (digit_count == 2'd2) begin
+//                            if (is_pixel_in_char(x, y, 74, 26, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 80, 26, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 80, 26, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        // Not currently editing - show stored value
+//                        if (g2_poly_coeff_c != NOT_SET) begin
+//                            if (g2_poly_coeff_c >= 10) begin
+//                                if (is_pixel_in_char(x, y, 74, 26, digit_to_ascii(g2_poly_coeff_c / 10))) pixel_color = COLOR_WHITE;
+//                                if (is_pixel_in_char(x, y, 80, 26, digit_to_ascii(g2_poly_coeff_c % 10))) pixel_color = COLOR_WHITE;
+//                            end else begin
+//                                if (is_pixel_in_char(x, y, 80, 26, digit_to_ascii(g2_poly_coeff_c))) pixel_color = COLOR_WHITE;
+//                            end
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 80, 26, "_")) pixel_color = COLOR_WHITE;
+//                        end
+//                    end
+//                end
+//                COSINE: begin
+//                    // Y = cos( - MATCHING GRAPH 1 POSITIONS
+//                    if (is_pixel_in_char(x, y, 14, 26, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 20, 26, "=")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 26, 26, "c")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 26, "o")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 26, "s")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 26, "(")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 2'd1 && current_coeff_pos == g2_coeff_a_pos && digit_count > 2'd0) begin
+//                        if (digit_count == 2'd2) begin
+//                            if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g2_cos_coeff_a != NOT_SET) begin
+//                        if (g2_cos_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(g2_cos_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_cos_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_cos_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 56, 26, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X)
+//                    if (is_pixel_in_char(x, y, 62, 26, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 26, ")")) pixel_color = COLOR_WHITE;
+//                end
+//                SINE: begin
+//                    // Y = sin( - MATCHING GRAPH 1 POSITIONS
+//                    if (is_pixel_in_char(x, y, 14, 26, "Y")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 20, 26, "=")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 26, 26, "s")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 32, 26, "i")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 38, 26, "n")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 44, 26, "(")) pixel_color = COLOR_WHITE;
+                    
+//                    // Coeff A
+//                    if (current_graph_slot == 2'd1 && current_coeff_pos == g2_coeff_a_pos && digit_count > 2'd0) begin
+//                        if (digit_count == 2'd2) begin
+//                            if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(temp_coeff / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(temp_coeff))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else if (g2_sin_coeff_a != NOT_SET) begin
+//                        if (g2_sin_coeff_a >= 10) begin
+//                            if (is_pixel_in_char(x, y, 50, 26, digit_to_ascii(g2_sin_coeff_a / 10))) pixel_color = COLOR_WHITE;
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_sin_coeff_a % 10))) pixel_color = COLOR_WHITE;
+//                        end else begin
+//                            if (is_pixel_in_char(x, y, 56, 26, digit_to_ascii(g2_sin_coeff_a))) pixel_color = COLOR_WHITE;
+//                        end
+//                    end else begin
+//                        if (is_pixel_in_char(x, y, 56, 26, "_")) pixel_color = COLOR_WHITE;
+//                    end
+                    
+//                    // X)
+//                    if (is_pixel_in_char(x, y, 62, 26, "X")) pixel_color = COLOR_WHITE;
+//                    if (is_pixel_in_char(x, y, 68, 26, ")")) pixel_color = COLOR_WHITE;
+//                end
+//            endcase
+//        end
+//    end
+//endmodule
+
+
 module equation_display (
     input wire clk,
     input wire [12:0] pixel_index,
@@ -2143,84 +2831,6 @@ module keypad_screen (
                 if (is_button_border || is_button_char) begin
                     pixel_data <= 16'b11111_111111_11111;
                 end
-            end
-        end
-    end
-endmodule
-
-module reset_message_display_module (
-    input  wire [12:0] pixel_index,
-    output reg  [15:0] pixel_color
-);
-
-    // Screen dimensions
-    localparam SCREEN_WIDTH  = 96;
-    localparam SCREEN_HEIGHT = 64;
-
-    // Font dimensions
-    localparam CHAR_WIDTH  = 8;
-    localparam CHAR_HEIGHT = 8;
-
-    // Colors (RGB565)
-    localparam [15:0] COLOR_BLACK = 16'h0000;
-    localparam [15:0] COLOR_WHITE = 16'hFFFF;
-
-    // Coordinate conversion
-    wire [6:0] pixel_x = pixel_index % SCREEN_WIDTH;
-    wire [6:0] pixel_y = pixel_index / SCREEN_WIDTH;
-
-    // Position of message
-    localparam X_OFFSET = 5;
-    localparam Y_OFFSET = 28;
-
-    // Font bitmap lookup
-    function automatic [63:0] get_char_bitmap(input [7:0] ch);
-        case (ch)
-            "P": get_char_bitmap = 64'hFE92929292FE0000;
-            "R": get_char_bitmap = 64'hFE929292B29C0000;
-            "E": get_char_bitmap = 64'hFE9292FE9292FE00;
-            "S": get_char_bitmap = 64'h7C82807C027C0000;
-            " ": get_char_bitmap = 64'h0000000000000000;
-            "B": get_char_bitmap = 64'hFC9292FC9292FC00;
-            "T": get_char_bitmap = 64'hFE10101010100000;
-            "N": get_char_bitmap = 64'hFE868E9EBECEFE00;
-            "C": get_char_bitmap = 64'h7C828282827C0000;
-            "O": get_char_bitmap = 64'h7C828282827C0000;
-            "p": get_char_bitmap = 64'h007C929292FC8080;
-            "r": get_char_bitmap = 64'h007C929080808000;
-            "e": get_char_bitmap = 64'h007C92929C007C00;
-            "s": get_char_bitmap = 64'h007C827C027C0000;
-            "b": get_char_bitmap = 64'h8080FC929292FC00;
-            "t": get_char_bitmap = 64'h1010FE1010120C00;
-            "n": get_char_bitmap = 64'h009292929292FE00;
-            "c": get_char_bitmap = 64'h007C8280807C0000;
-            default: get_char_bitmap = 64'h0000000000000000;
-        endcase
-    endfunction
-
-    // Packed message
-    localparam int MSG_LEN = 18;
-    localparam [8*MSG_LEN-1:0] MSG = "press btnC to reset";
-
-    integer i;
-    always @(*) begin
-        pixel_color = COLOR_BLACK;
-
-        for (i = 0; i < MSG_LEN; i = i + 1) begin
-            int abs_char_x = X_OFFSET + i * CHAR_WIDTH;
-            int abs_char_y = Y_OFFSET;
-
-            if (pixel_x >= abs_char_x && pixel_x < abs_char_x + CHAR_WIDTH &&
-                pixel_y >= abs_char_y && pixel_y < abs_char_y + CHAR_HEIGHT) begin
-
-                int rel_x = pixel_x - abs_char_x;
-                int rel_y = pixel_y - abs_char_y;
-
-                reg [63:0] char_bitmap;
-                char_bitmap = get_char_bitmap(MSG[i*8 +:8]);
-
-                if (char_bitmap[63 - (rel_y * CHAR_WIDTH + rel_x)])
-                    pixel_color = COLOR_WHITE;
             end
         end
     end
