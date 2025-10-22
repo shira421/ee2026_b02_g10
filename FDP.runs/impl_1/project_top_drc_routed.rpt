@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed Oct 22 20:32:49 2025
+| Date         : Thu Oct 23 00:11:04 2025
 | Host         : dorn_pc running 64-bit major release  (build 9200)
 | Command      : report_drc -file project_top_drc_routed.rpt -pb project_top_drc_routed.pb -rpx project_top_drc_routed.rpx
 | Design       : project_top
@@ -24,14 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 277
+             Violations found: 278
 +----------+----------+------------------------+------------+
 | Rule     | Severity | Description            | Violations |
 +----------+----------+------------------------+------------+
 | DPIP-1   | Warning  | Input pipelining       | 148        |
 | DPOP-1   | Warning  | PREG Output pipelining | 64         |
 | DPOP-2   | Warning  | MREG Output pipelining | 64         |
-| PDRC-153 | Warning  | Gated clock check      | 1          |
+| PDRC-153 | Warning  | Gated clock check      | 2          |
 +----------+----------+------------------------+------------+
 
 2. REPORT DETAILS
@@ -1418,7 +1418,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net screen_1_data_reg[15]_i_2_n_0 is a gated clock net sourced by a combinational pin screen_1_data_reg[15]_i_2/O, cell screen_1_data_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net f2/game_logic/score_reg[0]_0 is a gated clock net sourced by a combinational pin f2/game_logic/led_reg[15]_i_1/O, cell f2/game_logic/led_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net screen_2_data_reg[15]_i_2_n_0 is a gated clock net sourced by a combinational pin screen_2_data_reg[15]_i_2/O, cell screen_2_data_reg[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

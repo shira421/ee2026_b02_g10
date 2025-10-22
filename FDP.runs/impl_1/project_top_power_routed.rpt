@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Wed Oct 22 20:32:58 2025
+| Date             : Thu Oct 23 00:11:13 2025
 | Host             : dorn_pc running 64-bit major release  (build 9200)
 | Command          : report_power -file project_top_power_routed.rpt -pb project_top_power_summary_routed.pb -rpx project_top_power_routed.rpx
 | Design           : project_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.617        |
+| Total On-Chip Power (W)  | 0.667        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.544        |
+| Dynamic (W)              | 0.594        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 81.9         |
-| Junction Temperature (C) | 28.1         |
+| Max Ambient (C)          | 81.7         |
+| Junction Temperature (C) | 28.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        3 |       --- |             --- |
-| Slice Logic    |     0.229 |    24254 |       --- |             --- |
-|   LUT as Logic |     0.209 |    16930 |     20800 |           81.39 |
-|   CARRY4       |     0.020 |     3377 |      8150 |           41.44 |
-|   Register     |    <0.001 |      857 |     41600 |            2.06 |
-|   F7/F8 Muxes  |    <0.001 |       59 |     32600 |            0.18 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       52 |       --- |             --- |
-| Signals        |     0.238 |    20786 |       --- |             --- |
+| Clocks         |     0.008 |        3 |       --- |             --- |
+| Slice Logic    |     0.245 |    26330 |       --- |             --- |
+|   LUT as Logic |     0.224 |    18347 |     20800 |           88.21 |
+|   CARRY4       |     0.020 |     3529 |      8150 |           43.30 |
+|   Register     |    <0.001 |     1053 |     41600 |            2.53 |
+|   F7/F8 Muxes  |    <0.001 |       71 |     32600 |            0.22 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |       60 |       --- |             --- |
+| Signals        |     0.259 |    22533 |       --- |             --- |
+| Block RAM      |    <0.001 |        1 |        50 |            2.00 |
 | DSPs           |     0.067 |       66 |        90 |           73.33 |
-| I/O            |     0.003 |       55 |       106 |           51.89 |
+| I/O            |     0.015 |       55 |       106 |           51.89 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.617 |          |           |                 |
+| Total          |     0.667 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +75,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.551 |       0.541 |      0.011 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vccint    |       1.000 |     0.590 |       0.579 |      0.011 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -97,7 +98,7 @@ Table of Contents
 | User Input Data             | Confidence | Details                                                | Action                                                                                                             |
 +-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | Design implementation state | High       | Design is routed                                       |                                                                                                                    |
-| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| Clock nodes activity        | Medium     | More than 5% of clocks are missing user specification  | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
 | I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
 | Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
 | Device models               | High       | Device models are Production                           |                                                                                                                    |
@@ -143,7 +144,7 @@ Table of Contents
 +----------------------------------------+-----------+
 | Name                                   | Power (W) |
 +----------------------------------------+-----------+
-| project_top                            |     0.544 |
+| project_top                            |     0.594 |
 |   b0                                   |     0.003 |
 |     d0                                 |    <0.001 |
 |     d1                                 |    <0.001 |
@@ -155,19 +156,23 @@ Table of Contents
 |     text_render                        |     0.001 |
 |       font                             |     0.001 |
 |   f1                                   |     0.338 |
-|     confirmation_screen_inst           |     0.004 |
-|     equation_display_inst              |     0.009 |
+|     confirmation_screen_inst           |     0.005 |
+|     equation_display_inst              |     0.010 |
 |     equation_input_inst                |     0.118 |
-|     graph_display_1                    |     0.090 |
+|     graph_display_1                    |     0.088 |
 |     graph_display_2                    |     0.088 |
 |     keypad_inst                        |    <0.001 |
 |     keypad_screen_inst                 |    <0.001 |
-|     menu_logic_inst                    |     0.022 |
+|     menu_logic_inst                    |     0.023 |
 |     pixel_output_generator_inst        |     0.001 |
 |     pixel_output_state_graph_menu_inst |     0.003 |
 |     ti85_display_inst                  |     0.002 |
-|   g0                                   |     0.059 |
-|   g1                                   |     0.058 |
+|   f2                                   |     0.008 |
+|     clk_anode_gen                      |    <0.001 |
+|     display                            |    <0.001 |
+|     game_logic                         |     0.006 |
+|   g0                                   |     0.082 |
+|   g1                                   |     0.062 |
 +----------------------------------------+-----------+
 
 

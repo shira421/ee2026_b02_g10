@@ -60,6 +60,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -ruleid {1}  -id {filemgmt 56-3}  -string {{WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.ip_user_files'.}}  -suppress 
 set_msg_config  -ruleid {2}  -id {Labtoolstcl 44-129}  -string {{WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.}}  -suppress 
 

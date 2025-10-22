@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -ruleid {1}  -id {filemgmt 56-3}  -string {{WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.ip_user_files'.}}  -suppress 
 set_msg_config  -ruleid {2}  -id {Labtoolstcl 44-129}  -string {{WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.}}  -suppress 
 create_project -in_memory -part xc7a35tcpg236-1
@@ -49,6 +50,10 @@ read_verilog -library xil_defaultlib {
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/text_renderer.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/small_font_rom.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/font_rom.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/Top_Student.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/flexible_clock.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

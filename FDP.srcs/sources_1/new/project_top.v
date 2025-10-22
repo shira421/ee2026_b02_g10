@@ -23,9 +23,10 @@ module project_top(
     input clk, btnC, btnL, btnR, btnU, btnD, 
     input [15:0] sw,
     
-    output [15:0] led,
-    output [3:0] an,
-    output [7:0] seg, JB, JA
+    output reg [15:0] led,
+    output reg [3:0] an,
+    output reg [7:0] seg,
+    output [7:0] JB, JA
     );
     
     //clock functions
@@ -92,6 +93,19 @@ module project_top(
         negative_switch_graph,
         pixel_index_1, pixel_index_2,
         screen_1_graph, screen_2_graph);
+    
+    wire [6:0] seg_game;
+    wire [3:0] an_game;
+    wire [15:0] led_game;
+    wire [15:0] screen_2_game;
+    maths_game f2(
+            clk, freq625m, //inputs
+            btnCD_game, btnUD_game, btnDD_game, btnLD_game, btnRD_game, //inputs
+            seg_game, an_game, led_game, //outputs
+            // OLED interface signals
+            pixel_index_2, //input
+            screen_2_game //output
+        );
         
     //graphical modules
     reg [15:0] screen_1_data, screen_2_data;
@@ -151,10 +165,10 @@ module project_top(
     
     always@(*) begin
         case(state)
-            S0_home : begin screen_2_data = screen_2_home; end
-            S1_basic : begin end //insert the output of the graphical module here
-            S2_graph : begin screen_1_data = screen_1_graph; screen_2_data = screen_2_graph; end
-            S3_game : begin end
+            S0_home : begin screen_2_data = screen_2_home; an = 4'b1111; seg = 8'b11111111; end
+            S1_basic : begin an = 4'b1111; seg = 8'b11111111; end //insert the output of the graphical module here
+            S2_graph : begin screen_1_data = screen_1_graph; screen_2_data = screen_2_graph; an = 4'b1111; seg = 8'b11111111; end
+            S3_game : begin seg = {1'b1, seg_game}; an = an_game; led = led_game; screen_1_data = 16'b0000000000000000; screen_2_data = screen_2_game; end
         endcase
     end
     
