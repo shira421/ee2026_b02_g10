@@ -2,12 +2,12 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Oct 11 02:00:42 2025
-# Process ID: 17892
-# Current directory: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1
+# Start of session at: Wed Oct 22 12:22:24 2025
+# Process ID: 10100
+# Current directory: C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.runs/synth_1
 # Command line: vivado.exe -log dual_oled_calculator_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dual_oled_calculator_top.tcl
-# Log file: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1/dual_oled_calculator_top.vds
-# Journal file: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1\vivado.jou
+# Log file: C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.runs/synth_1/dual_oled_calculator_top.vds
+# Journal file: C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source dual_oled_calculator_top.tcl -notrace
 Command: synth_design -top dual_oled_calculator_top -part xc7a35tcpg236-1
@@ -15,36 +15,36 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25308 
-WARNING: [Synth 8-2507] parameter declaration becomes local in oled_display with formal parameter declaration list [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:22]
+INFO: Helper process launched with PID 23328 
+WARNING: [Synth 8-2507] parameter declaration becomes local in oled_display with formal parameter declaration list [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:22]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 368.785 ; gain = 112.211
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 368.555 ; gain = 111.938
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'dual_oled_calculator_top' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:12]
-INFO: [Synth 8-6157] synthesizing module 'freq_6_25m' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_6_25m.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'freq_6_25m' (1#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_6_25m.v:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/debounce.v:22]
+INFO: [Synth 8-6157] synthesizing module 'dual_oled_calculator_top' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:12]
+INFO: [Synth 8-6157] synthesizing module 'freq_6_25m' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_6_25m.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'freq_6_25m' (1#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/freq_6_25m.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/debounce.v:22]
 	Parameter SAMPLE_COUNT bound to: 100000 - type: integer 
 	Parameter DEBOUNCE_MS bound to: 200 - type: integer 
 	Parameter PULSE_MS bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/debounce.v:22]
-INFO: [Synth 8-6157] synthesizing module 'calculator_fsm' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (2#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/debounce.v:22]
+INFO: [Synth 8-6157] synthesizing module 'calculator_fsm' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
 	Parameter S_CHOOSE_OP bound to: 3'b000 
 	Parameter S_INPUT_NUM1 bound to: 3'b001 
 	Parameter S_INPUT_NUM2 bound to: 3'b010 
 	Parameter S_SHOW_RESULT bound to: 3'b011 
-INFO: [Synth 8-6157] synthesizing module 'add_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'add_function' (3#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
-INFO: [Synth 8-6157] synthesizing module 'subtract_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'subtract_function' (4#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
-INFO: [Synth 8-6157] synthesizing module 'multiply_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'multiply_function' (5#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
-INFO: [Synth 8-6157] synthesizing module 'divide_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'divide_function' (6#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:85]
-WARNING: [Synth 8-6014] Unused sequential element val_reg was removed.  [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:107]
-INFO: [Synth 8-6155] done synthesizing module 'calculator_fsm' (7#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
-INFO: [Synth 8-6157] synthesizing module 'output_screen_renderer' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
+INFO: [Synth 8-6157] synthesizing module 'add_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'add_function' (3#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'subtract_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'subtract_function' (4#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'multiply_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'multiply_function' (5#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'divide_function' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'divide_function' (6#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:85]
+WARNING: [Synth 8-6014] Unused sequential element val_reg was removed.  [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:107]
+INFO: [Synth 8-6155] done synthesizing module 'calculator_fsm' (7#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
+INFO: [Synth 8-6157] synthesizing module 'output_screen_renderer' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
 	Parameter WIDTH bound to: 96 - type: integer 
 	Parameter HEIGHT bound to: 64 - type: integer 
 	Parameter S_CHOOSE_OP bound to: 3'b000 
@@ -65,9 +65,9 @@ INFO: [Synth 8-6157] synthesizing module 'output_screen_renderer' [C:/Users/vksh
 	Parameter BOX_Y_START bound to: 24 - type: integer 
 	Parameter BOX_WIDTH bound to: 18 - type: integer 
 	Parameter BOX_HEIGHT bound to: 18 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:120]
-INFO: [Synth 8-6155] done synthesizing module 'output_screen_renderer' (8#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
-INFO: [Synth 8-6157] synthesizing module 'input_screen_renderer' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:120]
+INFO: [Synth 8-6155] done synthesizing module 'output_screen_renderer' (8#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
+INFO: [Synth 8-6157] synthesizing module 'input_screen_renderer' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
 	Parameter WIDTH bound to: 96 - type: integer 
 	Parameter HEIGHT bound to: 64 - type: integer 
 	Parameter S_CHOOSE_OP bound to: 3'b000 
@@ -81,10 +81,10 @@ INFO: [Synth 8-6157] synthesizing module 'input_screen_renderer' [C:/Users/vkshe
 	Parameter COLOR_SUB bound to: 16'b0000001111011111 
 	Parameter COLOR_MUL bound to: 16'b1110000100000000 
 	Parameter COLOR_DIV bound to: 16'b0000011111100000 
-INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:147]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:145]
-INFO: [Synth 8-6155] done synthesizing module 'input_screen_renderer' (9#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
-INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:147]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:145]
+INFO: [Synth 8-6155] done synthesizing module 'input_screen_renderer' (9#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
+INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
 	Parameter FLIP_SCREEN bound to: 1 - type: integer 
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -136,12 +136,12 @@ INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/vkshe/OneDrive
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
-INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
-INFO: [Synth 8-6155] done synthesizing module 'oled_display' (10#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
-WARNING: [Synth 8-350] instance 'oled_a' of module 'oled_display' requires 14 connections, but only 11 given [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:94]
-INFO: [Synth 8-6157] synthesizing module 'oled_display__parameterized0' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
+INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display' (10#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+WARNING: [Synth 8-350] instance 'oled_a' of module 'oled_display' requires 14 connections, but only 11 given [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:94]
+INFO: [Synth 8-6157] synthesizing module 'oled_display__parameterized0' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
 	Parameter FLIP_SCREEN bound to: 0 - type: integer 
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -193,16 +193,16 @@ INFO: [Synth 8-6157] synthesizing module 'oled_display__parameterized0' [C:/User
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
-INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
-INFO: [Synth 8-6155] done synthesizing module 'oled_display__parameterized0' (10#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
-WARNING: [Synth 8-350] instance 'oled_b' of module 'oled_display' requires 14 connections, but only 11 given [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:103]
-INFO: [Synth 8-6155] done synthesizing module 'dual_oled_calculator_top' (11#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:12]
+INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
+INFO: [Synth 8-226] default block is never used [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display__parameterized0' (10#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+WARNING: [Synth 8-350] instance 'oled_b' of module 'oled_display' requires 14 connections, but only 11 given [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'dual_oled_calculator_top' (11#1) [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_top.v:12]
 WARNING: [Synth 8-3917] design dual_oled_calculator_top has port JA[2] driven by constant 0
 WARNING: [Synth 8-3917] design dual_oled_calculator_top has port JB[2] driven by constant 0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.961 ; gain = 159.387
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.891 ; gain = 159.273
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -215,41 +215,41 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.961 ; gain = 159.387
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.891 ; gain = 159.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.961 ; gain = 159.387
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 415.891 ; gain = 159.273
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
-Finished Parsing XDC File [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dual_oled_calculator_top_propImpl.xdc].
+Parsing XDC File [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+Finished Parsing XDC File [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/constrs_1/imports/new/my_basys3_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dual_oled_calculator_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/dual_oled_calculator_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 764.617 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 764.098 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.617 ; gain = 508.043
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.098 ; gain = 507.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.617 ; gain = 508.043
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.098 ; gain = 507.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.617 ; gain = 508.043
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 764.098 ; gain = 507.480
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "slow_clk" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "current_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -383,7 +383,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'oled_display__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 764.617 ; gain = 508.043
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 764.098 ; gain = 507.480
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -590,8 +590,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'current_num_reg[16:0]' into 'current_num_reg[16:0]' [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
-WARNING: [Synth 8-6014] Unused sequential element current_num_reg was removed.  [C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
+INFO: [Synth 8-4471] merging register 'current_num_reg[16:0]' into 'current_num_reg[16:0]' [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element current_num_reg was removed.  [C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
 DSP Report: Generating DSP multer/num_3, operation Mode is: A''*B''.
 DSP Report: register current_num_reg is absorbed into DSP multer/num_3.
 DSP Report: register num2_out_reg is absorbed into DSP multer/num_3.
@@ -609,7 +609,7 @@ WARNING: [Synth 8-3917] design dual_oled_calculator_top has port JB[2] driven by
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (fsm/\current_state_reg[2] )
 WARNING: [Synth 8-3332] Sequential element (current_state_reg[2]) is unused and will be removed from module calculator_fsm.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 823.645 ; gain = 567.070
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 824.199 ; gain = 567.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -636,13 +636,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 823.645 ; gain = 567.070
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 824.199 ; gain = 567.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 835.742 ; gain = 579.168
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 833.289 ; gain = 576.672
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -654,7 +654,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -678,7 +678,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -691,7 +691,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -703,25 +703,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -775,11 +775,11 @@ Report Instance Areas:
 |13    |  oled_b        |oled_display__parameterized0 |  1143|
 +------+----------------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1005.289 ; gain = 400.059
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1005.289 ; gain = 748.715
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 1003.535 ; gain = 398.711
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1003.535 ; gain = 746.918
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 950 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -793,9 +793,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 111 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1005.289 ; gain = 761.871
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1003.535 ; gain = 759.969
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1/dual_oled_calculator_top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/vkshe/OneDrive/Documents/NUS/ee/EE2026/ee2026_b02_g10/FDP.runs/synth_1/dual_oled_calculator_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file dual_oled_calculator_top_utilization_synth.rpt -pb dual_oled_calculator_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1005.289 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 11 02:01:22 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1003.535 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 22 12:23:02 2025...

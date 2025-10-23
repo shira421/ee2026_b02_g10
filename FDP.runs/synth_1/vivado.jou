@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Oct 11 02:00:42 2025
-# Process ID: 17892
-# Current directory: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1
-# Command line: vivado.exe -log dual_oled_calculator_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dual_oled_calculator_top.tcl
-# Log file: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1/dual_oled_calculator_top.vds
-# Journal file: C:/Users/vkshe/OneDrive/Documents/NUS/ee2026/ee2026_b02_g10/FDP.runs/synth_1\vivado.jou
+# Start of session at: Thu Oct 23 13:24:26 2025
+# Process ID: 24124
+# Current directory: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/synth_1
+# Command line: vivado.exe -log project_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_top.tcl
+# Log file: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/synth_1/project_top.vds
+# Journal file: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source dual_oled_calculator_top.tcl -notrace
+source project_top.tcl -notrace
