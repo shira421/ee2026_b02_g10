@@ -167,10 +167,10 @@ module input_screen_renderer(
                            pixel_data = is_border(x, y, PAD_X+j*(KEY_W+2), PAD_Y+i*(KEY_H+2), KEY_W, KEY_H) ? COLOR_BORDER : ((i*3+j) == numpad_selection ? COLOR_ADD : COLOR_BG);
                     end
                 end
-                // Draw numbers and symbols on keys
-                if (draw_char(7, x, y, 14, 5)) pixel_data = COLOR_TEXT; if (draw_char(8, x, y, 44, 5)) pixel_data = COLOR_TEXT; if (draw_char(9, x, y, 74, 5)) pixel_data = COLOR_TEXT;
+                // Draw numbers and symbols on keys (UPDATED: 1-2-3 at top)
+                if (draw_char(1, x, y, 14, 5)) pixel_data = COLOR_TEXT; if (draw_char(2, x, y, 44, 5)) pixel_data = COLOR_TEXT; if (draw_char(3, x, y, 74, 5)) pixel_data = COLOR_TEXT;
                 if (draw_char(4, x, y, 14, 21)) pixel_data = COLOR_TEXT; if (draw_char(5, x, y, 44, 21)) pixel_data = COLOR_TEXT; if (draw_char(6, x, y, 74, 21)) pixel_data = COLOR_TEXT;
-                if (draw_char(1, x, y, 14, 37)) pixel_data = COLOR_TEXT; if (draw_char(2, x, y, 44, 37)) pixel_data = COLOR_TEXT; if (draw_char(3, x, y, 74, 37)) pixel_data = COLOR_TEXT;
+                if (draw_char(7, x, y, 14, 37)) pixel_data = COLOR_TEXT; if (draw_char(8, x, y, 44, 37)) pixel_data = COLOR_TEXT; if (draw_char(9, x, y, 74, 37)) pixel_data = COLOR_TEXT;
 
                 // Draw bottom row: [Backspace] [0] [Enter]
                 if (draw_backspace_icon(x, y, PAD_X, PAD_Y+3*(KEY_H+2), KEY_W, KEY_H)) pixel_data = COLOR_TEXT;
