@@ -14,14 +14,15 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 34748 
-WARNING: [Synth 8-992] keypad_enable is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:147]
-WARNING: [Synth 8-992] pixel_index_1 is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:112]
-WARNING: [Synth 8-992] pixel_index_2 is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:112]
+INFO: Helper process launched with PID 21136 
+WARNING: [Synth 8-992] keypad_enable is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:150]
+WARNING: [Synth 8-992] pixel_index_1 is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:133]
+WARNING: [Synth 8-992] pixel_index_2 is already implicitly declared earlier [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:133]
+WARNING: [Synth 8-2507] parameter declaration becomes local in oled_display with formal parameter declaration list [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:22]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 369.867 ; gain = 112.523
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 369.434 ; gain = 111.957
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'project_top' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:22]
+INFO: [Synth 8-6157] synthesizing module 'project_top' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:24]
 	Parameter S0_home bound to: 2'b00 
 	Parameter S1_basic bound to: 2'b01 
 	Parameter S2_graph bound to: 2'b10 
@@ -48,7 +49,65 @@ INFO: [Synth 8-6157] synthesizing module 'small_font_rom' [C:/Users/samue/Docume
 INFO: [Synth 8-6155] done synthesizing module 'small_font_rom' (5#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/small_font_rom.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'text_renderer' (6#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/text_renderer.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'home_screen' (7#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/home_screen.v:7]
-INFO: [Synth 8-6157] synthesizing module 'graphing_calculator_top' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'dual_oled_calculator_pixel' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_pixel.v:11]
+INFO: [Synth 8-6157] synthesizing module 'calculator_fsm' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
+	Parameter S_CHOOSE_OP bound to: 3'b000 
+	Parameter S_INPUT_NUM1 bound to: 3'b001 
+	Parameter S_INPUT_NUM2 bound to: 3'b010 
+	Parameter S_SHOW_RESULT bound to: 3'b011 
+INFO: [Synth 8-6157] synthesizing module 'add_function' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'add_function' (8#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'subtract_function' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'subtract_function' (9#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'multiply_function' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'multiply_function' (10#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v:23]
+INFO: [Synth 8-6157] synthesizing module 'divide_function' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'divide_function' (11#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:85]
+WARNING: [Synth 8-6014] Unused sequential element val_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:107]
+INFO: [Synth 8-6155] done synthesizing module 'calculator_fsm' (12#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:14]
+INFO: [Synth 8-6157] synthesizing module 'output_screen_renderer' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
+	Parameter WIDTH bound to: 96 - type: integer 
+	Parameter HEIGHT bound to: 64 - type: integer 
+	Parameter S_CHOOSE_OP bound to: 3'b000 
+	Parameter S_INPUT_NUM1 bound to: 3'b001 
+	Parameter S_INPUT_NUM2 bound to: 3'b010 
+	Parameter S_SHOW_RESULT bound to: 3'b011 
+	Parameter COLOR_BG bound to: 16'b0000000000000000 
+	Parameter COLOR_TEXT bound to: 16'b1111111111111111 
+	Parameter COLOR_RESULT bound to: 16'b0000011111100000 
+	Parameter COLOR_BORDER bound to: 16'b1111111111111111 
+	Parameter DIGIT_W bound to: 12 - type: integer 
+	Parameter CHAR_H bound to: 12 - type: integer 
+	Parameter TOP_Y bound to: 4 - type: integer 
+	Parameter MID_Y bound to: 28 - type: integer 
+	Parameter BOT_Y bound to: 50 - type: integer 
+	Parameter X_RIGHT bound to: 94 - type: integer 
+	Parameter BOX_X_START bound to: 1 - type: integer 
+	Parameter BOX_Y_START bound to: 24 - type: integer 
+	Parameter BOX_WIDTH bound to: 18 - type: integer 
+	Parameter BOX_HEIGHT bound to: 18 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:120]
+INFO: [Synth 8-6155] done synthesizing module 'output_screen_renderer' (13#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v:11]
+INFO: [Synth 8-6157] synthesizing module 'input_screen_renderer' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
+	Parameter WIDTH bound to: 96 - type: integer 
+	Parameter HEIGHT bound to: 64 - type: integer 
+	Parameter S_CHOOSE_OP bound to: 3'b000 
+	Parameter S_INPUT_NUM1 bound to: 3'b001 
+	Parameter S_INPUT_NUM2 bound to: 3'b010 
+	Parameter S_SHOW_RESULT bound to: 3'b011 
+	Parameter COLOR_BG bound to: 16'b0000000000000000 
+	Parameter COLOR_BORDER bound to: 16'b1000010000010000 
+	Parameter COLOR_TEXT bound to: 16'b1111111111111111 
+	Parameter COLOR_ADD bound to: 16'b1111110100100000 
+	Parameter COLOR_SUB bound to: 16'b0000001111011111 
+	Parameter COLOR_MUL bound to: 16'b1110000100000000 
+	Parameter COLOR_DIV bound to: 16'b0000011111100000 
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:147]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:145]
+INFO: [Synth 8-6155] done synthesizing module 'input_screen_renderer' (14#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'dual_oled_calculator_pixel' (15#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_pixel.v:11]
+INFO: [Synth 8-6157] synthesizing module 'graphing_calculator_top' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:6]
 	Parameter STATE_MAIN_MENU bound to: 3'b000 
 	Parameter STATE_GRAPH_MENU bound to: 3'b001 
 	Parameter STATE_INPUT bound to: 3'b010 
@@ -57,10 +116,10 @@ INFO: [Synth 8-6157] synthesizing module 'menu_logic_module' [C:/Users/samue/Doc
 	Parameter POLYNOMIAL bound to: 2'b00 
 	Parameter COSINE bound to: 2'b01 
 	Parameter SINE bound to: 2'b10 
-INFO: [Synth 8-6155] done synthesizing module 'menu_logic_module' (8#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/menu_logic_module.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'menu_logic_module' (16#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/menu_logic_module.v:22]
 INFO: [Synth 8-6157] synthesizing module 'keypad_logic_module' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
 	Parameter keypad_matrix bound to: 48'b000100100011010001010110011110001001101000001011 
-INFO: [Synth 8-6155] done synthesizing module 'keypad_logic_module' (9#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
+INFO: [Synth 8-6155] done synthesizing module 'keypad_logic_module' (17#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/keypad_logic_module.sv:22]
 INFO: [Synth 8-6157] synthesizing module 'equation_input_module' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/equation_input_module.v:3]
 	Parameter POLY bound to: 2'b00 
 	Parameter COS bound to: 2'b01 
@@ -70,7 +129,7 @@ INFO: [Synth 8-6157] synthesizing module 'equation_input_module' [C:/Users/samue
 	Parameter NOT_SET bound to: 8'b01111111 
 WARNING: [Synth 8-6014] Unused sequential element total_coeffs_entered_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/equation_input_module.v:87]
 WARNING: [Synth 8-6014] Unused sequential element final_coeff_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/equation_input_module.v:89]
-INFO: [Synth 8-6155] done synthesizing module 'equation_input_module' (10#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/equation_input_module.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'equation_input_module' (18#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/equation_input_module.v:3]
 INFO: [Synth 8-6157] synthesizing module 'ti85_display_module' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:4]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -81,7 +140,7 @@ INFO: [Synth 8-6157] synthesizing module 'ti85_display_module' [C:/Users/samue/D
 INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:201]
 WARNING: [Synth 8-6014] Unused sequential element font_row_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:186]
 WARNING: [Synth 8-6014] Unused sequential element is_text_pixel_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:223]
-INFO: [Synth 8-6155] done synthesizing module 'ti85_display_module' (11#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'ti85_display_module' (19#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'pixel_output_generator' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:233]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -116,7 +175,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samu
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:349]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:358]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:367]
-INFO: [Synth 8-6155] done synthesizing module 'pixel_output_generator' (12#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:233]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_generator' (20#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:233]
 INFO: [Synth 8-6157] synthesizing module 'pixel_output_state_graph_menu' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:481]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -188,7 +247,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samu
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:662]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:671]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:680]
-INFO: [Synth 8-6155] done synthesizing module 'pixel_output_state_graph_menu' (13#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:481]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_output_state_graph_menu' (21#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:481]
 INFO: [Synth 8-6157] synthesizing module 'confirmation_screen' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:893]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -207,11 +266,8 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samu
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:954]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:963]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:972]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:981]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:990]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:999]
 INFO: [Common 17-14] Message 'Synth 8-155' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'confirmation_screen' (14#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:893]
+INFO: [Synth 8-6155] done synthesizing module 'confirmation_screen' (22#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:893]
 INFO: [Synth 8-6157] synthesizing module 'equation_display' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:1883]
 	Parameter POLYNOMIAL bound to: 2'b00 
 	Parameter COSINE bound to: 2'b01 
@@ -223,7 +279,7 @@ INFO: [Synth 8-6157] synthesizing module 'equation_display' [C:/Users/samue/Docu
 	Parameter COLOR_GREEN bound to: 16'b0000011111100000 
 	Parameter CHAR_WIDTH bound to: 6 - type: integer 
 	Parameter CHAR_HEIGHT bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'equation_display' (15#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:1883]
+INFO: [Synth 8-6155] done synthesizing module 'equation_display' (23#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:1883]
 INFO: [Synth 8-6157] synthesizing module 'keypad_screen' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:2576]
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
@@ -234,7 +290,7 @@ INFO: [Synth 8-6157] synthesizing module 'keypad_screen' [C:/Users/samue/Documen
 	Parameter KeypadStartX bound to: 12 - type: integer 
 	Parameter KeypadStartY bound to: 4 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:2715]
-INFO: [Synth 8-6155] done synthesizing module 'keypad_screen' (16#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:2576]
+INFO: [Synth 8-6155] done synthesizing module 'keypad_screen' (24#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/ti85_display_module.sv:2576]
 INFO: [Synth 8-6157] synthesizing module 'graph_plotter' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:174]
 	Parameter POLY bound to: 2'b00 
 	Parameter COS bound to: 2'b01 
@@ -247,12 +303,12 @@ INFO: [Synth 8-6157] synthesizing module 'graph_plotter' [C:/Users/samue/Documen
 	Parameter COLOR_MAGENTA bound to: 16'b1111100000011111 
 	Parameter COLOR_GRAY bound to: 16'b1011110111110111 
 INFO: [Synth 8-6157] synthesizing module 'trig_lut' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'trig_lut' (17#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'trig_lut' (25#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'text_display' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:111]
 	Parameter COLOR_WHITE bound to: 16'b1111111111111111 
 INFO: [Synth 8-6157] synthesizing module 'digit_rom' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:80]
-INFO: [Synth 8-6155] done synthesizing module 'digit_rom' (18#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:80]
-INFO: [Synth 8-6155] done synthesizing module 'text_display' (19#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:111]
+INFO: [Synth 8-6155] done synthesizing module 'digit_rom' (26#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'text_display' (27#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:111]
 WARNING: [Synth 8-6014] Unused sequential element da_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:247]
 WARNING: [Synth 8-6014] Unused sequential element db_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:248]
 WARNING: [Synth 8-6014] Unused sequential element dc_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:249]
@@ -262,8 +318,8 @@ WARNING: [Synth 8-6014] Unused sequential element disc_reg was removed.  [C:/Use
 WARNING: [Synth 8-6014] Unused sequential element sq_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:260]
 WARNING: [Synth 8-6014] Unused sequential element xs2_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:263]
 WARNING: [Synth 8-6014] Unused sequential element ys2_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:264]
-INFO: [Synth 8-6155] done synthesizing module 'graph_plotter' (20#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'graphing_calculator_top' (21#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'graph_plotter' (28#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graph_plotter.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'graphing_calculator_top' (29#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v:6]
 INFO: [Synth 8-6157] synthesizing module 'maths_game' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/Top_Student.v:8]
 	Parameter FLASH_DURATION bound to: 24'b111001001110000111000000 
 	Parameter HOME bound to: 2'b00 
@@ -271,7 +327,7 @@ INFO: [Synth 8-6157] synthesizing module 'maths_game' [C:/Users/samue/Documents/
 	Parameter GAME_OVER bound to: 2'b10 
 	Parameter CORRECT_PAUSE bound to: 2'b11 
 INFO: [Synth 8-6157] synthesizing module 'flexible_clock' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/flexible_clock.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (22#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/flexible_clock.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'flexible_clock' (30#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/flexible_clock.v:23]
 INFO: [Synth 8-6157] synthesizing module 'game_state' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:8]
 	Parameter HOME bound to: 2'b00 
 	Parameter PLAYING bound to: 2'b01 
@@ -281,7 +337,7 @@ INFO: [Synth 8-6157] synthesizing module 'game_state' [C:/Users/samue/Documents/
 	Parameter OP_SUB bound to: 2'b01 
 	Parameter OP_DIV bound to: 2'b10 
 	Parameter OP_MUL bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'game_state' (23#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'game_state' (31#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:8]
 WARNING: [Synth 8-350] instance 'game_logic' of module 'game_state' requires 15 connections, but only 14 given [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/Top_Student.v:45]
 INFO: [Synth 8-6157] synthesizing module 'game_display' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v:7]
 	Parameter WIDTH bound to: 96 - type: integer 
@@ -303,9 +359,10 @@ INFO: [Synth 8-6157] synthesizing module 'game_display' [C:/Users/samue/Document
 	Parameter BTN_LEFT_X bound to: 32 - type: integer 
 	Parameter BTN_RIGHT_X bound to: 64 - type: integer 
 INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v:208]
-INFO: [Synth 8-6155] done synthesizing module 'game_display' (24#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'maths_game' (25#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/Top_Student.v:8]
-INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'game_display' (32#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'maths_game' (33#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/Top_Student.v:8]
+INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+	Parameter FLIP_SCREEN bound to: 0 - type: integer 
 	Parameter Width bound to: 96 - type: integer 
 	Parameter Height bound to: 64 - type: integer 
 	Parameter PixelCount bound to: 6144 - type: integer 
@@ -356,11 +413,70 @@ INFO: [Synth 8-6157] synthesizing module 'oled_display' [C:/Users/samue/Document
 	Parameter SendPixel bound to: 5'b10000 
 	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
 	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:110]
-INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:185]
-WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:333]
-INFO: [Synth 8-6155] done synthesizing module 'oled_display' (26#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'project_top' (27#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:22]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display' (34#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+INFO: [Synth 8-6157] synthesizing module 'oled_display__parameterized0' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+	Parameter FLIP_SCREEN bound to: 1 - type: integer 
+	Parameter Width bound to: 96 - type: integer 
+	Parameter Height bound to: 64 - type: integer 
+	Parameter PixelCount bound to: 6144 - type: integer 
+	Parameter PixelCountWidth bound to: 13 - type: integer 
+	Parameter ClkFreq bound to: 6250000 - type: integer 
+	Parameter FrameFreq bound to: 60 - type: integer 
+	Parameter FrameDiv bound to: 104166 - type: integer 
+	Parameter FrameDivWidth bound to: 17 - type: integer 
+	Parameter PowerDelay bound to: 20 - type: integer 
+	Parameter ResetDelay bound to: 3 - type: integer 
+	Parameter VccEnDelay bound to: 20 - type: integer 
+	Parameter StartupCompleteDelay bound to: 100 - type: integer 
+	Parameter MaxDelay bound to: 100 - type: integer 
+	Parameter MaxDelayCount bound to: 625000 - type: integer 
+	Parameter StateCount bound to: 32 - type: integer 
+	Parameter StateWidth bound to: 5 - type: integer 
+	Parameter PowerUp bound to: 5'b00000 
+	Parameter Reset bound to: 5'b00001 
+	Parameter ReleaseReset bound to: 5'b00011 
+	Parameter EnableDriver bound to: 5'b00010 
+	Parameter DisplayOff bound to: 5'b00110 
+	Parameter SetRemapDisplayFormat bound to: 5'b00111 
+	Parameter SetStartLine bound to: 5'b00101 
+	Parameter SetOffset bound to: 5'b00100 
+	Parameter SetNormalDisplay bound to: 5'b01100 
+	Parameter SetMultiplexRatio bound to: 5'b01101 
+	Parameter SetMasterConfiguration bound to: 5'b01111 
+	Parameter DisablePowerSave bound to: 5'b01110 
+	Parameter SetPhaseAdjust bound to: 5'b01010 
+	Parameter SetDisplayClock bound to: 5'b01011 
+	Parameter SetSecondPrechargeA bound to: 5'b01001 
+	Parameter SetSecondPrechargeB bound to: 5'b01000 
+	Parameter SetSecondPrechargeC bound to: 5'b11000 
+	Parameter SetPrechargeLevel bound to: 5'b11001 
+	Parameter SetVCOMH bound to: 5'b11011 
+	Parameter SetMasterCurrent bound to: 5'b11010 
+	Parameter SetContrastA bound to: 5'b11110 
+	Parameter SetContrastB bound to: 5'b11111 
+	Parameter SetContrastC bound to: 5'b11101 
+	Parameter DisableScrolling bound to: 5'b11100 
+	Parameter ClearScreen bound to: 5'b10100 
+	Parameter VccEn bound to: 5'b10101 
+	Parameter DisplayOn bound to: 5'b10111 
+	Parameter PrepareNextFrame bound to: 5'b10110 
+	Parameter SetColAddress bound to: 5'b10010 
+	Parameter SetRowAddress bound to: 5'b10011 
+	Parameter WaitNextFrame bound to: 5'b10001 
+	Parameter SendPixel bound to: 5'b10000 
+	Parameter SpiCommandMaxWidth bound to: 40 - type: integer 
+	Parameter SpiCommandBitCountWidth bound to: 6 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:101]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:176]
+WARNING: [Synth 8-693] zero replication count - replication ignored [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:304]
+INFO: [Synth 8-6155] done synthesizing module 'oled_display__parameterized0' (34#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v:10]
+INFO: [Synth 8-226] default block is never used [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:201]
+INFO: [Synth 8-6155] done synthesizing module 'project_top' (35#1) [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:24]
+WARNING: [Synth 8-3917] design project_top has port JB[2] driven by constant 0
+WARNING: [Synth 8-3917] design project_top has port JA[2] driven by constant 0
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[3]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[2]
 WARNING: [Synth 8-3331] design game_display has unconnected port mistakes[1]
@@ -375,8 +491,7 @@ WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[
 WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[6]
 WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[5]
 WARNING: [Synth 8-3331] design equation_display has unconnected port temp_coeff[4]
-WARNING: [Synth 8-3331] design project_top has unconnected port JB[2]
-WARNING: [Synth 8-3331] design project_top has unconnected port JA[2]
+WARNING: [Synth 8-3331] design project_top has unconnected port sw[15]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[14]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[13]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[12]
@@ -387,9 +502,8 @@ WARNING: [Synth 8-3331] design project_top has unconnected port sw[7]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[6]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[5]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[4]
-WARNING: [Synth 8-3331] design project_top has unconnected port sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 457.527 ; gain = 200.184
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 472.062 ; gain = 214.586
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -402,10 +516,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 457.527 ; gain = 200.184
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 472.062 ; gain = 214.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 457.527 ; gain = 200.184
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 472.062 ; gain = 214.586
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -421,22 +535,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 809.352 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 823.102 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 809.398 ; gain = 552.055
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 823.102 ; gain = 565.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 809.398 ; gain = 552.055
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 823.102 ; gain = 565.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 809.398 ; gain = 552.055
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 823.102 ; gain = 565.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "slow_clk" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "font_data" won't be mapped to RAM because it is too sparse
@@ -445,6 +559,54 @@ INFO: [Synth 8-5544] ROM "char_code" won't be mapped to Block RAM because addres
 INFO: [Synth 8-5544] ROM "char_code" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "char_code" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "char_code" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "current_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "current_num" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row9" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "font_row24" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pixel_data1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "enter_pressed" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "result" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -495,8 +657,8 @@ WARNING: [Synth 8-6014] Unused sequential element operand1_reg was removed.  [C:
 WARNING: [Synth 8-6014] Unused sequential element operand2_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:184]
 WARNING: [Synth 8-6014] Unused sequential element result_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:185]
 INFO: [Synth 8-5544] ROM "final_score" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-DSP Debug: swapped A/B pins for adder 00000183E09454B0
-DSP Debug: swapped A/B pins for adder 00000183E0943950
+DSP Debug: swapped A/B pins for adder 0000027ADDE9A990
+DSP Debug: swapped A/B pins for adder 0000027ADDE9AED0
 INFO: [Synth 8-5544] ROM "final_score" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "pixel_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -506,36 +668,12 @@ INFO: [Synth 8-5544] ROM "cur_char" won't be mapped to Block RAM because address
 INFO: [Synth 8-5544] ROM "cur_char" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "get_char" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "led_feedback" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "led_feedback" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "seg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'oled_display'
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "fsm_next_state0" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'oled_display__parameterized0'
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -583,45 +721,83 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                SendPixel | 00000000000000000010000000000000 |                            10000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'oled_display'
-WARNING: [Synth 8-327] inferring latch for variable 'led_reg' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:171]
-WARNING: [Synth 8-327] inferring latch for variable 'screen_2_data_reg' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:123]
-WARNING: [Synth 8-327] inferring latch for variable 'screen_1_data_reg' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/project_top.v:140]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 PowerUp | 00000000100000000000000000000000 |                            00000
+                   Reset | 00000000000100000000000000000000 |                            00001
+            ReleaseReset | 00000000000000000000100000000000 |                            00011
+            EnableDriver | 00000000000000000001000000000000 |                            00010
+              DisplayOff | 00000000000000000100000000000000 |                            00110
+   SetRemapDisplayFormat | 00000100000000000000000000000000 |                            00111
+            SetStartLine | 00001000000000000000000000000000 |                            00101
+               SetOffset | 10000000000000000000000000000000 |                            00100
+        SetNormalDisplay | 00000000000000000000000010000000 |                            01100
+       SetMultiplexRatio | 00000000000000000000000000100000 |                            01101
+  SetMasterConfiguration | 00000000000000000000000001000000 |                            01111
+        DisablePowerSave | 00000000000000000000000000000100 |                            01110
+          SetPhaseAdjust | 00000000000000000000000000001000 |                            01010
+         SetDisplayClock | 00000000001000000000000000000000 |                            01011
+     SetSecondPrechargeA | 00000000010000000000000000000000 |                            01001
+     SetSecondPrechargeB | 01000000000000000000000000000000 |                            01000
+     SetSecondPrechargeC | 00000010000000000000000000000000 |                            11000
+       SetPrechargeLevel | 00000001000000000000000000000000 |                            11001
+                SetVCOMH | 00000000000000010000000000000000 |                            11011
+        SetMasterCurrent | 00000000000000100000000000000000 |                            11010
+            SetContrastA | 00000000000001000000000000000000 |                            11110
+            SetContrastB | 00100000000000000000000000000000 |                            11111
+            SetContrastC | 00000000000000000000000000000001 |                            11101
+        DisableScrolling | 00000000000000000000000000000010 |                            11100
+             ClearScreen | 00000000000000000000000000010000 |                            10100
+                   VccEn | 00010000000000000000000000000000 |                            10101
+               DisplayOn | 00000000000010000000000000000000 |                            10111
+        PrepareNextFrame | 00000000000000001000000000000000 |                            10110
+           SetColAddress | 00000000000000000000010000000000 |                            10010
+           SetRowAddress | 00000000000000000000000100000000 |                            10011
+           WaitNextFrame | 00000000000000000000001000000000 |                            10001
+               SendPixel | 00000000000000000010000000000000 |                            10000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'oled_display__parameterized0'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 809.398 ; gain = 552.055
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 823.102 ; gain = 565.625
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-----------------------------+------------+----------+
 |      |RTL Partition                |Replication |Instances |
 +------+-----------------------------+------------+----------+
-|1     |graph_plotter__GBM0          |           1|     21391|
-|2     |graph_plotter__GBM1          |           1|      8667|
+|1     |graph_plotter__GB0           |           1|     21391|
+|2     |graph_plotter__GB1           |           1|      8667|
 |3     |graphing_calculator_top__GC0 |           1|     30436|
-|4     |project_top__GC0             |           1|     19789|
+|4     |project_top__GCB0            |           1|     33968|
+|5     |project_top__GCB1            |           1|     16568|
 +------+-----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 45    
-	   3 Input     32 Bit       Adders := 20    
+	   2 Input     32 Bit       Adders := 56    
+	   3 Input     32 Bit       Adders := 11    
 	   2 Input     27 Bit       Adders := 2     
 	   2 Input     24 Bit       Adders := 1     
-	   3 Input     18 Bit       Adders := 4     
-	   2 Input     17 Bit       Adders := 14    
-	   2 Input     16 Bit       Adders := 28    
-	   3 Input     16 Bit       Adders := 6     
-	   2 Input     10 Bit       Adders := 3     
+	   3 Input     20 Bit       Adders := 1     
+	   3 Input     18 Bit       Adders := 2     
+	   2 Input     18 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 8     
+	   2 Input     16 Bit       Adders := 14    
+	   3 Input     16 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 2     
 	   3 Input      9 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 3     
-	   2 Input      8 Bit       Adders := 21    
+	   2 Input      8 Bit       Adders := 22    
+	   3 Input      8 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 34    
-	   2 Input      6 Bit       Adders := 18    
+	   2 Input      6 Bit       Adders := 12    
 	   3 Input      6 Bit       Adders := 6     
-	   2 Input      5 Bit       Adders := 14    
-	   2 Input      4 Bit       Adders := 15    
-	   2 Input      3 Bit       Adders := 40    
+	   2 Input      5 Bit       Adders := 12    
+	   2 Input      4 Bit       Adders := 16    
+	   2 Input      3 Bit       Adders := 43    
 	   2 Input      2 Bit       Adders := 7     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
@@ -629,56 +805,62 @@ Detailed RTL Component Info :
 	               40 Bit    Registers := 2     
 	               27 Bit    Registers := 2     
 	               24 Bit    Registers := 1     
-	               17 Bit    Registers := 2     
+	               20 Bit    Registers := 1     
+	               17 Bit    Registers := 6     
 	               16 Bit    Registers := 2     
 	               10 Bit    Registers := 3     
-	                8 Bit    Registers := 32    
-	                7 Bit    Registers := 9     
+	                8 Bit    Registers := 28    
+	                7 Bit    Registers := 5     
 	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 5     
-	                3 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 16    
-	                1 Bit    Registers := 57    
+	                1 Bit    Registers := 62    
 +---ROMs : 
 	                              ROMs := 3     
 +---Muxes : 
 	   2 Input     40 Bit        Muxes := 6     
-	   2 Input     32 Bit        Muxes := 70    
+	   2 Input     32 Bit        Muxes := 37    
 	  32 Input     32 Bit        Muxes := 2     
 	   4 Input     27 Bit        Muxes := 2     
 	   2 Input     27 Bit        Muxes := 3     
 	   4 Input     24 Bit        Muxes := 1     
 	   2 Input     24 Bit        Muxes := 2     
+	   4 Input     20 Bit        Muxes := 1     
 	  32 Input     20 Bit        Muxes := 2     
-	   2 Input     17 Bit        Muxes := 2     
-	   2 Input     16 Bit        Muxes := 150   
-	   3 Input     16 Bit        Muxes := 17    
-	   5 Input     16 Bit        Muxes := 4     
-	   4 Input     16 Bit        Muxes := 10    
+	   2 Input     17 Bit        Muxes := 6     
+	   4 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 165   
+	   3 Input     16 Bit        Muxes := 9     
+	   5 Input     16 Bit        Muxes := 5     
+	   4 Input     16 Bit        Muxes := 26    
+	   6 Input     16 Bit        Muxes := 1     
 	  12 Input     16 Bit        Muxes := 1     
 	  15 Input     15 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 5     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 6     
 	   5 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 3     
 	   4 Input     10 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 2     
-	  49 Input      8 Bit        Muxes := 4     
-	   2 Input      8 Bit        Muxes := 39    
+	  49 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 32    
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 29    
-	   8 Input      7 Bit        Muxes := 7     
+	   2 Input      7 Bit        Muxes := 26    
+	   8 Input      7 Bit        Muxes := 43    
 	   4 Input      7 Bit        Muxes := 5     
 	  12 Input      7 Bit        Muxes := 2     
 	   7 Input      7 Bit        Muxes := 2     
 	   5 Input      7 Bit        Muxes := 2     
 	  14 Input      7 Bit        Muxes := 2     
+	   6 Input      7 Bit        Muxes := 2     
 	  11 Input      7 Bit        Muxes := 1     
 	  13 Input      7 Bit        Muxes := 1     
-	   6 Input      7 Bit        Muxes := 2     
-	   2 Input      6 Bit        Muxes := 18    
+	   2 Input      6 Bit        Muxes := 12    
 	   4 Input      6 Bit        Muxes := 5     
 	   7 Input      6 Bit        Muxes := 1     
+	   8 Input      6 Bit        Muxes := 4     
 	  32 Input      6 Bit        Muxes := 2     
 	   8 Input      5 Bit        Muxes := 217   
 	  11 Input      5 Bit        Muxes := 2     
@@ -688,23 +870,24 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 14    
 	   4 Input      5 Bit        Muxes := 1     
 	  27 Input      5 Bit        Muxes := 5     
-	   2 Input      4 Bit        Muxes := 33    
-	   3 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 25    
+	   3 Input      4 Bit        Muxes := 1     
 	  12 Input      4 Bit        Muxes := 1     
 	  15 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 9     
 	   8 Input      4 Bit        Muxes := 2     
-	   3 Input      3 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 25    
-	   2 Input      2 Bit        Muxes := 18    
-	   3 Input      2 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 26    
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 19    
+	   3 Input      2 Bit        Muxes := 4     
 	  12 Input      2 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 5     
 	   5 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 152   
+	   2 Input      1 Bit        Muxes := 161   
 	   4 Input      1 Bit        Muxes := 29    
-	   3 Input      1 Bit        Muxes := 11    
-	   8 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 7     
+	   8 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -718,12 +901,11 @@ Detailed RTL Component Info :
 +---Registers : 
 	                2 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 3     
 	   4 Input      8 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 17    
 Module trig_lut__1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -981,33 +1163,110 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
-Module small_font_rom 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  15 Input     15 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 1     
-Module text_renderer 
+Module add_function 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 2     
-	   2 Input      6 Bit       Adders := 3     
-	   3 Input      6 Bit       Adders := 6     
-	   2 Input      4 Bit       Adders := 3     
-	   2 Input      3 Bit       Adders := 3     
-	   2 Input      2 Bit       Adders := 1     
-+---Muxes : 
-	   8 Input      7 Bit        Muxes := 5     
-	  12 Input      7 Bit        Muxes := 1     
-	  11 Input      7 Bit        Muxes := 1     
-	  13 Input      7 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 8     
-	   2 Input      1 Bit        Muxes := 22    
-Module home_screen 
+	   2 Input     18 Bit       Adders := 1     
+Module subtract_function 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     20 Bit       Adders := 1     
+Module divide_function 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     16 Bit        Muxes := 3     
-	   4 Input     16 Bit        Muxes := 3     
+	   2 Input     17 Bit        Muxes := 1     
+Module calculator_fsm 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 5     
++---Registers : 
+	               20 Bit    Registers := 1     
+	               17 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   4 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 3     
+	   4 Input     17 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   4 Input      1 Bit        Muxes := 8     
+	   3 Input      1 Bit        Muxes := 1     
+Module output_screen_renderer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 14    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 12    
+	   6 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 27    
+	   8 Input      6 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
+Module input_screen_renderer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 12    
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 3     
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 14    
+	   2 Input     16 Bit        Muxes := 17    
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 9     
+	   8 Input      6 Bit        Muxes := 1     
+Module oled_display__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module oled_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	  32 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	  32 Input     20 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 1     
+	  32 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  32 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module flexible_clock 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1091,46 +1350,33 @@ Detailed RTL Component Info :
 	   4 Input      4 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 10    
 	   5 Input      1 Bit        Muxes := 1     
-Module oled_display__1 
+Module small_font_rom 
+Detailed RTL Component Info : 
++---Muxes : 
+	  15 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+Module text_renderer 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     17 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	               40 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 3     
+	   3 Input      6 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     40 Bit        Muxes := 3     
-	  32 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 2     
-	  32 Input     20 Bit        Muxes := 1     
-	   2 Input     17 Bit        Muxes := 1     
-	  32 Input      6 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
-	  32 Input      5 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-Module oled_display 
+	   8 Input      7 Bit        Muxes := 5     
+	  12 Input      7 Bit        Muxes := 1     
+	  11 Input      7 Bit        Muxes := 1     
+	  13 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 22    
+Module home_screen 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	               40 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     40 Bit        Muxes := 3     
-	  32 Input     32 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 2     
-	  32 Input     20 Bit        Muxes := 1     
-	   2 Input     17 Bit        Muxes := 1     
-	  32 Input      6 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
-	  32 Input      5 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
+	   4 Input     16 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -1227,19 +1473,27 @@ INFO: [Synth 8-5546] ROM "sol_cnt_prev" won't be mapped to RAM because it is too
 INFO: [Synth 8-5546] ROM "sol_x_prev" won't be mapped to RAM because it is too sparse
 DSP Report: Generating DSP g2_y_prev2, operation Mode is: A*B.
 DSP Report: operator g2_y_prev2 is absorbed into DSP g2_y_prev2.
-INFO: [Synth 8-5544] ROM "p_0_out" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5587] ROM size for "small_font/font_data" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-4471] merging register 'fsm/current_num_reg[16:0]' into 'fsm/current_num_reg[16:0]' [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element fsm/current_num_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v:83]
+DSP Report: Generating DSP fsm/multer/num_3, operation Mode is: A''*B''.
+DSP Report: register fsm/current_num_reg is absorbed into DSP fsm/multer/num_3.
+DSP Report: register fsm/num2_out_reg is absorbed into DSP fsm/multer/num_3.
+DSP Report: register fsm/current_num_reg is absorbed into DSP fsm/multer/num_3.
+DSP Report: register fsm/num1_out_reg is absorbed into DSP fsm/multer/num_3.
+DSP Report: operator fsm/multer/num_3 is absorbed into DSP fsm/multer/num_3.
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "clk_anode_gen/slow_clock0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element game_logic/operand1_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:183]
 WARNING: [Synth 8-6014] Unused sequential element game_logic/operand2_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:184]
 WARNING: [Synth 8-6014] Unused sequential element game_logic/result_reg was removed.  [C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v:185]
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "fsm_next_state0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "small_font/font_data" is below threshold of ROM address width. It will be mapped to LUTs
 WARNING: [Synth 8-3917] design project_top has port seg[7] driven by constant 1
-WARNING: [Synth 8-3331] design project_top has unconnected port JB[2]
-WARNING: [Synth 8-3331] design project_top has unconnected port JA[2]
+WARNING: [Synth 8-3917] design project_top has port JB[2] driven by constant 0
+WARNING: [Synth 8-3917] design project_top has port JA[2] driven by constant 0
+WARNING: [Synth 8-3331] design project_top has unconnected port sw[15]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[14]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[13]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[12]
@@ -1250,373 +1504,60 @@ WARNING: [Synth 8-3331] design project_top has unconnected port sw[7]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[6]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[5]
 WARNING: [Synth 8-3331] design project_top has unconnected port sw[4]
-WARNING: [Synth 8-3331] design project_top has unconnected port sw[0]
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/temp_coeff_reg[6]' (FDCE) to 'f1i_5/equation_input_inst/digit_count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/temp_coeff_reg[5]' (FDCE) to 'f1i_5/equation_input_inst/digit_count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/temp_coeff_reg[4]' (FDCE) to 'f1i_5/equation_input_inst/digit_count_reg[1]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/temp_coeff_reg[7]' (FDCE) to 'f1i_5/equation_input_inst/digit_count_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_5/\state_prev_reg[2] )
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[0]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[1]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[1]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[2]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[2]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[3]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[3]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[5]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[6]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[7]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[8]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[9]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[9]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[10]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[11]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[11]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[12]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[13]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[14]' (FD) to 'f1i_5/pixel_output_state_graph_menu_inst/pixel_data_reg[15]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_5/\equation_input_inst/current_graph_slot_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_5/\equation_input_inst/digit_count_reg[1] )
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[0]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[1]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[1]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[2]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[2]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[3]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[3]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[5]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[6]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[7]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[8]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[9]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[9]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[10]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[11]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[11]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[12]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[13]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[14]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/keypad_screen_inst/pixel_data_reg[14]' (FDR) to 'f1i_5/keypad_screen_inst/pixel_data_reg[15]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_sin_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g2_sin_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_sin_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g2_sin_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_cos_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g2_cos_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_cos_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g2_cos_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_c_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_c_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_c_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_c_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_b_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_b_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_b_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_b_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g2_poly_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g2_poly_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_sin_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g1_sin_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_sin_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g1_sin_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_cos_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g1_cos_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_cos_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g1_cos_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_c_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_c_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_c_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_c_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_b_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_b_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_b_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_b_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_a_reg[4]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'f1i_5/equation_input_inst/g1_poly_coeff_a_reg[5]' (FDPE) to 'f1i_5/equation_input_inst/g1_poly_coeff_a_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[0]' (LD) to 'i_0/led_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[1]' (LD) to 'i_0/led_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[2]' (LD) to 'i_0/led_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[3]' (LD) to 'i_0/led_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[4]' (LD) to 'i_0/led_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[5]' (LD) to 'i_0/led_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[6]' (LD) to 'i_0/led_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[7]' (LD) to 'i_0/led_reg[9]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[8]' (LD) to 'i_0/led_reg[9]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[9]' (LD) to 'i_0/led_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[10]' (LD) to 'i_0/led_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[11]' (LD) to 'i_0/led_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[12]' (LD) to 'i_0/led_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[13]' (LD) to 'i_0/led_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_0/led_reg[14]' (LD) to 'i_0/led_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[0]' (LD) to 'i_0/screen_1_data_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[1]' (LD) to 'i_0/screen_1_data_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[2]' (LD) to 'i_0/screen_1_data_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[5]' (LD) to 'i_0/screen_1_data_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[6]' (LD) to 'i_0/screen_1_data_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[7]' (LD) to 'i_0/screen_1_data_reg[8]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[8]' (LD) to 'i_0/screen_1_data_reg[10]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[11]' (LD) to 'i_0/screen_1_data_reg[12]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[12]' (LD) to 'i_0/screen_1_data_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_0/screen_1_data_reg[13]' (LD) to 'i_0/screen_1_data_reg[15]'
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:01:24 . Memory (MB): peak = 1209.047 ; gain = 951.703
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-ROM:
-+--------------------+-------------------------+---------------+----------------+
-|Module Name         | RTL Object              | Depth x Width | Implemented As | 
-+--------------------+-------------------------+---------------+----------------+
-|font_rom            | font_data               | 256x35        | LUT            | 
-|confirmation_screen | get_line1_char          | 32x7          | LUT            | 
-|game_state          | p_0_out                 | 512x8         | LUT            | 
-|game_state          | operand1_reg            | 512x8         | Block RAM      | 
-|game_state          | operand2_reg            | 512x8         | Block RAM      | 
-|game_state          | result_reg              | 512x8         | Block RAM      | 
-|trig_lut            | trig_val                | 64x8          | LUT            | 
-|trig_lut            | trig_val                | 64x8          | LUT            | 
-|confirmation_screen | get_line1_char          | 32x7          | LUT            | 
-|font_rom            | font_data               | 256x35        | LUT            | 
-|maths_game          | p_0_out                 | 512x8         | LUT            | 
-|maths_game          | game_logic/operand1_reg | 512x8         | Block RAM      | 
-|maths_game          | game_logic/operand2_reg | 512x8         | Block RAM      | 
-|maths_game          | game_logic/result_reg   | 512x8         | Block RAM      | 
-+--------------------+-------------------------+---------------+----------------+
-
-
-DSP: Preliminary Mapping  Report (see note below)
-+--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name   | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|graph_plotter | A*B                    | 20     | 16     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B+1                | 16     | 16     | 32     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | (C:0xfffffff00000)+A*B | 16     | 16     | 21     | -      | 32     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | PCIN-A*B               | 20     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*(B:0x29)             | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*(B:0x29)             | 24     | 7      | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|graph_plotter | C+A*B                  | 16     | 16     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|graph_plotter | A*B                    | 16     | 8      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+--------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-
-Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance i_0/i_6/f2/game_logic/operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_0/i_7/f2/game_logic/operand2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_0/i_8/f2/game_logic/result_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-
-Report RTL Partitions: 
-+------+-----------------------------+------------+----------+
-|      |RTL Partition                |Replication |Instances |
-+------+-----------------------------+------------+----------+
-|1     |graph_plotter__GBM0          |           2|     11870|
-|2     |graph_plotter__GBM1          |           2|      5459|
-|3     |graphing_calculator_top__GC0 |           1|     11579|
-|4     |project_top__GC0             |           1|      8732|
-+------+-----------------------------+------------+----------+
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:01:31 . Memory (MB): peak = 1209.047 ; gain = 951.703
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:02:17 . Memory (MB): peak = 1209.047 ; gain = 951.703
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+------+--------------------+------------+----------+
-|      |RTL Partition       |Replication |Instances |
-+------+--------------------+------------+----------+
-|1     |graph_plotter__GBM1 |           2|      5459|
-|2     |project_top__GC0    |           1|      8732|
-|3     |project_top_GT0     |           1|     35319|
-+------+--------------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance f2/game_logic/operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance f2/game_logic/operand1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance f2/game_logic/result_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
-INFO: [Synth 8-6064] Net f1n_0_19631 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
-INFO: [Synth 8-6064] Net f1n_0_19633 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
-INFO: [Synth 8-6064] Net n_0_2022 is driving 68 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
-INFO: [Synth 8-6064] Net f1n_0_19395 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
-INFO: [Synth 8-6064] Net f1n_0_19397 is driving 96 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
-INFO: [Synth 8-6064] Net n_0_4185 is driving 68 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
-INFO: [Synth 8-6064] Net \f1/graph_display_1/A [15] is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
-INFO: [Synth 8-6064] Net \f1/g1_poly_coeff_a [7] is driving 77 big block pins (URAM, BRAM and DSP loads). Created 8 replicas of its driver. 
-INFO: [Synth 8-6064] Net \f1/graph_display_2/A [15] is driving 64 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
-INFO: [Synth 8-6064] Net \f1/g1_poly_coeff_b [7] is driving 99 big block pins (URAM, BRAM and DSP loads). Created 10 replicas of its driver. 
-INFO: [Synth 8-6064] Net \f1/g2_poly_coeff_b [7] is driving 66 big block pins (URAM, BRAM and DSP loads). Created 7 replicas of its driver. 
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:02:28 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:02:28 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:02:30 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:02:30 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:02:30 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:02:30 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+----------+------+
-|      |Cell      |Count |
-+------+----------+------+
-|1     |BUFG      |     3|
-|2     |CARRY4    |  3529|
-|3     |DSP48E1   |    44|
-|4     |DSP48E1_1 |    22|
-|5     |LUT1      |   863|
-|6     |LUT2      |  3277|
-|7     |LUT3      |  2264|
-|8     |LUT4      |  6153|
-|9     |LUT5      |  4091|
-|10    |LUT6      |  5190|
-|11    |MUXF7     |    63|
-|12    |MUXF8     |     8|
-|13    |RAMB18E1  |     2|
-|14    |FDCE      |    95|
-|15    |FDE_1     |    64|
-|16    |FDPE      |    51|
-|17    |FDRE      |   672|
-|18    |FDSE      |    28|
-|19    |LD        |    23|
-|20    |IBUF      |    11|
-|21    |OBUF      |    42|
-|22    |OBUFT     |     2|
-+------+----------+------+
-
-Report Instance Areas: 
-+------+---------------------------------------+------------------------------+------+
-|      |Instance                               |Module                        |Cells |
-+------+---------------------------------------+------------------------------+------+
-|1     |top                                    |                              | 26497|
-|2     |  b0                                   |debouncer_parent              |   368|
-|3     |    d0                                 |debounce                      |    73|
-|4     |    d1                                 |debounce_2                    |    75|
-|5     |    d2                                 |debounce_3                    |    74|
-|6     |    d3                                 |debounce_4                    |    73|
-|7     |    d4                                 |debounce_5                    |    73|
-|8     |  c0                                   |freq_625m                     |    15|
-|9     |  f0                                   |home_screen                   |   204|
-|10    |    text_render                        |text_renderer                 |    76|
-|11    |      font                             |font_rom                      |    76|
-|12    |  f1                                   |graphing_calculator_top       | 13724|
-|13    |    confirmation_screen_inst           |confirmation_screen           |   135|
-|14    |    equation_display_inst              |equation_display              |   440|
-|15    |    equation_input_inst                |equation_input_module         |  6399|
-|16    |    graph_display_1                    |graph_plotter                 |  2611|
-|17    |    graph_display_2                    |graph_plotter_1               |  2611|
-|18    |    keypad_inst                        |keypad_logic_module           |    44|
-|19    |    keypad_screen_inst                 |keypad_screen                 |    24|
-|20    |    menu_logic_inst                    |menu_logic_module             |  1120|
-|21    |    pixel_output_generator_inst        |pixel_output_generator        |   106|
-|22    |    pixel_output_state_graph_menu_inst |pixel_output_state_graph_menu |   146|
-|23    |    ti85_display_inst                  |ti85_display_module           |    82|
-|24    |  f2                                   |maths_game                    |   927|
-|25    |    clk_anode_gen                      |flexible_clock                |    54|
-|26    |    display                            |game_display                  |    90|
-|27    |    game_logic                         |game_state                    |   700|
-|28    |  g0                                   |oled_display                  |  3739|
-|29    |  g1                                   |oled_display_0                |  2491|
-+------+---------------------------------------+------------------------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:02:30 . Memory (MB): peak = 1414.465 ; gain = 1157.121
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 23 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1414.465 ; gain = 805.250
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:02:31 . Memory (MB): peak = 1414.465 ; gain = 1157.121
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 3766 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 87 instances were transformed.
-  FDE_1 => FDRE (inverted pins: C): 64 instances
-  LD => LDCE: 23 instances
-
-INFO: [Common 17-83] Releasing license: Synthesis
-375 Infos, 68 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:02:35 . Memory (MB): peak = 1414.465 ; gain = 1170.180
-WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1/project_top.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file project_top_utilization_synth.rpt -pb project_top_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1414.465 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 23 00:07:34 2025...
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/temp_coeff_reg[6]' (FDCE) to 'f1i_4/equation_input_inst/digit_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/temp_coeff_reg[5]' (FDCE) to 'f1i_4/equation_input_inst/digit_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/temp_coeff_reg[4]' (FDCE) to 'f1i_4/equation_input_inst/digit_count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/temp_coeff_reg[7]' (FDCE) to 'f1i_4/equation_input_inst/digit_count_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_4/\state_prev_reg[2] )
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[0]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[1]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[2]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[3]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[5]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[6]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[7]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[8]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[9]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[10]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[11]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[12]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[13]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[14]' (FD) to 'f1i_4/pixel_output_state_graph_menu_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[0]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[1]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[2]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[3]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[5]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[6]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[7]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[8]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[9]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[10]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[11]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[12]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[13]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/keypad_screen_inst/pixel_data_reg[14]' (FDR) to 'f1i_4/keypad_screen_inst/pixel_data_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_4/\equation_input_inst/current_graph_slot_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (f1i_4/\equation_input_inst/digit_count_reg[1] )
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_sin_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_sin_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g2_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_cos_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_cos_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g2_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_c_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_c_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_b_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_b_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g2_poly_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g2_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_sin_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_sin_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g1_sin_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_cos_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_cos_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g1_cos_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_c_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_c_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_c_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_b_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_b_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_b_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_a_reg[4]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'f1i_4/equation_input_inst/g1_poly_coeff_a_reg[5]' (FDPE) to 'f1i_4/equation_input_inst/g1_poly_coeff_a_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/f_calc/\fsm/current_state_reg[2] )
+WARNING: [Synth 8-3332] Sequential element (fsm/current_state_reg[2]) is unused and will be removed from module dual_oled_calculator_pixel.

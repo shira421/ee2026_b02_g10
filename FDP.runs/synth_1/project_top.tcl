@@ -17,8 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -ruleid {1}  -id {filemgmt 56-3}  -string {{WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.ip_user_files'.}}  -suppress 
 set_msg_config  -ruleid {2}  -id {Labtoolstcl 44-129}  -string {{WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.}}  -suppress 
 create_project -in_memory -part xc7a35tcpg236-1
@@ -38,7 +36,6 @@ read_verilog -library xil_defaultlib -sv {
 }
 read_verilog -library xil_defaultlib {
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/debouncer.v
-  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/debouncer_parent.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/graphing_calculator_top.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/menu_logic_module.v
@@ -54,6 +51,15 @@ read_verilog -library xil_defaultlib {
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_state.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/game_display.v
   C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/imports/new/flexible_clock.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/calculator_fsm.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/output_screen_renderer.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/add_function.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/multiply_function.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/subtract_function.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/divide_function.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/oled_display.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/input_screen_renderer.v
+  C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.srcs/sources_1/new/dual_oled_calculator_pixel.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

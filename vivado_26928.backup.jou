@@ -1,0 +1,87 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Oct 23 12:21:15 2025
+# Process ID: 26928
+# Current directory: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24980 C:\Users\vkshe\Downloads\Telegram Desktop\included_akshay_game.xpr\FDP\FDP.xpr
+# Log file: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/vivado.log
+# Journal file: C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.xpr}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/calculator_fsm.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/calculator_fsm.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/debounce.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/debounce.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/output_screen_renderer.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/output_screen_renderer.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/add_function.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/add_function.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_top.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_top.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/multiply_function.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/multiply_function.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/subtract_function.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/subtract_function.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/divide_function.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/divide_function.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/oled_display.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/oled_display.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/input_screen_renderer.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/input_screen_renderer.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/debounce.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/debounce.v}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v}}
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/freq_6_25m.v}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v}}
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/imports/samue/lab_4_task_q/lab_4_task_q.srcs/sources_1/new/oled_display.v}}
+export_ip_user_files -of_objects  [get_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_top.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_top.v}}
+close [ open {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_pixel.v} w ]
+add_files {{C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.srcs/sources_1/new/dual_oled_calculator_pixel.v}}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/impl_1/project_top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/impl_1/project_top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/vkshe/Downloads/Telegram Desktop/included_akshay_game.xpr/FDP/FDP.runs/impl_1/project_top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]

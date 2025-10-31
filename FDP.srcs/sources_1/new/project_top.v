@@ -9,7 +9,9 @@
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: Modified to include dual OLED calculator in S1_basic state
+//              Uses dual_oled_calculator_pixel for resource optimization
+//              Shares parent's OLED displays instead of instantiating separate ones
 // 
 // Dependencies: 
 // 
@@ -68,7 +70,7 @@ module project_top(
     assign btnDD_graph = (state == S2_graph) ? btnDD : 1'b0;
     
     // Gate switches for graphing module
-    assign reset_switch_graph = (state == S2_graph) ? sw[15] : 1'b0;
+    assign reset_switch_graph = (state == S2_graph) ? sw[0] : 1'b0;
     assign negative_switch_graph = (state == S2_graph) ? sw[10] : 1'b0;
     
     // Gate buttons for game module
@@ -78,14 +80,33 @@ module project_top(
     assign btnRD_game = (state == S3_game) ? btnRD : 1'b0;
     assign btnDD_game = (state == S3_game) ? btnDD : 1'b0;
     
-    //instantiate the three main modules
+    //instantiate the home screen module
     wire [15:0] screen_2_home;
     home_screen f0(
         pixel_index_2,
         screen_2_home
         );
     
-    wire [15:0] screen_1_graph, screen_2_graph; //these are later multiplexed below
+    //instantiate the dual OLED calculator module (basic calculator)
+    // Using pre-debounced signals from debouncer_parent
+    // Outputs pixel data to share parent's OLED displays (resource saving)
+    wire [15:0] screen_1_basic, screen_2_basic;
+    dual_oled_calculator_pixel f_calc(
+        .clk(clk),
+        .slow_clk(freq625m),
+        .btnC(btnCD_basic),
+        .btnU(btnUD_basic),
+        .btnD(btnDD_basic),
+        .btnL(btnLD_basic),
+        .btnR(btnRD_basic),
+        .pixel_index_a(pixel_index_1),  // Connect to g1's pixel_index
+        .pixel_index_b(pixel_index_2),  // Connect to g0's pixel_index
+        .pixel_data_a(screen_1_basic),  // Output screen (flipped)
+        .pixel_data_b(screen_2_basic)   // Input screen (normal)
+    );
+    
+    //instantiate the graphing calculator module
+    wire [15:0] screen_1_graph, screen_2_graph;
     graphing_calculator_top f1(
         clk,
         reset_switch_graph,
@@ -94,17 +115,17 @@ module project_top(
         pixel_index_1, pixel_index_2,
         screen_1_graph, screen_2_graph);
     
+    //instantiate the maths game module
     wire [6:0] seg_game;
     wire [3:0] an_game;
     wire [15:0] led_game;
     wire [15:0] screen_2_game;
     maths_game f2(
-            clk, freq625m, //inputs
-            btnCD_game, btnUD_game, btnDD_game, btnLD_game, btnRD_game, //inputs
-            seg_game, an_game, led_game, //outputs
-            // OLED interface signals
-            pixel_index_2, //input
-            screen_2_game //output
+            clk, freq625m,
+            btnCD_game, btnUD_game, btnDD_game, btnLD_game, btnRD_game,
+            seg_game, an_game, led_game,
+            pixel_index_2,
+            screen_2_game
         );
         
     //graphical modules
@@ -113,7 +134,15 @@ module project_top(
     wire frame_begin_1, sending_pixels_1, sample_pixel_1;
     wire frame_begin_2, sending_pixels_2, sample_pixel_2;
     
-    oled_display g0(
+    // OLED driver signals (used for all modes)
+    wire cs_g0, sdin_g0, sclk_g0, d_cn_g0, resn_g0, vccen_g0, pmoden_g0;
+    wire cs_g1, sdin_g1, sclk_g1, d_cn_g1, resn_g1, vccen_g1, pmoden_g1;
+    
+    // OLED Display 0 - JB (pixel_index_2, screen_2_data)
+    // Normal orientation for calculator input screen
+    oled_display #(
+        .FLIP_SCREEN(0)
+    ) g0(
         .clk(freq625m), 
         .reset(1'b0), 
         .frame_begin(frame_begin_1), 
@@ -121,16 +150,20 @@ module project_top(
         .sample_pixel(sample_pixel_1),
         .pixel_index(pixel_index_2), 
         .pixel_data(screen_2_data),
-        .cs(JB[0]), 
-        .sdin(JB[1]), 
-        .sclk(JB[3]), 
-        .d_cn(JB[4]), 
-        .resn(JB[5]), 
-        .vccen(JB[6]), 
-        .pmoden(JB[7])
+        .cs(cs_g0), 
+        .sdin(sdin_g0), 
+        .sclk(sclk_g0), 
+        .d_cn(d_cn_g0), 
+        .resn(resn_g0), 
+        .vccen(vccen_g0), 
+        .pmoden(pmoden_g0)
     );
     
-    oled_display g1(
+    // OLED Display 1 - JA (pixel_index_1, screen_1_data)
+    // Flipped 180° for calculator output screen
+    oled_display #(
+        .FLIP_SCREEN(1)
+    ) g1(
         .clk(freq625m), 
         .reset(1'b0), 
         .frame_begin(frame_begin_2), 
@@ -138,13 +171,13 @@ module project_top(
         .sample_pixel(sample_pixel_2),
         .pixel_index(pixel_index_1), 
         .pixel_data(screen_1_data),
-        .cs(JA[0]), 
-        .sdin(JA[1]), 
-        .sclk(JA[3]), 
-        .d_cn(JA[4]), 
-        .resn(JA[5]), 
-        .vccen(JA[6]), 
-        .pmoden(JA[7])
+        .cs(cs_g1), 
+        .sdin(sdin_g1), 
+        .sclk(sclk_g1), 
+        .d_cn(d_cn_g1), 
+        .resn(resn_g1), 
+        .vccen(vccen_g1), 
+        .pmoden(pmoden_g1)
     );
     
     //FSM for the modules to multiplex
@@ -152,7 +185,7 @@ module project_top(
         state = S0_home;
     end
     
-    //sw0 for basic, sw1 for graph, sw2 for the game
+    //sw[3:1] for mode selection: 000=home, 001=basic calc, 010=graph, 100=game
     always@(*) begin
         case(sw[3:1])
             3'b000 : next_state = S0_home;
@@ -163,14 +196,55 @@ module project_top(
         endcase
     end
     
+    // Multiplex outputs based on state
     always@(*) begin
         case(state)
-            S0_home : begin screen_2_data = screen_2_home; an = 4'b1111; seg = 8'b11111111; end
-            S1_basic : begin an = 4'b1111; seg = 8'b11111111; end //insert the output of the graphical module here
-            S2_graph : begin screen_1_data = screen_1_graph; screen_2_data = screen_2_graph; an = 4'b1111; seg = 8'b11111111; end
-            S3_game : begin seg = {1'b1, seg_game}; an = an_game; led = led_game; screen_1_data = 16'b0000000000000000; screen_2_data = screen_2_game; end
+            S0_home : begin 
+                screen_2_data = screen_2_home; 
+                screen_1_data = 16'b0;
+                an = 4'b1111; 
+                seg = 8'b11111111;
+                led = 16'b0;
+            end
+            
+            S1_basic : begin 
+                // Calculator shares the OLED displays
+                screen_1_data = screen_1_basic;  // Output screen (flipped)
+                screen_2_data = screen_2_basic;  // Input screen (normal)
+                an = 4'b1111; 
+                seg = 8'b11111111;
+                led = 16'b0;
+            end
+            
+            S2_graph : begin 
+                screen_1_data = screen_1_graph; 
+                screen_2_data = screen_2_graph; 
+                an = 4'b1111; 
+                seg = 8'b11111111;
+                led = 16'b0;
+            end
+            
+            S3_game : begin 
+                seg = {1'b1, seg_game}; 
+                an = an_game; 
+                led = led_game; 
+                screen_1_data = 16'b0000000000000000; 
+                screen_2_data = screen_2_game;
+            end
+            
+            default : begin
+                screen_2_data = screen_2_home; 
+                screen_1_data = 16'b0;
+                an = 4'b1111; 
+                seg = 8'b11111111;
+                led = 16'b0;
+            end
         endcase
     end
+    
+    // JA and JB outputs (same for all states now - using shared OLED drivers)
+    assign JA = {pmoden_g1, vccen_g1, resn_g1, d_cn_g1, sclk_g1, 1'b0, sdin_g1, cs_g1};
+    assign JB = {pmoden_g0, vccen_g0, resn_g0, d_cn_g0, sclk_g0, 1'b0, sdin_g0, cs_g0};
     
     always@(posedge clk) begin
         state <= next_state;
