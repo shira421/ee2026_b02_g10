@@ -32,8 +32,9 @@ module project_top(
     );
     
     //clock functions
-    wire freq625m;
+    wire freq625m, freq_200hz;
     freq_625m c0(clk, freq625m);
+    freq_divider #(200, 20) c1(clk, freq_200hz);
     
     //debouncer function
     wire btnCD, btnUD, btnLD, btnRD, btnDD;
@@ -85,6 +86,18 @@ module project_top(
     home_screen f0(
         pixel_index_2,
         screen_2_home
+        );
+    //instantiate the startup anode and segment functions needed
+    //the counter and the clk
+    wire [1:0] ctr_out;
+    counter #(4, 2) ctr0(freq_200hz, 0, ctr_out);
+    
+    wire [3:0] an_home;
+    wire [7:0] seg_home;
+    ti_85_anode ti_85_anode_inst(
+        ctr_out,
+        an_home,
+        seg_home    
         );
     
     //instantiate the dual OLED calculator module (basic calculator)
@@ -202,8 +215,8 @@ module project_top(
             S0_home : begin 
                 screen_2_data = screen_2_home; 
                 screen_1_data = 16'b0;
-                an = 4'b1111; 
-                seg = 8'b11111111;
+                an = an_home; 
+                seg = seg_home;
                 led = 16'b0;
             end
             

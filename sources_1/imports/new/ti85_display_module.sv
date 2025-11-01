@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-//stage 1
 module ti85_display_module (
     input freq625m,
     input [12:0] pixel_index,                 // From OLED driver (0 to 6143)
@@ -477,7 +476,6 @@ module pixel_output_generator (
     end
 endmodule
 
-//stage 2
 module pixel_output_state_graph_menu (
     input freq625m,
     input cursor_pos,           // 0 for row 1, 1 for row 2
