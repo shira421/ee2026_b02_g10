@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/29/2025 10:14:38 PM
-// Design Name: 
-// Module Name: debouncer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module debounce(
     input clk,          // 100 MHz system clock
@@ -28,8 +8,8 @@ module debounce(
 
     // --- Parameters ---
     localparam integer SAMPLE_COUNT = 100_000; // 100 MHz / 100k = 1 ms tick
-    localparam integer DEBOUNCE_MS  = 200;     // 200 ms lockout
-    localparam integer PULSE_MS     = 5;       // 5 ms output pulse
+    localparam integer DEBOUNCE_MS  = 100;     // 200 ms lockout
+    localparam integer PULSE_MS     = 2;       // 5 ms output pulse
 
     // --- Signals ---
     reg [16:0] sample_counter = 0;   // counts to 100_000

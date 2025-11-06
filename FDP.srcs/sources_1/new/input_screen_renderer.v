@@ -1,0 +1,179 @@
+`timescale 1ns / 1ps
+
+module input_screen_renderer(
+    input [12:0] pixel_index,
+    input [2:0] state,
+    input [1:0] op_selection,
+    input [3:0] numpad_selection,
+    output reg [15:0] pixel_data
+);
+    localparam WIDTH  = 96;
+    localparam HEIGHT = 64;
+
+    // FSM State Definitions
+    localparam S_CHOOSE_OP   = 3'd0;
+    localparam S_INPUT_NUM1  = 3'd1;
+    localparam S_INPUT_NUM2  = 3'd2;
+    localparam S_SHOW_RESULT = 3'd3;
+
+    // --- Colors (Updated Hover Colors) ---
+    localparam COLOR_BG        = 16'h0000; // Black
+    localparam COLOR_BORDER    = 16'h8410; // Grey
+    localparam COLOR_TEXT      = 16'hFFFF; // White
+    localparam COLOR_ADD       = 16'hFD20; // Orange
+    localparam COLOR_SUB       = 16'h03DF; // Blue
+    localparam COLOR_MUL       = 16'hE100; // Vibrant Red (Updated)
+    localparam COLOR_DIV       = 16'h07E0; // Green
+
+    wire [6:0] x = pixel_index % WIDTH;
+    wire [6:0] y = pixel_index / WIDTH;
+
+    // --- Helper functions ---
+    function is_in_box;
+        input [6:0] px, py, x0, y0, w, h;
+        is_in_box = (px >= x0 && px < x0+w && py >= y0 && py < y0+h);
+    endfunction
+
+    function is_border;
+        input [6:0] px, py, x0, y0, w, h;
+        is_border = (px == x0 || px == x0+w-1 || py == y0 || py == y0+h-1);
+    endfunction
+
+    // --- Centered Operator Drawing ---
+    function draw_op_symbol;
+        input [6:0] px, py;
+        input [1:0] op;
+        integer cx, cy, dx, dy;
+        begin
+            draw_op_symbol = 0;
+            case(op)
+                2'b00: begin // +
+                    cx=27; cy=16; dx = px-cx; dy = py-cy;
+                    if((dy>=-1 && dy<=1 && px>=17 && px<=37) || (dx>=-1 && dx<=1 && py>=8 && py<=24))
+                        draw_op_symbol=1;
+                end
+                2'b01: begin // -
+                    cx=72; cy=16; dx = px-cx; dy = py-cy;
+                    if(dy>=-1 && dy<=1 && px>=62 && px<=82)
+                        draw_op_symbol=1;
+                end
+                2'b10: begin // x
+                    cx=27; cy=48; dx = px-cx; dy = py-cy;
+                    if((dx==dy) || (dx==-dy) || (dx==dy+1) || (dx+1==dy) || (dx==-dy+1) || (dx+1==-dy))
+                       if(px >= 20 && px <= 34 && py >= 41 && py <= 55)
+                            draw_op_symbol = 1;
+                end
+                2'b11: begin // /
+                    cx=72; cy=49; dx = px-cx; dy = py-cy;
+                     if((dy>=-1 && dy<=1 && px>=62 && px<=82) ||
+                        (px>=cx-1 && px<=cx+1 && ((py>=cy-7 && py<=cy-5) || (py>=cy+5 && py<=cy+7))))
+                        draw_op_symbol=1;
+                end
+            endcase
+        end
+    endfunction
+
+    // --- Icon Drawing Functions ---
+    function draw_tick_icon;
+        input [6:0] px, py, x0, y0, w, h;
+        integer cx, cy;
+        begin
+             cx = x0 + w/2; cy = y0 + h/2;
+             draw_tick_icon = ((px-py > cx-cy-6) && (px-py < cx-cy-2) && (px > cx-6 && px < cx+1) && (py > cy-3 && py < cy+3)) ||
+                            ((px+py > cx+cy-3) && (px+py < cx+cy+1) && (px > cx-2 && px < cx+7) && (py > cy-7 && py < cy+1));
+        end
+    endfunction
+
+    function draw_backspace_icon;
+        input [6:0] px, py, x0, y0, w, h;
+        integer rel_x, rel_y;
+        begin
+             rel_x = px - x0; rel_y = py - y0;
+             draw_backspace_icon = (rel_y >= 5 && rel_y <= 8 && rel_x >= 10 && rel_x <= 21) ||
+                                 (rel_x >= 6 && rel_x <= 10 && rel_y >= (7 - (rel_x - 6)) && rel_y <= (7 + (rel_x - 6)));
+        end
+    endfunction
+
+    // --- Font table and drawing for Numpad ---
+    function [7:0] font_row;
+        input [3:0] digit;
+        input [2:0] row;
+        case(digit)
+            4'd0: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd1: case(row) 0: font_row=8'b00001000;1: font_row=8'b00011000;2: font_row=8'b00001000;3: font_row=8'b00001000;4: font_row=8'b00001000;5: font_row=8'b00001000;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd2: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b00000010;3: font_row=8'b00000100;4: font_row=8'b00001000;5: font_row=8'b00100000;6: font_row=8'b01111110; default: font_row=8'b00000000; endcase
+            4'd3: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b00000010;3: font_row=8'b00011100;4: font_row=8'b00000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd4: case(row) 0: font_row=8'b00000100;1: font_row=8'b00001100;2: font_row=8'b00010100;3: font_row=8'b00100100;4: font_row=8'b01111110;5: font_row=8'b00000100;6: font_row=8'b00000100; default: font_row=8'b00000000; endcase
+            4'd5: case(row) 0: font_row=8'b01111110;1: font_row=8'b01000000;2: font_row=8'b01111100;3: font_row=8'b00000010;4: font_row=8'b00000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd6: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000000;2: font_row=8'b01111100;3: font_row=8'b01000010;4: font_row=8'b01000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd7: case(row) 0: font_row=8'b01111110;1: font_row=8'b00000010;2: font_row=8'b00000100;3: font_row=8'b00001000;4: font_row=8'b00010000;5: font_row=8'b00100000;6: font_row=8'b01000000; default: font_row=8'b00000000; endcase
+            4'd8: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;3: font_row=8'b00111100;4: font_row=8'b01000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            4'd9: case(row) 0: font_row=8'b00111100;1: font_row=8'b01000010;2: font_row=8'b01000010;3: font_row=8'b00111110;4: font_row=8'b00000010;5: font_row=8'b01000010;6: font_row=8'b00111100; default: font_row=8'b00000000; endcase
+            default: font_row = 8'b00000000;
+        endcase
+    endfunction
+    function draw_char;
+        input [3:0] char_code; input [6:0] px, py, x0, y0;
+        integer fx, fy; reg [7:0] rowbits;
+        begin
+            draw_char=0;
+            if(px>=x0 && px<x0+8 && py>=y0 && py<y0+8) begin
+                fx = px - x0; fy = py - y0;
+                rowbits = font_row(char_code, fy);
+                draw_char = rowbits[7-fx];
+            end
+        end
+    endfunction
+
+    // === Main drawing logic ===
+    always @(*) begin : render_logic_block
+        localparam BOX_W = 40, BOX_H = 28, X0 = 8, Y0 = 3;
+        localparam KEY_W = 28, KEY_H = 14, PAD_X = 4, PAD_Y = 2;
+        integer i, j;
+        reg [15:0] highlight_color;
+
+        pixel_data = COLOR_BG;
+
+        case(state)
+            S_CHOOSE_OP: begin
+                case(op_selection)
+                    2'b00: highlight_color = COLOR_ADD;
+                    2'b01: highlight_color = COLOR_SUB;
+                    2'b10: highlight_color = COLOR_MUL;
+                    2'b11: highlight_color = COLOR_DIV;
+                    default: highlight_color = COLOR_BG;
+                endcase
+
+                if(is_in_box(x, y, X0, Y0, BOX_W, BOX_H)) pixel_data = is_border(x, y, X0, Y0, BOX_W, BOX_H) ? COLOR_BORDER : (op_selection == 2'b00 ? highlight_color : COLOR_BG);
+                if(is_in_box(x, y, X0+BOX_W+4, Y0, BOX_W, BOX_H)) pixel_data = is_border(x, y, X0+BOX_W+4, Y0, BOX_W, BOX_H) ? COLOR_BORDER : (op_selection == 2'b01 ? highlight_color : COLOR_BG);
+                if(is_in_box(x, y, X0, Y0+BOX_H+4, BOX_W, BOX_H)) pixel_data = is_border(x, y, X0, Y0+BOX_H+4, BOX_W, BOX_H) ? COLOR_BORDER : (op_selection == 2'b10 ? highlight_color : COLOR_BG);
+                if(is_in_box(x, y, X0+BOX_W+4, Y0+BOX_H+4, BOX_W, BOX_H)) pixel_data = is_border(x, y, X0+BOX_W+4, Y0+BOX_H+4, BOX_W, BOX_H) ? COLOR_BORDER : (op_selection == 2'b11 ? highlight_color : COLOR_BG);
+
+                if(draw_op_symbol(x,y,2'b00) || draw_op_symbol(x,y,2'b01) || draw_op_symbol(x,y,2'b10) || draw_op_symbol(x,y,2'b11)) pixel_data = COLOR_TEXT;
+            end
+
+            S_INPUT_NUM1, S_INPUT_NUM2: begin
+                 for(i=0; i<4; i=i+1) begin // Rows
+                    for(j=0; j<3; j=j+1) begin // Columns
+                        if(is_in_box(x, y, PAD_X+j*(KEY_W+2), PAD_Y+i*(KEY_H+2), KEY_W, KEY_H))
+                           pixel_data = is_border(x, y, PAD_X+j*(KEY_W+2), PAD_Y+i*(KEY_H+2), KEY_W, KEY_H) ? COLOR_BORDER : ((i*3+j) == numpad_selection ? COLOR_ADD : COLOR_BG);
+                    end
+                end
+                // Draw numbers and symbols on keys (UPDATED: 1-2-3 at top)
+                if (draw_char(1, x, y, 14, 5)) pixel_data = COLOR_TEXT; if (draw_char(2, x, y, 44, 5)) pixel_data = COLOR_TEXT; if (draw_char(3, x, y, 74, 5)) pixel_data = COLOR_TEXT;
+                if (draw_char(4, x, y, 14, 21)) pixel_data = COLOR_TEXT; if (draw_char(5, x, y, 44, 21)) pixel_data = COLOR_TEXT; if (draw_char(6, x, y, 74, 21)) pixel_data = COLOR_TEXT;
+                if (draw_char(7, x, y, 14, 37)) pixel_data = COLOR_TEXT; if (draw_char(8, x, y, 44, 37)) pixel_data = COLOR_TEXT; if (draw_char(9, x, y, 74, 37)) pixel_data = COLOR_TEXT;
+
+                // Draw bottom row: [Backspace] [0] [Enter]
+                if (draw_backspace_icon(x, y, PAD_X, PAD_Y+3*(KEY_H+2), KEY_W, KEY_H)) pixel_data = COLOR_TEXT;
+                if (draw_char(0, x, y, PAD_X+1*(KEY_W+2)+10, PAD_Y+3*(KEY_H+2)+3)) pixel_data = COLOR_TEXT;
+                if (draw_tick_icon(x, y, PAD_X+2*(KEY_W+2), PAD_Y+3*(KEY_H+2), KEY_W, KEY_H)) pixel_data = COLOR_TEXT;
+
+            end
+
+            S_SHOW_RESULT: begin
+                // Screen is blank
+            end
+        endcase
+    end
+endmodule

@@ -70,8 +70,8 @@ module pixel_output_generator (
 
         // Stylized "7" - only if match_signal is high
         else if (match_signal) begin
-            // Top bar: x = 80-88, y = 4-5
-            if (x >= SevenBarXStart && x <= SevenBarXEnd + 1 && y >= 4 && y <= 5)
+            // Top bar: x = 80-87, y = 4-5
+            if (x >= SevenBarXStart && x <= SevenBarXEnd && y >= 4 && y <= 5)
                 pixel_data <= rgb3_to_rgb565(3'b101); // pink
 
             // Right vertical leg: x = 87-88, y = 6-25
@@ -79,5 +79,4 @@ module pixel_output_generator (
                 pixel_data <= rgb3_to_rgb565(3'b101);
         end
     end
-
 endmodule

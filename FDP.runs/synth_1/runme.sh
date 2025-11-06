@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/samue/Documents/vivado/ee2026_b02_g10/FDP.runs/synth_1'
+HD_PWD='C:/Users/dorn/Desktop/working_version_ui_fixed.xpr/FDP/FDP.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log top_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+EAStep vivado -log project_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source project_top.tcl
