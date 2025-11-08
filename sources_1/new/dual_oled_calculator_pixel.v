@@ -1,13 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////
-// Engineer:      (Modified for resource sharing)
-// Create Date:   10/11/2025
-// Module Name:   dual_oled_calculator_pixel
-// Description:
-//
-// Modified version that outputs pixel data instead of driving OLEDs directly.
-// This allows sharing of parent's OLED display drivers to save resources.
-//
-//////////////////////////////////////////////////////////////////////////////////
 module dual_oled_calculator_pixel(
     input clk,          // System clock (100 MHz)
     input slow_clk,     // Slow clock for timing (6.25 MHz)

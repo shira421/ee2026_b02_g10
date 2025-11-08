@@ -1,8 +1,5 @@
 `timescale 1ns / 1ps
 
-// OPTIMIZED VERSION: Graph shows on ONE screen only
-// Saves ~6000 LUTs and ~30 DSP blocks by removing duplicate graph_plotter
-
 module graphing_calculator_top (
     input wire clk,
     input wire reset,
@@ -282,9 +279,16 @@ module graphing_calculator_top (
     
     // ========================================================================
     // OPTIMIZED: Only ONE graph_plotter instance (shows on screen 1 only)
-    // Screen 2 shows equation display instead
+    // Screen 2 shows equation display with area and intersection data
     // This saves ~6000 LUTs and ~30 DSP blocks!
     // ========================================================================
+    
+    // Area and intersection data from graph_plotter
+    wire [15:0] area_value;
+    wire area_valid;
+    wire [1:0] intersect_count;
+    wire [3:0] int0_d0, int0_d1, int0_d2, int0_d3, int0_d4, int0_d5, int0_d6, int0_d7;
+    wire [3:0] int1_d0, int1_d1, int1_d2, int1_d3, int1_d4, int1_d5, int1_d6, int1_d7;
     
     wire [15:0] state_graphing_menu_1;
     graph_plotter graph_display(
@@ -307,12 +311,55 @@ module graphing_calculator_top (
         .g2_cos_coeff_a(g2_cos_coeff_a),
         .g2_sin_coeff_a(g2_sin_coeff_a),
         
-        .pixel_data(state_graphing_menu_1)
+        .pixel_data(state_graphing_menu_1),
+        
+        // Export area and intersection data
+        .area_out(area_value),
+        .area_valid_out(area_valid),
+        .intersect_count_out(intersect_count),
+        .int0_d0(int0_d0), .int0_d1(int0_d1), .int0_d2(int0_d2), .int0_d3(int0_d3),
+        .int0_d4(int0_d4), .int0_d5(int0_d5), .int0_d6(int0_d6), .int0_d7(int0_d7),
+        .int1_d0(int1_d0), .int1_d1(int1_d1), .int1_d2(int1_d2), .int1_d3(int1_d3),
+        .int1_d4(int1_d4), .int1_d5(int1_d5), .int1_d6(int1_d6), .int1_d7(int1_d7)
     );
     
-    // Screen 2 in graphing mode: Show the equation info instead of duplicate graph
+    // Screen 2 in graphing mode: Show equation display with area and intersection
     wire [15:0] state_graphing_menu_2;
-    assign state_graphing_menu_2 = state_input_menu_1;  // Reuse equation display
+    equation_display equation_display_graphing_inst(
+        .clk(clk),
+        .pixel_index(pixel_index_2),
+        .graph1_type(graph1_type),
+        .graph2_type(graph2_type),
+        
+        .g1_poly_coeff_a(g1_poly_coeff_a), 
+        .g1_poly_coeff_b(g1_poly_coeff_b), 
+        .g1_poly_coeff_c(g1_poly_coeff_c),
+        .g1_cos_coeff_a(g1_cos_coeff_a), 
+        .g1_sin_coeff_a(g1_sin_coeff_a),
+        
+        .g2_poly_coeff_a(g2_poly_coeff_a), 
+        .g2_poly_coeff_b(g2_poly_coeff_b), 
+        .g2_poly_coeff_c(g2_poly_coeff_c),
+        .g2_cos_coeff_a(g2_cos_coeff_a), 
+        .g2_sin_coeff_a(g2_sin_coeff_a),
+        
+        .temp_coeff(temp_coeff), 
+        .digit_count(digit_count),
+        .is_negative(is_negative),
+        .current_graph_slot(current_graph_slot), 
+        .current_coeff_pos(current_coeff_pos),
+        
+        // Area and intersection data
+        .area_value(area_value),
+        .area_valid(area_valid),
+        .intersect_count(intersect_count),
+        .int0_d0(int0_d0), .int0_d1(int0_d1), .int0_d2(int0_d2), .int0_d3(int0_d3),
+        .int0_d4(int0_d4), .int0_d5(int0_d5), .int0_d6(int0_d6), .int0_d7(int0_d7),
+        .int1_d0(int1_d0), .int1_d1(int1_d1), .int1_d2(int1_d2), .int1_d3(int1_d3),
+        .int1_d4(int1_d4), .int1_d5(int1_d5), .int1_d6(int1_d6), .int1_d7(int1_d7),
+        
+        .pixel_color(state_graphing_menu_2)
+    );
     
     // MUX Display Output Based on FSM State
     always @(*) begin

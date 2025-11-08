@@ -1,12 +1,3 @@
-/*
- * Module: oled_display
- * Description: Drives the SSD1306 OLED display via SPI.
- *
- * ** UPDATE: This module is now configurable. A `FLIP_SCREEN` parameter has
- * ** been added. When set to 1, it modifies the initialization sequence to
- * ** render the display upside down.
- *
- */
 module oled_display #(
     parameter FLIP_SCREEN = 0 // Default to normal orientation
 ) (
